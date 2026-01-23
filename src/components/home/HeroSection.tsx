@@ -1,9 +1,72 @@
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowRight, Calculator, Building2, Users, Award } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Calculator, Building2, Users, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+const heroSlides = [
+  {
+    badge: "Trusted by 500+ UAE Businesses",
+    badgeIcon: Award,
+    title: "Powering UAE Business Growth Through",
+    highlight: "Strategic Financing",
+    description: "Access flexible business loans from AED 100,000 to AED 50 million. Partner with UAE's leading banks through our streamlined application process.",
+    stats: [
+      { icon: Building2, value: "15+", label: "Years Experience" },
+      { icon: Users, value: "500+", label: "Businesses Served" },
+      { icon: Award, value: "AED 2B+", label: "Loans Facilitated" },
+    ],
+  },
+  {
+    badge: "Fast & Hassle-Free Process",
+    badgeIcon: Calculator,
+    title: "Get Pre-Approved in Just",
+    highlight: "48 Hours",
+    description: "Our streamlined digital process and strong banking relationships mean faster approvals and competitive rates for your business.",
+    stats: [
+      { icon: Building2, value: "87%", label: "Approval Rate" },
+      { icon: Users, value: "15+", label: "Partner Banks" },
+      { icon: Award, value: "7%", label: "Starting Interest" },
+    ],
+  },
+  {
+    badge: "Complete Business Banking",
+    badgeIcon: Building2,
+    title: "From Loans to Accounts,",
+    highlight: "We've Got You Covered",
+    description: "Beyond financing, we help you open the perfect business account, set up trade finance solutions, and manage your corporate banking needs.",
+    stats: [
+      { icon: Building2, value: "5+", label: "Account Types" },
+      { icon: Users, value: "100%", label: "Compliance" },
+      { icon: Award, value: "24/7", label: "Online Banking" },
+    ],
+  },
+];
 
 const HeroSection = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const scrollTo = useCallback((index: number) => {
+    api?.scrollTo(index);
+  }, [api]);
+
   return (
     <section className="relative min-h-screen gradient-hero overflow-hidden">
       {/* Background Pattern */}
@@ -22,88 +85,153 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)]">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full text-primary-foreground/90 text-sm font-medium backdrop-blur-sm"
-            >
-              <Award className="h-4 w-4" />
-              Trusted by 500+ UAE Businesses
-            </motion.div>
+          {/* Left Content - Carousel */}
+          <Carousel
+            setApi={setApi}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 5000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-0">
+              {heroSlides.map((slide, index) => (
+                <CarouselItem key={index} className="pl-0">
+                  <AnimatePresence mode="wait">
+                    {current === index && (
+                      <motion.div 
+                        key={index}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="space-y-8"
+                      >
+                        <motion.div 
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5 }}
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full text-primary-foreground/90 text-sm font-medium backdrop-blur-sm"
+                        >
+                          <slide.badgeIcon className="h-4 w-4" />
+                          {slide.badge}
+                        </motion.div>
 
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-display-sm md:text-display text-primary-foreground leading-tight"
-            >
-              Powering UAE Business Growth Through{" "}
-              <span className="text-accent">Strategic Financing</span>
-            </motion.h1>
+                        <motion.h1 
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.1 }}
+                          className="text-display-sm md:text-display text-primary-foreground leading-tight"
+                        >
+                          {slide.title}{" "}
+                          <span className="text-accent">{slide.highlight}</span>
+                        </motion.h1>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-primary-foreground/80 max-w-xl leading-relaxed"
-            >
-              Access flexible business loans from AED 100,000 to AED 50 million.
-              Partner with UAE's leading banks through our streamlined application process.
-            </motion.p>
+                        <motion.p 
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          className="text-xl text-primary-foreground/80 max-w-xl leading-relaxed"
+                        >
+                          {slide.description}
+                        </motion.p>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Button asChild variant="hero" size="xl">
-                <Link to="/apply" className="flex items-center gap-2">
-                  Apply for Business Loan
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="heroOutline" size="xl">
-                <a href="#calculator" className="flex items-center gap-2">
-                  <Calculator className="h-5 w-5" />
-                  Calculate Eligibility
-                </a>
-              </Button>
-            </motion.div>
+                        <motion.div 
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.3 }}
+                          className="flex flex-col sm:flex-row gap-4"
+                        >
+                          <Button asChild variant="hero" size="xl">
+                            <Link to="/apply" className="flex items-center gap-2">
+                              Apply for Business Loan
+                              <ArrowRight className="h-5 w-5" />
+                            </Link>
+                          </Button>
+                          <Button asChild variant="heroOutline" size="xl">
+                            <a href="#calculator" className="flex items-center gap-2">
+                              <Calculator className="h-5 w-5" />
+                              Calculate Eligibility
+                            </a>
+                          </Button>
+                        </motion.div>
 
-            {/* Trust Badges */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-8 pt-8 border-t border-primary-foreground/20"
-            >
-              {[
-                { icon: Building2, value: "15+", label: "Years Experience" },
-                { icon: Users, value: "500+", label: "Businesses Served" },
-                { icon: Award, value: "AED 2B+", label: "Loans Facilitated" },
-              ].map((stat, index) => (
-                <motion.div 
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                  className="flex items-center gap-3"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center">
-                    <stat.icon className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-primary-foreground">{stat.value}</p>
-                    <p className="text-sm text-primary-foreground/70">{stat.label}</p>
-                  </div>
-                </motion.div>
+                        {/* Trust Badges */}
+                        <motion.div 
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4 }}
+                          className="flex flex-wrap gap-8 pt-8 border-t border-primary-foreground/20"
+                        >
+                          {slide.stats.map((stat, statIndex) => (
+                            <motion.div 
+                              key={stat.label}
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.4, delay: 0.5 + statIndex * 0.1 }}
+                              className="flex items-center gap-3"
+                            >
+                              <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center">
+                                <stat.icon className="h-6 w-6 text-accent" />
+                              </div>
+                              <div>
+                                <p className="text-2xl font-bold text-primary-foreground">{stat.value}</p>
+                                <p className="text-sm text-primary-foreground/70">{stat.label}</p>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </CarouselItem>
               ))}
-            </motion.div>
-          </div>
+            </CarouselContent>
+
+            {/* Carousel Navigation */}
+            <div className="flex items-center gap-4 mt-8">
+              {/* Dots */}
+              <div className="flex gap-2">
+                {heroSlides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => scrollTo(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      current === index 
+                        ? "w-8 bg-accent" 
+                        : "w-2 bg-primary-foreground/30 hover:bg-primary-foreground/50"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Arrows */}
+              <div className="flex gap-2 ml-auto">
+                <button
+                  onClick={() => api?.scrollPrev()}
+                  className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={() => api?.scrollNext()}
+                  className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          </Carousel>
 
           {/* Right Content - Abstract Visualization */}
           <div className="relative hidden lg:block">
