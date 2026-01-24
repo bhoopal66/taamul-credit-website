@@ -149,8 +149,8 @@ const BusinessLoans = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 bg-background">
+      {/* Features Section with Calculator */}
+      <section id="calculator" className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-display-sm text-foreground mb-4">
@@ -161,24 +161,96 @@ const BusinessLoans = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                  <feature.icon className="h-7 w-7 text-primary" />
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Features Grid */}
+            <div className="grid sm:grid-cols-2 gap-6">
+              {features.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                    <feature.icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {feature.description}
-                </p>
+              ))}
+            </div>
+
+            {/* Calculator */}
+            <div className="bg-card rounded-3xl p-8 shadow-elevated border border-border">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <Calculator className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground">Loan Eligibility Calculator</h3>
+                  <p className="text-muted-foreground">Get an instant estimate</p>
+                </div>
               </div>
-            ))}
+
+              <div className="space-y-6">
+                {/* Annual Turnover Slider */}
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <label className="text-sm font-medium text-foreground">
+                      Annual Turnover
+                    </label>
+                    <span className="text-lg font-bold text-primary">
+                      {formatCurrency(turnover)}
+                    </span>
+                  </div>
+                  <Slider
+                    value={[turnover]}
+                    onValueChange={(value) => setTurnover(value[0])}
+                    min={500000}
+                    max={100000000}
+                    step={500000}
+                    className="w-full"
+                  />
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>AED 500K</span>
+                    <span>AED 100M</span>
+                  </div>
+                </div>
+
+                {/* Minimum Requirement Note */}
+                <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
+                  <Info className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                  <p className="text-sm text-muted-foreground">
+                    Minimum 1 year in business required
+                  </p>
+                </div>
+              </div>
+
+              {/* Result */}
+              <motion.div 
+                key={eligibleAmount}
+                initial={{ opacity: 0.8, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                className="mt-8 p-6 rounded-2xl gradient-hero text-primary-foreground"
+              >
+                <p className="text-sm opacity-80 mb-1">Estimated Eligible Amount</p>
+                <p className="text-4xl font-bold mb-2">
+                  {formatCurrency(eligibleAmount)}
+                </p>
+                <p className="text-xs opacity-70 mb-4">*This is an estimate. Actual amount may vary.</p>
+                <Button asChild variant="hero" size="lg" className="w-full">
+                  <Link to="/contact" className="flex items-center justify-center gap-2">
+                    Talk to Expert
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </Button>
+              </motion.div>
+            </div>
           </div>
+
           <p className="text-sm text-muted-foreground text-center mt-8">
             *Interest rates are subject to lender's discretion and may vary based on credit assessment.
           </p>
@@ -452,79 +524,6 @@ const BusinessLoans = () => {
         </div>
       </section>
 
-      {/* Calculator Section */}
-      <section id="calculator" className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-card rounded-3xl p-8 shadow-elevated border border-border">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <Calculator className="h-6 w-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">Business Loan Eligibility Calculator</h3>
-                  <p className="text-muted-foreground">Get an instant estimate</p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                {/* Annual Turnover Slider */}
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <label className="text-sm font-medium text-foreground">
-                      Annual Turnover
-                    </label>
-                    <span className="text-lg font-bold text-primary">
-                      {formatCurrency(turnover)}
-                    </span>
-                  </div>
-                  <Slider
-                    value={[turnover]}
-                    onValueChange={(value) => setTurnover(value[0])}
-                    min={500000}
-                    max={100000000}
-                    step={500000}
-                    className="w-full"
-                  />
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>AED 500K</span>
-                    <span>AED 100M</span>
-                  </div>
-                </div>
-
-                {/* Minimum Requirement Note */}
-                <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
-                  <Info className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                  <p className="text-sm text-muted-foreground">
-                    Minimum 1 year in business required
-                  </p>
-                </div>
-              </div>
-
-              {/* Result */}
-              <motion.div 
-                key={eligibleAmount}
-                initial={{ opacity: 0.8, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
-                className="mt-8 p-6 rounded-2xl gradient-hero text-primary-foreground"
-              >
-                <p className="text-sm opacity-80 mb-1">Estimated Eligible Amount</p>
-                <p className="text-4xl font-bold mb-2">
-                  {formatCurrency(eligibleAmount)}
-                </p>
-                <p className="text-xs opacity-70 mb-4">*This is an estimate. Actual amount may vary.</p>
-                <Button asChild variant="hero" size="lg" className="w-full">
-                  <Link to="/contact" className="flex items-center justify-center gap-2">
-                    Talk to Expert
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </Button>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-24 gradient-hero relative overflow-hidden">
