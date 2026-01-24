@@ -40,7 +40,7 @@ const features = [
 
 const eligibility = [
   "Business operating in UAE for at least 1 year",
-  "Minimum annual turnover of AED 1 million",
+  "Minimum annual turnover of AED 500K onwards",
   "Valid trade license",
   "Audited financial statements for 2+ years",
   "Positive credit history with no defaults",
