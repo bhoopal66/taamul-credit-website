@@ -34,7 +34,7 @@ const features = [
   {
     icon: Clock,
     title: "Quick Approval",
-    description: "Get pre-approved within 48 hours with minimal documentation",
+    description: "Streamlined documentation process with faster turnaround times",
   },
 ];
 
