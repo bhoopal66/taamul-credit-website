@@ -41,7 +41,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">Services</h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/loans/business-loans" className="text-white hover:text-accent transition-colors">
@@ -78,7 +78,7 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Resources</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">Resources</h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/how-it-works" className="text-white hover:text-accent transition-colors">
@@ -115,7 +115,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-1 text-accent" />
