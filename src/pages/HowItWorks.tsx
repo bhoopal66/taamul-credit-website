@@ -59,7 +59,7 @@ const steps = [
     title: "Final Approval",
     description: "Once you select your preferred offer, we coordinate with the bank to complete the final approval process and documentation.",
     icon: CheckCircle2,
-    duration: "3-5 days",
+    duration: "2-4 weeks",
     details: [
       "Final documentation",
       "Bank credit committee review",
