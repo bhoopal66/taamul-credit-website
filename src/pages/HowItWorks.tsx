@@ -118,7 +118,7 @@ const HowItWorks = () => {
             </p>
             <div className="flex items-center justify-center gap-2 text-lg">
               <Clock className="h-5 w-5" />
-              <span>Average processing time: <strong>7-10 business days</strong></span>
+              <span>Average processing time: <strong>3-5 weeks</strong></span>
             </div>
           </div>
         </div>
