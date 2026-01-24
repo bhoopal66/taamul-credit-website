@@ -269,66 +269,6 @@ const HeroSection = () => {
             </div>
           </Carousel>
 
-          {/* Right Content - Abstract Visualization */}
-          <div className="relative hidden lg:block">
-            <div className="relative w-full h-[500px]">
-              {/* Main Card */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-48 bg-card/95 backdrop-blur-md rounded-2xl shadow-elevated p-6 animate-float border border-border/50"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Building2 className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Loan Approved</p>
-                    <p className="text-xl font-bold text-foreground">AED 2,500,000</p>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Interest Rate</span>
-                    <span className="font-medium text-foreground">7.5% p.a.</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Tenure</span>
-                    <span className="font-medium text-foreground">60 months</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Elements */}
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="absolute top-10 right-10 w-20 h-20 bg-accent/30 rounded-full blur-xl animate-pulse-slow" 
-              />
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.7 }}
-                className="absolute bottom-20 left-10 w-32 h-32 bg-primary-foreground/20 rounded-full blur-2xl animate-pulse-slow" 
-                style={{ animationDelay: "1s" }} 
-              />
-              
-              {/* Stats Cards */}
-
-              <motion.div 
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute bottom-16 right-8 bg-card/95 backdrop-blur-md rounded-xl p-4 shadow-card animate-float border border-border/50" 
-                style={{ animationDelay: "1s" }}
-              >
-                <p className="text-sm text-muted-foreground">Document Review</p>
-                <p className="text-lg font-bold text-accent">Avoid Delays</p>
-              </motion.div>
-            </div>
-          </div>
         </div>
       </div>
 
