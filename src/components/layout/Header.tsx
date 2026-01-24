@@ -13,7 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import taamulLogo from "@/assets/taamul-logo.png";
 const loanServices = [
-  { name: "Term Loans", href: "/loans/term-loans", description: "Fixed-term financing for business growth" },
+  { name: "Business Loans", href: "/loans/business-loans", description: "Fixed-term financing for business growth" },
   { name: "Working Capital", href: "/loans/working-capital", description: "Manage daily operations smoothly" },
   { name: "Secured Loans", href: "/loans/secured-loans", description: "Asset-backed financing solutions" },
   { name: "SME Loans", href: "/loans/sme-loans", description: "Tailored for small & medium enterprises" },
