@@ -190,7 +190,7 @@ const WorkingCapital = () => {
               Need Funds for Daily Operations?
             </h2>
             <p className="text-xl text-[hsl(var(--background))]/80 mb-10">
-              Get working capital within 72 hours. Keep your business running smoothly.
+              Quick approval process – get your working capital fast. Keep your business running smoothly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="hero" size="xl">
