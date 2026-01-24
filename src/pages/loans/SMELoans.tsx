@@ -46,7 +46,7 @@ const eligibility = [
   "Registered business in UAE for minimum 1 year",
   "Annual turnover between AED 500,000 - AED 50 million",
   "Valid trade license with SME classification",
-  "Minimum 51% ownership by UAE residents/nationals",
+  "No drop in turnover on year-on-year basis",
   "Audited or management accounts available",
   "No major defaults or legal issues",
 ];
