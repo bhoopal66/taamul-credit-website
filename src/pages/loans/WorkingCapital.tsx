@@ -4,8 +4,6 @@ import {
   ArrowRight,
   Clock,
   Percent,
-  Calendar,
-  Banknote,
   TrendingUp,
   FileText,
   Shield,
@@ -14,6 +12,7 @@ import {
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
+import ServiceSidebar from "@/components/layout/ServiceSidebar";
 import { Button } from "@/components/ui/button";
 
 const features = [
@@ -108,101 +107,104 @@ const WorkingCapital = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-display-sm text-foreground mb-4">
-              Why Choose Our Working Capital Loans?
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Keep your business running smoothly with quick access to operational funds.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature) => (
-              <div key={feature.title} className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                  <feature.icon className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+      {/* Content with Sidebar */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex gap-8">
+          <ServiceSidebar />
+          
+          <main className="flex-1 min-w-0 space-y-16">
+            {/* Features Section */}
+            <section>
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <h2 className="text-display-sm text-foreground mb-4">
+                  Why Choose Our Working Capital Loans?
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Keep your business running smoothly with quick access to operational funds.
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Eligibility & Documents */}
-      <section className="py-24 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-card rounded-2xl p-8 shadow-card">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
-                  <Shield className="h-6 w-6 text-success" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground">Eligibility Criteria</h3>
-              </div>
-              <div className="space-y-4">
-                {eligibility.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
-                    <p className="text-foreground">{item}</p>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {features.map((feature) => (
+                  <div key={feature.title} className="bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                      <feature.icon className="h-7 w-7 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
 
-            <div className="bg-card rounded-2xl p-8 shadow-card">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <FileText className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground">Required Documents</h3>
-              </div>
-              <div className="space-y-4">
-                {documents.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                    <p className="text-foreground">{item}</p>
+            {/* Eligibility & Documents */}
+            <section className="bg-muted rounded-3xl p-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-card rounded-2xl p-6 shadow-card">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
+                      <Shield className="h-6 w-6 text-success" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">Eligibility Criteria</h3>
                   </div>
-                ))}
+                  <div className="space-y-3">
+                    {eligibility.map((item, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
+                        <p className="text-foreground text-sm">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-card rounded-2xl p-6 shadow-card">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                      <FileText className="h-6 w-6 text-accent" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">Required Documents</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {documents.map((item, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                        <p className="text-foreground text-sm">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
-      {/* CTA Section */}
-      <section className="py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
-        </div>
+            {/* CTA Section */}
+            <section className="gradient-hero rounded-3xl p-8 md:p-12 relative overflow-hidden">
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
+              </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
-              Need Funds for Daily Operations?
-            </h2>
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-10">
-              Get working capital within 72 hours. Keep your business running smoothly.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="hero" size="xl">
-                <Link to="/apply" className="flex items-center gap-2">
-                  Start Application
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="heroOutline" size="xl">
-                <Link to="/contact">Talk to Expert</Link>
-              </Button>
-            </div>
-          </div>
+              <div className="relative z-10 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-[hsl(var(--background))] mb-4">
+                  Need Funds for Daily Operations?
+                </h2>
+                <p className="text-lg text-[hsl(var(--background))]/80 mb-8 max-w-xl mx-auto">
+                  Get working capital within 72 hours. Keep your business running smoothly.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button asChild variant="hero" size="lg">
+                    <Link to="/apply" className="flex items-center gap-2">
+                      Start Application
+                      <ArrowRight className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="heroOutline" size="lg">
+                    <Link to="/contact">Talk to Expert</Link>
+                  </Button>
+                </div>
+              </div>
+            </section>
+          </main>
         </div>
-      </section>
+      </div>
 
       <Footer />
       <FloatingButtons />
