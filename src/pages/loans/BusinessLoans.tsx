@@ -267,20 +267,20 @@ const BusinessLoans = () => {
             <div className="bg-white/10 rounded-xl p-6 mb-6">
               <div className="grid sm:grid-cols-3 gap-4 text-center">
                 <div className="p-4">
-                  <p className="text-sm text-white/70 mb-1">Average Monthly POS Sales</p>
-                  <p className="text-2xl font-bold text-white">AED 100,000</p>
+                  <p className="text-sm text-white/70 mb-1">Annual POS Turnover</p>
+                  <p className="text-2xl font-bold text-white">AED 1,200,000</p>
                 </div>
                 <div className="p-4 flex items-center justify-center">
                   <span className="text-2xl text-accent font-bold">×</span>
                 </div>
                 <div className="p-4">
-                  <p className="text-sm text-white/70 mb-1">Multiplier (up to)</p>
-                  <p className="text-2xl font-bold text-white">3x - 5x</p>
+                  <p className="text-sm text-white/70 mb-1">Multiplier</p>
+                  <p className="text-2xl font-bold text-white">80%</p>
                 </div>
               </div>
               <div className="border-t border-white/20 mt-4 pt-4 text-center">
                 <p className="text-sm text-white/70 mb-1">Potential Loan Amount</p>
-                <p className="text-3xl font-bold text-accent">AED 300,000 - 500,000</p>
+                <p className="text-3xl font-bold text-accent">AED 960,000</p>
               </div>
             </div>
             
