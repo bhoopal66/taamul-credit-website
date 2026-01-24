@@ -56,7 +56,7 @@ const documents = [
   "VAT returns of last 4 Qtrs",
 ];
 
-const TermLoans = () => {
+const BusinessLoans = () => {
   return (
     <div className="min-h-screen">
       <Header />
@@ -75,7 +75,7 @@ const TermLoans = () => {
             </div>
 
             <h1 className="text-display-sm md:text-display text-[hsl(var(--background))] mb-6">
-              Term Loans for{" "}
+              Business Loans for{" "}
               <span className="text-accent">Business Expansion</span>
             </h1>
 
@@ -117,7 +117,7 @@ const TermLoans = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-display-sm text-foreground mb-4">
-              Why Choose Our Term Loans?
+              Why Choose Our Business Loans?
             </h2>
             <p className="text-lg text-muted-foreground">
               Designed for UAE businesses looking for structured, long-term financing solutions.
@@ -229,4 +229,4 @@ const TermLoans = () => {
   );
 };
 
-export default TermLoans;
+export default BusinessLoans;

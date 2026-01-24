@@ -18,9 +18,9 @@ import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section"
 const services = [
   {
     icon: Landmark,
-    title: "Term Loans",
+    title: "Business Loans",
     description: "Fixed-term financing for expansion, equipment, or capital investments with predictable repayments.",
-    href: "/loans/term-loans",
+    href: "/loans/business-loans",
   },
   {
     icon: Banknote,

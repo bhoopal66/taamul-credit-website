@@ -64,11 +64,11 @@ const faqItems = [
 const loanServices = [
   {
     icon: Landmark,
-    title: "Term Loans",
+    title: "Business Loans",
     description: "Fixed-term financing for expansion, equipment, or capital investments with predictable repayments.",
-    details: "Our term loans offer flexible tenures from 1 to 7 years, competitive interest rates, and customized repayment schedules tailored to your cash flow patterns.",
+    details: "Our business loans offer flexible tenures from 1 to 7 years, competitive interest rates, and customized repayment schedules tailored to your cash flow patterns.",
     features: ["Loan amounts from AED 500K to AED 50M", "Flexible tenure options", "Competitive fixed rates", "Quick disbursement"],
-    href: "/loans/term-loans",
+    href: "/loans/business-loans",
   },
   {
     icon: Banknote,
