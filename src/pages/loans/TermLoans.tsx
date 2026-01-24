@@ -53,7 +53,7 @@ const documents = [
   "Bank statements (12 months)",
   "Company profile and business plan",
   "Passport copies of shareholders & EID of authorised signatory",
-  "VAT returns of last 4 quarters",
+  "VAT returns of last 4 Qtrs",
 ];
 
 const TermLoans = () => {
