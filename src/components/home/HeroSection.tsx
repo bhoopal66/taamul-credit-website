@@ -10,70 +10,72 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Import background images
 import heroSlide1 from "@/assets/hero-slide-1.jpg";
 import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import heroSlide4 from "@/assets/hero-slide-4.jpg";
 
-const heroSlides = [
-  {
-    badge: "Trusted by 500+ UAE Businesses",
-    badgeIcon: Award,
-    title: "Unlock Your Business Potential with",
-    highlight: "Smart Financing",
-    description: "Access flexible business loans from AED 50,000 to AED\u00A050\u00A0million. Partner with UAE's leading banks through our streamlined application process.",
-    backgroundImage: heroSlide1,
-    stats: [
-      { icon: Building2, value: "15+", label: "Years Experience" },
-      { icon: Users, value: "500+", label: "Businesses Served" },
-      { icon: Award, value: "AED 800M+", label: "Loans Facilitated" },
-    ],
-  },
-  {
-    badge: "Complete Business Banking",
-    badgeIcon: Building2,
-    title: "Your One-Stop Partner for",
-    highlight: "Business Success",
-    description: "Beyond financing, we help you open the perfect business account, set up trade finance solutions, and manage your corporate banking needs.",
-    backgroundImage: heroSlide3,
-    stats: [
-      { icon: Building2, value: "5+", label: "Account Types" },
-      { icon: Users, value: "100%", label: "Compliance" },
-      { icon: Award, value: "24/7", label: "Online Banking" },
-    ],
-  },
-  {
-    badge: "Simple Solutions for Complex Challenges",
-    badgeIcon: Lightbulb,
-    title: "Situations can be complex,",
-    highlight: "SOLUTIONS NEED NOT BE !!",
-    description: "We simplify complex financial challenges with straightforward solutions. Our expert team navigates the complexities so you can focus on growing your business.",
-    backgroundImage: heroSlide4,
-    stats: [
-      { icon: Building2, value: "10+", label: "Financing Solutions" },
-      { icon: Users, value: "Expert", label: "Advisory Team" },
-      { icon: Award, value: "100%", label: "Client Focus" },
-    ],
-  },
-  {
-    badge: "Flexible Refinancing Solutions",
-    badgeIcon: RefreshCw,
-    title: "Top-up &",
-    highlight: "Buy-out Options",
-    description: "Refinance existing merchant loans or top-up your funding over time. Consolidate your debts and unlock better terms with our refinancing solutions.",
-    backgroundImage: heroSlide1,
-    stats: [
-      { icon: Building2, value: "Quick", label: "Processing" },
-      { icon: Users, value: "Better", label: "Terms" },
-      { icon: Award, value: "Flexible", label: "Options" },
-    ],
-  },
-];
-
 const HeroSection = () => {
+  const { t, isRTL } = useLanguage();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+
+  const heroSlides = [
+    {
+      badge: t('hero.trustedBy'),
+      badgeIcon: Award,
+      title: t('hero.unlockPotential'),
+      highlight: t('hero.smartFinancing'),
+      description: t('hero.heroDesc'),
+      backgroundImage: heroSlide1,
+      stats: [
+        { icon: Building2, value: "15+", label: t('hero.yearsExperience') },
+        { icon: Users, value: "500+", label: t('hero.businessesServed') },
+        { icon: Award, value: "AED 800M+", label: t('hero.loansFacilitated') },
+      ],
+    },
+    {
+      badge: t('hero.completeBanking'),
+      badgeIcon: Building2,
+      title: t('hero.yourOneStop'),
+      highlight: t('hero.businessSuccess'),
+      description: t('hero.bankingDesc'),
+      backgroundImage: heroSlide3,
+      stats: [
+        { icon: Building2, value: "5+", label: t('hero.accountTypes') },
+        { icon: Users, value: "100%", label: t('hero.compliance') },
+        { icon: Award, value: "24/7", label: t('hero.onlineBanking') },
+      ],
+    },
+    {
+      badge: t('hero.simpleSolutions'),
+      badgeIcon: Lightbulb,
+      title: t('hero.situationsComplex'),
+      highlight: t('hero.solutionsSimple'),
+      description: t('hero.solutionsDesc'),
+      backgroundImage: heroSlide4,
+      stats: [
+        { icon: Building2, value: "10+", label: t('hero.financingSolutions') },
+        { icon: Users, value: isRTL ? "خبراء" : "Expert", label: t('hero.advisoryTeam') },
+        { icon: Award, value: "100%", label: t('hero.clientFocus') },
+      ],
+    },
+    {
+      badge: t('hero.flexibleRefinancing'),
+      badgeIcon: RefreshCw,
+      title: t('hero.topUpBuyout'),
+      highlight: t('hero.buyoutOptions'),
+      description: t('hero.refinancingDesc'),
+      backgroundImage: heroSlide1,
+      stats: [
+        { icon: Building2, value: isRTL ? "سريع" : "Quick", label: t('hero.processing') },
+        { icon: Users, value: isRTL ? "أفضل" : "Better", label: t('hero.terms') },
+        { icon: Award, value: isRTL ? "مرن" : "Flexible", label: t('hero.options') },
+      ],
+    },
+  ];
 
   useEffect(() => {
     if (!api) return;
@@ -124,13 +126,14 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)]">
+        <div className={`grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)] ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
           {/* Left Content - Carousel */}
           <Carousel
             setApi={setApi}
             opts={{
               align: "start",
               loop: true,
+              direction: isRTL ? "rtl" : "ltr",
             }}
             plugins={[
               Autoplay({
@@ -152,13 +155,13 @@ const HeroSection = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="space-y-8"
+                        className={`space-y-8 ${isRTL ? 'text-right' : ''}`}
                       >
                         <motion.div 
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5 }}
-                          className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full text-primary-foreground/90 text-sm font-medium backdrop-blur-sm border border-primary-foreground/20"
+                          className={`inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full text-primary-foreground/90 text-sm font-medium backdrop-blur-sm border border-primary-foreground/20 ${isRTL ? 'flex-row-reverse' : ''}`}
                         >
                           <slide.badgeIcon className="h-4 w-4" />
                           {slide.badge}
@@ -187,18 +190,18 @@ const HeroSection = () => {
                           initial={{ opacity: 0, y: 30 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.3 }}
-                          className="flex flex-col sm:flex-row gap-4 flex-wrap"
+                          className={`flex flex-col sm:flex-row gap-4 flex-wrap ${isRTL ? 'sm:flex-row-reverse' : ''}`}
                         >
                           <Button asChild variant="hero" size="xl">
-                            <Link to="/contact" className="flex items-center gap-2">
-                              Contact Us
-                              <ArrowRight className="h-5 w-5" />
+                            <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                              {t('common.contactUs')}
+                              <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
                             </Link>
                           </Button>
                           <Button asChild variant="heroOutline" size="xl">
-                            <a href="#calculator" className="flex items-center gap-2">
+                            <a href="#calculator" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                               <Calculator className="h-5 w-5" />
-                              Calculate Eligibility
+                              {t('hero.calculateEligibility')}
                             </a>
                           </Button>
                         </motion.div>
@@ -211,16 +214,16 @@ const HeroSection = () => {
                         >
                           <Link 
                             to="/business-accounts"
-                            className="inline-flex items-center gap-3 px-5 py-3 bg-accent hover:bg-accent/90 border border-accent rounded-xl text-primary transition-all duration-300 group shadow-lg"
+                            className={`inline-flex items-center gap-3 px-5 py-3 bg-accent hover:bg-accent/90 border border-accent rounded-xl text-primary transition-all duration-300 group shadow-lg ${isRTL ? 'flex-row-reverse' : ''}`}
                           >
                             <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
                               <Landmark className="h-5 w-5 text-accent" />
                             </div>
-                            <div>
-                              <p className="text-sm text-primary/70">Need a</p>
-                              <p className="text-lg font-bold text-primary uppercase tracking-wide group-hover:underline">BUSINESS BANK ACCOUNT?</p>
+                            <div className={isRTL ? 'text-right' : ''}>
+                              <p className="text-sm text-primary/70">{t('hero.needBusinessAccount')}</p>
+                              <p className="text-lg font-bold text-primary uppercase tracking-wide group-hover:underline">{t('hero.businessBankAccount')}</p>
                             </div>
-                            <ArrowRight className="h-5 w-5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                            <ArrowRight className={`h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 ${isRTL ? 'rotate-180 translate-x-2 group-hover:translate-x-0' : '-translate-x-2 group-hover:translate-x-0'}`} />
                           </Link>
                         </motion.div>
 
@@ -229,7 +232,7 @@ const HeroSection = () => {
                           initial={{ opacity: 0, y: 30 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.4 }}
-                          className="flex flex-wrap gap-8 pt-8 border-t border-primary-foreground/20"
+                          className={`flex flex-wrap gap-8 pt-8 border-t border-primary-foreground/20 ${isRTL ? 'flex-row-reverse' : ''}`}
                         >
                           {slide.stats.map((stat, statIndex) => (
                             <motion.div 
@@ -237,12 +240,12 @@ const HeroSection = () => {
                               initial={{ opacity: 0, scale: 0.9 }}
                               animate={{ opacity: 1, scale: 1 }}
                               transition={{ duration: 0.4, delay: 0.5 + statIndex * 0.1 }}
-                              className="flex items-center gap-3"
+                              className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}
                             >
                               <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center border border-primary-foreground/20">
                                 <stat.icon className="h-6 w-6 text-accent" />
                               </div>
-                              <div>
+                              <div className={isRTL ? 'text-right' : ''}>
                                 <p className="text-2xl font-bold text-primary-foreground">{stat.value}</p>
                                 <p className="text-sm text-primary-foreground/70">{stat.label}</p>
                               </div>
@@ -284,20 +287,20 @@ const HeroSection = () => {
               </div>
 
               {/* Arrows */}
-              <div className="flex gap-2 ml-auto">
+              <div className={`flex gap-2 ${isRTL ? 'mr-auto' : 'ml-auto'}`}>
                 <button
-                  onClick={() => api?.scrollPrev()}
+                  onClick={() => isRTL ? api?.scrollNext() : api?.scrollPrev()}
                   className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all backdrop-blur-sm"
                   aria-label="Previous slide"
                 >
-                  <ChevronLeft className="h-5 w-5" />
+                  <ChevronLeft className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
                 </button>
                 <button
-                  onClick={() => api?.scrollNext()}
+                  onClick={() => isRTL ? api?.scrollPrev() : api?.scrollNext()}
                   className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all backdrop-blur-sm"
                   aria-label="Next slide"
                 >
-                  <ChevronRight className="h-5 w-5" />
+                  <ChevronRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
                 </button>
               </div>
             </div>
@@ -333,22 +336,22 @@ const HeroSection = () => {
                       <CheckCircle2 className="h-8 w-8 text-primary" />
                     </motion.div>
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-primary mb-2">100% Free</h3>
-                  <p className="text-lg font-semibold text-primary">No Strings Attached.</p>
+                  <h3 className="text-2xl font-bold text-primary mb-2">{t('hero.free100')}</h3>
+                  <p className="text-lg font-semibold text-primary">{t('hero.noStrings')}</p>
                 </div>
                 
                 <div className="space-y-4">
                   {[
-                    "No service fees",
-                    "No consultancy charges", 
-                    "No hidden costs"
+                    t('hero.noServiceFees'),
+                    t('hero.noConsultancyCharges'), 
+                    t('hero.noHiddenCosts')
                   ].map((item, index) => (
                     <motion.div
                       key={item}
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                      className="flex items-center gap-3 p-3 rounded-lg bg-muted/50"
+                      className={`flex items-center gap-3 p-3 rounded-lg bg-muted/50 ${isRTL ? 'flex-row-reverse' : ''}`}
                     >
                       <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="h-4 w-4 text-accent" />
@@ -365,7 +368,7 @@ const HeroSection = () => {
                   className="mt-6 pt-6 border-t border-border text-center"
                 >
                   <p className="text-sm text-muted-foreground">
-                    We earn from bank partnerships, not from you
+                    {t('hero.weEarnFromBanks')}
                   </p>
                 </motion.div>
               </div>
