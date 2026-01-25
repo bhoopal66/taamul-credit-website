@@ -344,7 +344,7 @@ const About = () => {
                   </div>
                   <div className="bg-card rounded-xl p-5 text-center shadow-sm">
                     <Building2 className="h-8 w-8 text-primary mx-auto mb-2" />
-                    <div className="text-sm font-medium text-foreground">Dubai Based</div>
+                    <div className="text-sm font-medium text-foreground">8+ Years in Dubai</div>
                   </div>
                   <div className="bg-card rounded-xl p-5 text-center shadow-sm">
                     <Users className="h-8 w-8 text-primary mx-auto mb-2" />
