@@ -141,7 +141,7 @@ const HowItWorks = () => {
                       {getDetails(index).map((detail, i) => (
                         <div key={i} className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                           <CheckCircle2 className="h-4 w-4 text-success flex-shrink-0" />
-                          <span className="text-sm text-foreground">{typeof detail === 'string' ? detail : t(steps[index].detailsKeys[i])}</span>
+                          <span className={`text-sm text-foreground ${isRTL ? 'text-right flex-1' : ''}`}>{typeof detail === 'string' ? detail : t(steps[index].detailsKeys[i])}</span>
                         </div>
                       ))}
                     </div>
