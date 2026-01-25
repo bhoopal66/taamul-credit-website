@@ -5,10 +5,10 @@ import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section"
 
 const testimonials = [
   {
-    quote: "TAAMUL helped us secure AED 5 million in working capital within just 3 weeks. Their team understood our industry and found us the perfect banking partner.",
-    author: "Ahmed Al Rashid",
+    quote: "TAAMUL helped us secure AED 8 million in working capital within just 3 weeks. Their team understood our industry and found us the perfect banking partner.",
+    author: "Alex",
     position: "CFO",
-    company: "Gulf Trading Co.",
+    company: "Four Dimension LLC",
     rating: 5,
   },
   {
