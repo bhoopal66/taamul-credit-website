@@ -22,8 +22,8 @@ import { Button } from "@/components/ui/button";
 const features = [
   {
     icon: Cog,
-    title: "100% Equipment Financing",
-    description: "Finance the full cost of machinery and equipment with no down payment",
+    title: "Up to 80% Equipment Financing",
+    description: "Finance up to 80% of machinery and equipment costs",
   },
   {
     icon: Clock,
