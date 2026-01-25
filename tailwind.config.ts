@@ -204,24 +204,33 @@ export default {
   					opacity: '1'
   				}
   			},
-  			marquee: {
-  				from: {
-  					transform: 'translateX(0)'
-  				},
-  				to: {
-  					transform: 'translateX(-50%)'
-  				}
-  			}
-  		},
-  		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out',
-  			'slide-in-right': 'slide-in-right 0.5s ease-out',
-  			'slide-in-left': 'slide-in-left 0.5s ease-out',
-  			'fade-in-up': 'fade-in-up 0.5s ease-out',
-  			'scale-in': 'scale-in 0.3s ease-out',
-  			marquee: 'marquee 30s linear infinite'
-  		}
+			marquee: {
+				from: {
+					transform: 'translateX(0)'
+				},
+				to: {
+					transform: 'translateX(-50%)'
+				}
+			},
+			'marquee-reverse': {
+				from: {
+					transform: 'translateX(-50%)'
+				},
+				to: {
+					transform: 'translateX(0)'
+				}
+			}
+		},
+		animation: {
+			'accordion-down': 'accordion-down 0.2s ease-out',
+			'accordion-up': 'accordion-up 0.2s ease-out',
+			'slide-in-right': 'slide-in-right 0.5s ease-out',
+			'slide-in-left': 'slide-in-left 0.5s ease-out',
+			'fade-in-up': 'fade-in-up 0.5s ease-out',
+			'scale-in': 'scale-in 0.3s ease-out',
+			marquee: 'marquee 30s linear infinite',
+			'marquee-reverse': 'marquee-reverse 35s linear infinite'
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
