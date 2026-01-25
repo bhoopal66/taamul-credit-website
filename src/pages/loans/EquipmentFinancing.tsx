@@ -106,7 +106,7 @@ const EquipmentFinancing = () => {
               <span className="text-accent">Financing</span>
             </h1>
 
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-4 max-w-2xl">
+            <p className="text-xl text-[hsl(var(--background))] mb-4 max-w-2xl">
               Acquire new or used machinery, vehicles, and equipment without impacting your 
               working capital. The equipment serves as its own collateral.
             </p>
@@ -254,7 +254,7 @@ const EquipmentFinancing = () => {
             <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
               Ready to Finance Your Equipment?
             </h2>
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-10">
+            <p className="text-xl text-[hsl(var(--background))] mb-10">
               Whether new or used, finance your equipment with competitive terms. Start your application today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

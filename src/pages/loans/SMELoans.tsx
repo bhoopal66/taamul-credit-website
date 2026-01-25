@@ -106,7 +106,7 @@ const SMELoans = () => {
               <span className="text-accent">Solutions</span>
             </h1>
 
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-8 max-w-2xl">
+            <p className="text-xl text-[hsl(var(--background))] mb-8 max-w-2xl">
               Tailored financing solutions designed specifically for small and medium 
               enterprises in the UAE. Fuel your growth with the right funding partner.
             </p>
@@ -250,7 +250,7 @@ const SMELoans = () => {
             <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
               Ready to Scale Your SME?
             </h2>
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-10">
+            <p className="text-xl text-[hsl(var(--background))] mb-10">
               Get tailored financing designed for your business growth. Let's discuss your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

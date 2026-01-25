@@ -116,7 +116,7 @@ const BusinessLoans = () => {
               <span className="text-accent">Business Expansion</span>
             </h1>
 
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-8 max-w-2xl">
+            <p className="text-xl text-[hsl(var(--background))] mb-8 max-w-2xl">
               Fixed-term financing solutions for capital investments, expansion projects,
               and business growth. We streamline applications to help you get quick approval
               with predictable monthly repayments.

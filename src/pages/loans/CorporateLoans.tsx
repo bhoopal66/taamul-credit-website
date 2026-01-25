@@ -106,7 +106,7 @@ const CorporateLoans = () => {
               <span className="text-accent">Financing</span>
             </h1>
 
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-8 max-w-2xl">
+            <p className="text-xl text-[hsl(var(--background))] mb-8 max-w-2xl">
               Large-scale financing solutions for established corporations. 
               Competitive rates and flexible terms for your strategic initiatives.
             </p>
@@ -250,7 +250,7 @@ const CorporateLoans = () => {
             <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
               Let's Discuss Your Corporate Needs
             </h2>
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-10">
+            <p className="text-xl text-[hsl(var(--background))] mb-10">
               Our corporate banking team is ready to structure the right solution for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
