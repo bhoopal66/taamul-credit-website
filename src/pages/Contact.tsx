@@ -37,80 +37,82 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import { useToast } from "@/hooks/use-toast";
-
-const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(1, { message: "Name is required" })
-    .max(100, { message: "Name must be less than 100 characters" }),
-  email: z
-    .string()
-    .trim()
-    .email({ message: "Invalid email address" })
-    .max(255, { message: "Email must be less than 255 characters" }),
-  phone: z
-    .string()
-    .trim()
-    .min(1, { message: "Phone number is required" })
-    .max(20, { message: "Phone number must be less than 20 characters" }),
-  company: z
-    .string()
-    .trim()
-    .max(200, { message: "Company name must be less than 200 characters" })
-    .optional(),
-  subject: z.string().min(1, { message: "Please select a subject" }),
-  message: z
-    .string()
-    .trim()
-    .min(1, { message: "Message is required" })
-    .max(1000, { message: "Message must be less than 1000 characters" }),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
-
-const contactInfo = [
-  {
-    icon: Building2,
-    title: "Head Office",
-    details: [
-      "Taamul Credit Review Services LLC",
-      "319 Gharhoud Star Building",
-      "Dubai, UAE",
-    ],
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    details: ["+971 4 452 1111", "+971 50 123 4567"],
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    details: ["info@taamul.ae", "support@taamul.ae"],
-  },
-  {
-    icon: Clock,
-    title: "Office Hours",
-    details: [
-      "Mon - Fri: 10:00 AM - 2:00 PM",
-      "Sat: 10:00 AM - 2:00 PM",
-      "Sun: Closed",
-    ],
-  },
-];
-
-const subjects = [
-  "Business Loan Inquiry",
-  "Account Opening",
-  "Partnership Opportunity",
-  "General Inquiry",
-  "Support Request",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t, isRTL } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  const contactSchema = z.object({
+    name: z
+      .string()
+      .trim()
+      .min(1, { message: t('contact.fullName') + " is required" })
+      .max(100, { message: "Name must be less than 100 characters" }),
+    email: z
+      .string()
+      .trim()
+      .email({ message: "Invalid email address" })
+      .max(255, { message: "Email must be less than 255 characters" }),
+    phone: z
+      .string()
+      .trim()
+      .min(1, { message: t('contact.phoneNumber') + " is required" })
+      .max(20, { message: "Phone number must be less than 20 characters" }),
+    company: z
+      .string()
+      .trim()
+      .max(200, { message: "Company name must be less than 200 characters" })
+      .optional(),
+    subject: z.string().min(1, { message: "Please select a subject" }),
+    message: z
+      .string()
+      .trim()
+      .min(1, { message: t('contact.message') + " is required" })
+      .max(1000, { message: "Message must be less than 1000 characters" }),
+  });
+
+  type ContactFormData = z.infer<typeof contactSchema>;
+
+  const contactInfo = [
+    {
+      icon: Building2,
+      titleKey: "contact.headOffice",
+      details: [
+        "Taamul Credit Review Services LLC",
+        "319 Gharhoud Star Building",
+        "Dubai, UAE",
+      ],
+    },
+    {
+      icon: Phone,
+      titleKey: "contact.phone",
+      details: ["+971 4 452 1111", "+971 50 123 4567"],
+    },
+    {
+      icon: Mail,
+      titleKey: "contact.email",
+      details: ["info@taamul.ae", "support@taamul.ae"],
+    },
+    {
+      icon: Clock,
+      titleKey: "contact.officeHours",
+      details: [
+        "Mon - Fri: 10:00 AM - 2:00 PM",
+        "Sat: 10:00 AM - 2:00 PM",
+        "Sun: Closed",
+      ],
+    },
+  ];
+
+  const subjects = [
+    { key: "contact.subjects.businessLoan", value: "Business Loan Inquiry" },
+    { key: "contact.subjects.accountOpening", value: "Account Opening" },
+    { key: "contact.subjects.partnership", value: "Partnership Opportunity" },
+    { key: "contact.subjects.general", value: "General Inquiry" },
+    { key: "contact.subjects.support", value: "Support Request" },
+  ];
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -126,7 +128,6 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsSubmitting(false);
     
@@ -159,16 +160,16 @@ const Contact = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className={`max-w-4xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
             {/* Badge */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-accent text-sm font-medium mb-6"
+              className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-accent text-sm font-medium mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}
             >
               <Headphones className="h-4 w-4" />
-              Expert Support Available
+              {t('contact.badge')}
             </motion.div>
 
             {/* Heading */}
@@ -178,8 +179,8 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
             >
-              Let's Discuss Your{" "}
-              <span className="text-accent">Financing Needs</span>
+              {t('contact.heading')}{" "}
+              <span className="text-accent">{t('contact.headingHighlight')}</span>
             </motion.h1>
 
             {/* Subheading */}
@@ -187,9 +188,9 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-white mb-10 max-w-2xl mx-auto"
+              className={`text-xl text-white mb-10 max-w-2xl ${isRTL ? 'mr-0' : 'mx-auto'}`}
             >
-              Our team of experts is ready to help you find the perfect financial solution for your business.
+              {t('contact.description')}
             </motion.p>
 
             {/* Trust Indicators */}
@@ -197,25 +198,25 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap justify-center gap-6 md:gap-10"
+              className={`flex flex-wrap justify-center gap-6 md:gap-10 ${isRTL ? 'flex-row-reverse' : ''}`}
             >
-              <div className="flex items-center gap-2 text-white">
+              <div className={`flex items-center gap-2 text-white ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                   <CheckCircle2 className="h-5 w-5 text-accent" />
                 </div>
-                <span className="text-sm font-medium">Free Consultation</span>
+                <span className="text-sm font-medium">{t('contact.freeConsultation')}</span>
               </div>
-              <div className="flex items-center gap-2 text-white">
+              <div className={`flex items-center gap-2 text-white ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                   <Clock className="h-5 w-5 text-accent" />
                 </div>
-                <span className="text-sm font-medium">Quick Response</span>
+                <span className="text-sm font-medium">{t('contact.quickResponse')}</span>
               </div>
-              <div className="flex items-center gap-2 text-white">
+              <div className={`flex items-center gap-2 text-white ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                   <Shield className="h-5 w-5 text-accent" />
                 </div>
-                <span className="text-sm font-medium">Confidential</span>
+                <span className="text-sm font-medium">{t('contact.confidential')}</span>
               </div>
             </motion.div>
           </div>
@@ -235,19 +236,19 @@ const Contact = () => {
       {/* Contact Content */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             {/* Contact Form */}
-            <div className="bg-card rounded-2xl p-8 shadow-card">
-              <div className="flex items-center gap-3 mb-6">
+            <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'lg:col-start-2' : ''}`}>
+              <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                   <MessageSquare className="h-6 w-6 text-primary" />
                 </div>
-                <div>
+                <div className={isRTL ? 'text-right' : ''}>
                   <h2 className="text-2xl font-semibold text-foreground">
-                    Send Us a Message
+                    {t('contact.sendMessage')}
                   </h2>
                   <p className="text-muted-foreground">
-                    Fill out the form and we'll respond within 24 hours.
+                    {t('contact.formDescription')}
                   </p>
                 </div>
               </div>
@@ -259,10 +260,10 @@ const Contact = () => {
                       control={form.control}
                       name="name"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Full Name *</FormLabel>
+                        <FormItem className={isRTL ? 'text-right' : ''}>
+                          <FormLabel>{t('contact.fullName')} *</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Smith" {...field} />
+                            <Input placeholder="John Smith" {...field} className={isRTL ? 'text-right' : ''} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -272,13 +273,14 @@ const Contact = () => {
                       control={form.control}
                       name="email"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email Address *</FormLabel>
+                        <FormItem className={isRTL ? 'text-right' : ''}>
+                          <FormLabel>{t('contact.emailAddress')} *</FormLabel>
                           <FormControl>
                             <Input
                               type="email"
                               placeholder="john@company.com"
                               {...field}
+                              className={isRTL ? 'text-right' : ''}
                             />
                           </FormControl>
                           <FormMessage />
@@ -292,10 +294,10 @@ const Contact = () => {
                       control={form.control}
                       name="phone"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone Number *</FormLabel>
+                        <FormItem className={isRTL ? 'text-right' : ''}>
+                          <FormLabel>{t('contact.phoneNumber')} *</FormLabel>
                           <FormControl>
-                            <Input placeholder="+971 50 123 4567" {...field} />
+                            <Input placeholder="+971 50 123 4567" {...field} className={isRTL ? 'text-right' : ''} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -305,10 +307,10 @@ const Contact = () => {
                       control={form.control}
                       name="company"
                       render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Company Name</FormLabel>
+                        <FormItem className={isRTL ? 'text-right' : ''}>
+                          <FormLabel>{t('contact.companyName')}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Company LLC" {...field} />
+                            <Input placeholder="Your Company LLC" {...field} className={isRTL ? 'text-right' : ''} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -320,25 +322,43 @@ const Contact = () => {
                     control={form.control}
                     name="subject"
                     render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject *</FormLabel>
+                      <FormItem className={isRTL ? 'text-right' : ''}>
+                        <FormLabel>{t('contact.subject')} *</FormLabel>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a subject" />
+                            <SelectTrigger className={isRTL ? 'text-right' : ''}>
+                              <SelectValue placeholder={t('contact.selectSubject')} />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
                             {subjects.map((subject) => (
-                              <SelectItem key={subject} value={subject}>
-                                {subject}
+                              <SelectItem key={subject.value} value={subject.value} className={isRTL ? 'text-right' : ''}>
+                                {t(subject.key)}
                               </SelectItem>
                             ))}
                           </SelectContent>
                         </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem className={isRTL ? 'text-right' : ''}>
+                        <FormLabel>{t('contact.message')} *</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder={t('contact.messagePlaceholder')}
+                            className={`min-h-[120px] resize-none ${isRTL ? 'text-right' : ''}`}
+                            {...field}
+                          />
+                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -366,15 +386,15 @@ const Contact = () => {
                     type="submit"
                     variant="cta"
                     size="xl"
-                    className="w-full"
+                    className={`w-full ${isRTL ? 'flex-row-reverse' : ''}`}
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      "Sending..."
+                      t('contact.sending')
                     ) : (
                       <>
-                        Send Message
-                        <Send className="ml-2 h-5 w-5" />
+                        {t('contact.sendButton')}
+                        <Send className={`h-5 w-5 ${isRTL ? 'mr-2 rotate-180' : 'ml-2'}`} />
                       </>
                     )}
                   </Button>
@@ -383,19 +403,19 @@ const Contact = () => {
             </div>
 
             {/* Contact Info & Map */}
-            <div className="space-y-8">
+            <div className={`space-y-8 ${isRTL ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
               {/* Contact Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {contactInfo.map((info) => (
                   <div
-                    key={info.title}
-                    className="bg-card rounded-2xl p-6 shadow-card"
+                    key={info.titleKey}
+                    className={`bg-card rounded-2xl p-6 shadow-card ${isRTL ? 'text-right' : ''}`}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
                       <info.icon className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {info.title}
+                      {t(info.titleKey)}
                     </h3>
                     {info.details.map((detail, index) => (
                       <p key={index} className="text-muted-foreground text-sm">
@@ -425,10 +445,10 @@ const Contact = () => {
                     href="https://www.google.com/maps/search/?api=1&query=25.251748,55.342345"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary font-medium text-sm hover:underline flex items-center justify-center gap-2"
+                    className={`text-primary font-medium text-sm hover:underline flex items-center justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}
                   >
                     <MapPin className="h-4 w-4" />
-                    Open in Google Maps
+                    {t('contact.openInMaps')}
                   </a>
                 </div>
               </div>
@@ -440,24 +460,24 @@ const Contact = () => {
       {/* Quick Contact Bar */}
       <section className="py-12 bg-primary">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
+          <div className={`flex flex-col md:flex-row items-center justify-between gap-6 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
+            <div className={`text-center ${isRTL ? 'md:text-right' : 'md:text-left'}`}>
               <h3 className="text-2xl font-semibold text-white mb-2">
-                Need Immediate Assistance?
+                {t('contact.needImmediate')}
               </h3>
               <p className="text-white/80">
-                Our team is available during business hours to answer your questions.
+                {t('contact.teamAvailable')}
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
               <Button
                 asChild
                 variant="hero"
                 size="xl"
               >
-                <a href="tel:+97144521111" className="flex items-center gap-2">
+                <a href="tel:+97144521111" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Phone className="h-5 w-5" />
-                  Call Now
+                  {t('contact.callNow')}
                 </a>
               </Button>
               <Button
@@ -470,9 +490,9 @@ const Contact = () => {
                   href="https://wa.me/971501234567"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2"
+                  className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
-                  WhatsApp Us
+                  {t('contact.whatsappUs')}
                 </a>
               </Button>
             </div>
