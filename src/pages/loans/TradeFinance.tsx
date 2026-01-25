@@ -202,7 +202,7 @@ const TradeFinance = () => {
               </div>
               <div className="space-y-4">
                 {eligibility.map((item, index) => (
-                  <div key={index} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <div key={index} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                     <CheckCircle2 className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
                     <p className="text-foreground">{item}</p>
                   </div>
@@ -219,7 +219,7 @@ const TradeFinance = () => {
               </div>
               <div className="space-y-4">
                 {documents.map((item, index) => (
-                  <div key={index} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <div key={index} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
                     <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                     <p className="text-foreground">{item}</p>
                   </div>
