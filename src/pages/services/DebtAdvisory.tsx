@@ -212,7 +212,7 @@ const DebtAdvisory = () => {
                 {benefits.map((key) => (
                   <div key={key} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <CheckCircle2 className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
-                    <p className="text-foreground">{t(`debtAdvisory.benefits.${key}`)}</p>
+                    <p className={`text-foreground ${isRTL ? 'text-right flex-1' : ''}`}>{t(`debtAdvisory.benefits.${key}`)}</p>
                   </div>
                 ))}
               </div>
@@ -232,7 +232,7 @@ const DebtAdvisory = () => {
                     <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-sm font-semibold text-accent">{index + 1}</span>
                     </div>
-                    <p className="text-foreground">{t(`debtAdvisory.process.${key}`)}</p>
+                    <p className={`text-foreground ${isRTL ? 'text-right flex-1' : ''}`}>{t(`debtAdvisory.process.${key}`)}</p>
                   </div>
                 ))}
               </div>
