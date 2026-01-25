@@ -257,6 +257,69 @@ const BusinessLoans = () => {
         </div>
       </section>
 
+      {/* Taamul Advantage Section */}
+      <section className="py-24 gradient-hero relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-display-sm text-white mb-4">
+              The <span className="text-accent">Taamul</span> Advantage
+            </h2>
+            <p className="text-lg text-white/80">
+              Experience a smarter way to access business financing with our client-first approach.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                icon: BadgeCheck,
+                title: "Authorized Direct Selling Agent (DSA)",
+                description: "We work directly with leading banks and financial institutions as an authorized partner",
+              },
+              {
+                icon: Shield,
+                title: "No Consultancy or Success Fees",
+                description: "Our services come at zero cost to you – no hidden charges or success-based commissions",
+              },
+              {
+                icon: Building2,
+                title: "Multiple Funding Options Under One Roof",
+                description: "Access a wide range of lending partners and financing solutions through a single point of contact",
+              },
+              {
+                icon: Zap,
+                title: "SME & Startup-Friendly Solutions",
+                description: "Tailored financing options designed specifically for small businesses and emerging enterprises",
+              },
+              {
+                icon: FileText,
+                title: "End-to-End Application Support",
+                description: "From documentation to disbursement, we guide you through every step of the process",
+              },
+            ].map((advantage, index) => (
+              <motion.div
+                key={advantage.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+              >
+                <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4">
+                  <advantage.icon className="h-6 w-6 text-accent" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{advantage.title}</h3>
+                <p className="text-sm text-white/70">{advantage.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* POS Machine Loan Section */}
       <section className="py-24 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
