@@ -20,9 +20,9 @@ const testimonials = [
   },
   {
     quote: "The transparency and professionalism throughout the process was exceptional. They negotiated rates that saved us over AED 200,000 in interest over the loan term.",
-    author: "Raj Patel",
-    position: "Finance Director",
-    company: "Premium Foods LLC",
+    author: "Sivakrishman",
+    position: "GM",
+    company: "EIL",
     rating: 5,
   },
 ];
