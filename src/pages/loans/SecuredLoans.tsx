@@ -106,7 +106,7 @@ const SecuredLoans = () => {
               <span className="text-accent">Loans</span>
             </h1>
 
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-8 max-w-2xl">
+            <p className="text-xl text-[hsl(var(--background))] mb-8 max-w-2xl">
               Leverage your assets for better rates and higher loan amounts. 
               Unlock the value in your property, equipment, or inventory.
             </p>
@@ -250,7 +250,7 @@ const SecuredLoans = () => {
             <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
               Unlock Your Asset Value Today
             </h2>
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-10">
+            <p className="text-xl text-[hsl(var(--background))] mb-10">
               Get competitive rates with secured financing. Your assets work for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

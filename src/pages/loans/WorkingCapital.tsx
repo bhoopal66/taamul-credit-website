@@ -107,7 +107,7 @@ const WorkingCapital = () => {
               <span className="text-accent">Solutions</span>
             </h1>
 
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-8 max-w-2xl">
+            <p className="text-xl text-[hsl(var(--background))] mb-8 max-w-2xl">
               Bridge cash flow gaps and maintain smooth operations with flexible 
               working capital financing designed for UAE businesses.
             </p>
@@ -251,7 +251,7 @@ const WorkingCapital = () => {
             <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
               Need Funds for Daily Operations?
             </h2>
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-10">
+            <p className="text-xl text-[hsl(var(--background))] mb-10">
               Quick approval process – get your working capital fast. Keep your business running smoothly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
