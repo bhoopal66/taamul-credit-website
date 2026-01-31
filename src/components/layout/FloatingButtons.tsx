@@ -39,8 +39,7 @@ const FloatingButtons = () => {
 
   const handleCallbackSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Callback request:", callbackForm);
+    // TODO: Wire up to Cloudflare Worker API (Phase 4)
     setIsCallbackOpen(false);
     setCallbackForm({ name: "", phone: "", preferredTime: "" });
   };
