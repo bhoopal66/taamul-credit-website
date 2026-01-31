@@ -15,6 +15,7 @@ import FloatingButtons from "@/components/layout/FloatingButtons";
 import TaamulAdvantageSection from "@/components/loans/TaamulAdvantageSection";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 
 const WorkingCapital = () => {
   const { t, isRTL } = useLanguage();
@@ -63,9 +64,13 @@ const WorkingCapital = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <SEO
+        title="Working Capital Finance | Taamul Credit Review Services"
+        description="Access working capital solutions to keep your UAE business running smoothly. Short-term financing tailored to your cash flow needs."
+      />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
         </div>

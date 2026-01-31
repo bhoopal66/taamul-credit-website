@@ -6,24 +6,27 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const testimonials = [
   {
-    quote: "TAAMUL helped us secure AED 8 million in working capital within just 3 weeks. Their team understood our industry and found us the perfect banking partner.",
-    author: "Alex",
-    position: "CEO",
-    company: "FORE FRONT FACILITIES MANAGEMENT LLC",
+    quote: "TAAMUL helped us secure the right financing solution quickly and efficiently. Their team understood our industry and found us the perfect banking partner.",
+    author: "Noura Frikh",
+    company: "Accounting & Book Keeping, Dubai",
     rating: 5,
   },
   {
     quote: "As an SME, we struggled to get traditional bank financing. TAAMUL's expertise opened doors we didn't know existed. Highly recommended for any business owner.",
-    author: "Kashif",
-    position: "Consultant",
-    company: "Kurshid Impex",
+    author: "Joby Paul Muttath",
+    company: "Aquapix General Trading, Ajman",
     rating: 5,
   },
   {
-    quote: "The transparency and professionalism throughout the process was exceptional. They negotiated rates that saved us over AED 200,000 in interest over the loan term.",
-    author: "Sivakrishman",
-    position: "GM",
-    company: "EIL",
+    quote: "The transparency and professionalism throughout the process was exceptional. They negotiated rates that saved us significantly in interest over the loan term.",
+    author: "Zaheer Ismail",
+    company: "Zisma Trading, Dubai",
+    rating: 5,
+  },
+  {
+    quote: "From the initial consultation to final approval, the TAAMUL team was incredibly supportive. They made the entire financing process seamless and stress-free.",
+    author: "Abdual Majid",
+    company: "Golden Will Businessman Services, Dubai",
     rating: 5,
   },
 ];
@@ -32,11 +35,11 @@ const TestimonialsSection = () => {
   const { t, isRTL } = useLanguage();
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <AnimatedSection className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+          <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
             {t('testimonialsSection.title')}
           </p>
           <h2 className="text-display-sm text-foreground mb-4">
@@ -48,7 +51,7 @@ const TestimonialsSection = () => {
         </AnimatedSection>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <AnimatedItem key={index} index={index} baseDelay={0.1}>
               <div className={`bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 relative h-full ${isRTL ? 'text-right' : ''}`}>
@@ -83,7 +86,7 @@ const TestimonialsSection = () => {
                       {testimonial.author}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {testimonial.position}, {testimonial.company}
+                      {testimonial.company}
                     </p>
                   </div>
                 </div>

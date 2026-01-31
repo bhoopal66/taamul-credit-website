@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 import { cn } from "@/lib/utils";
 import teamBhoopal from "@/assets/team-bhoopal.jpg";
 import { 
@@ -105,16 +106,21 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About Us | Taamul Credit Review Services"
+        description="Learn about Taamul Credit Review Services, our mission, and the experienced team behind over 15 years of business financing expertise in the UAE."
+      />
       <Header />
+      <main id="main-content">
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary via-primary to-navy-light">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
           <div className={cn("max-w-4xl mx-auto text-center text-primary-foreground", isRTL && "text-right")}>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {t('about.title')}
             </h1>
-            <p className={cn("text-xl text-white mb-8 max-w-3xl mx-auto", isRTL && "mx-0")}>
+            <p className={cn("text-base md:text-xl text-white mb-8 max-w-3xl mx-auto", isRTL && "mx-0")}>
               {t('about.subtitle')}
             </p>
           </div>
@@ -124,7 +130,7 @@ const About = () => {
       {/* Stats Bar */}
       <section className="py-8 bg-card border-b border-border">
         <div className="container mx-auto px-4">
-          <div className={cn("grid grid-cols-2 md:grid-cols-4 gap-8", isRTL && "direction-rtl")}>
+          <div className={cn("grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8", isRTL && "direction-rtl")}>
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
@@ -138,9 +144,9 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className={cn("grid md:grid-cols-2 gap-12 max-w-5xl mx-auto", isRTL && "direction-rtl")}>
+          <div className={cn("grid md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto", isRTL && "direction-rtl")}>
             {/* Mission */}
             <div className={cn("bg-card rounded-2xl p-8 shadow-lg border border-border", isRTL && "text-right")}>
               <div className={cn("w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6", isRTL && "mr-0 ml-auto")}>
@@ -294,18 +300,14 @@ const About = () => {
                   {/* Avatar */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     {member.image ? (
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gold/30 rounded-full blur-2xl scale-125" />
-                        <img 
-                          src={member.image} 
-                          alt={t(member.nameKey)}
-                          className="relative w-48 h-48 rounded-full object-cover object-top ring-[6px] ring-white/50 shadow-2xl group-hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
+                      <img
+                        src={member.image}
+                        alt={t(member.nameKey)}
+                        className="w-48 h-48 rounded-full object-cover object-top ring-4 ring-white/20 shadow-2xl group-hover:scale-110 transition-transform duration-500"
+                      />
                     ) : (
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-white/10 rounded-full blur-2xl scale-125" />
-                        <div className="relative w-48 h-48 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center ring-[6px] ring-white/50 shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                      <div>
+                        <div className="w-48 h-48 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center ring-4 ring-white/20 shadow-2xl group-hover:scale-110 transition-transform duration-500">
                           <span className="text-5xl font-bold text-white">
                             {t(member.nameKey).split(' ').map(n => n[0]).join('')}
                           </span>
@@ -407,6 +409,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

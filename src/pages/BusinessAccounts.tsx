@@ -33,6 +33,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 
 const BusinessAccounts = () => {
   const { t, isRTL } = useLanguage();
@@ -183,10 +184,15 @@ const BusinessAccounts = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Business Account Opening | Taamul Credit Review Services"
+        description="Open a business bank account in the UAE with expert guidance from Taamul. We simplify the process for startups, SMEs, and corporate entities."
+      />
       <Header />
+      <main id="main-content">
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <motion.div 
             className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl"
@@ -223,7 +229,7 @@ const BusinessAccounts = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-white mb-10 max-w-2xl mx-auto"
+              className="text-base md:text-xl text-white mb-10 max-w-2xl mx-auto"
             >
               {t('businessAccounts.description')}
             </motion.p>
@@ -258,7 +264,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-14 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.whyChooseUs')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -293,7 +299,7 @@ const BusinessAccounts = () => {
       <section id="accounts" className="py-20 bg-muted scroll-mt-20">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-12 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.accountTypes')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -337,7 +343,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-14 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.ourProcess')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -370,7 +376,7 @@ const BusinessAccounts = () => {
                           <h3 className="text-xl font-semibold text-foreground">
                             {t(step.titleKey)}
                           </h3>
-                          <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-xs font-medium ${isRTL ? 'flex-row-reverse' : ''}`}>
+                          <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium ${isRTL ? 'flex-row-reverse' : ''}`}>
                             <Clock className="h-3 w-3" />
                             {t(step.durationKey)}
                           </span>
@@ -411,7 +417,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-12 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.requiredDocuments')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -437,7 +443,7 @@ const BusinessAccounts = () => {
                   <ul className="space-y-3">
                     {req.documentsKeys.map((docKey) => (
                       <li key={docKey} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                        <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-muted-foreground">{t(docKey)}</span>
                       </li>
                     ))}
@@ -460,7 +466,7 @@ const BusinessAccounts = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <AnimatedSection className={`text-center mb-12 ${isRTL ? 'text-right' : ''}`}>
-              <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+              <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
                 {t('businessAccounts.faq')}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -537,6 +543,7 @@ const BusinessAccounts = () => {
           </AnimatedSection>
         </div>
       </section>
+      </main>
 
       <Footer />
       <FloatingButtons />

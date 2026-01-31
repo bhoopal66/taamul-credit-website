@@ -236,6 +236,8 @@ const translations = {
       selectSubject: "Select a subject",
       message: "Message",
       messagePlaceholder: "Tell us about your financing needs...",
+      namePlaceholder: "Your full name",
+      companyPlaceholder: "Your Company LLC",
       sendButton: "Send Message",
       sending: "Sending...",
       headOffice: "Head Office",
@@ -575,11 +577,11 @@ const translations = {
       blog: "Blog",
       contactUs: "Contact Us",
       address: "319 Gharhoud Star Building, Dubai, UAE",
-      phone: "+971 4 234 5678",
+      phone: "+971 4 452 1111",
       subscribeNewsletter: "Subscribe to Newsletter",
       yourEmail: "Your email",
       subscribe: "Subscribe",
-      copyright: "© 2024 TAAMUL Credit Review Services LLC. All rights reserved.",
+      copyright: "© 2025 TAAMUL Credit Review Services LLC. All rights reserved.",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
       cookiePolicy: "Cookie Policy"
@@ -675,7 +677,32 @@ const translations = {
       talkToExpert: "Talk to Expert",
       contactUs: "Contact Us",
       day: "Day",
-      days: "Days"
+      days: "Days",
+      skipToContent: "Skip to content",
+      howItWorks: "How It Works",
+    },
+    // Not Found
+    notFound: {
+      description: "The page you're looking for doesn't exist or has been moved.",
+      returnHome: "Return to Home",
+    },
+    // Calculator Section (Home)
+    calculator: {
+      title: "Business Loan Eligibility Calculator",
+      subtitle: "Get an instant estimate",
+      annualTurnover: "Annual Turnover",
+      minRequirement: "Minimum 1 year in business required",
+      estimatedAmount: "Estimated Eligible Amount",
+      estimateDisclaimer: "*This is an estimate. Actual amount may vary.",
+      whyChoose: "Why Choose TAAMUL?",
+      fastTitle: "Fast, Transparent Business Loan Financing",
+      fastDesc: "We've simplified the business loan process so you can focus on what matters most - growing your business.",
+      benefit1: "Prevent incomplete documentation delays",
+      benefit2: "Access to 15+ leading UAE banks",
+      benefit3: "Competitive interest rates from 7% p.a.",
+      benefit4: "Flexible tenure up to 48 months",
+      benefit5: "Minimal documentation required",
+      benefit6: "Dedicated relationship manager",
     },
     // Loan Pages Common
     loanPages: {
@@ -1182,6 +1209,8 @@ const translations = {
       selectSubject: "اختر موضوعاً",
       message: "الرسالة",
       messagePlaceholder: "أخبرنا عن احتياجاتك التمويلية...",
+      namePlaceholder: "الاسم الكامل",
+      companyPlaceholder: "شركتك ذ.م.م",
       sendButton: "إرسال الرسالة",
       sending: "جاري الإرسال...",
       headOffice: "المقر الرئيسي",
@@ -1410,11 +1439,11 @@ const translations = {
       blog: "المدونة",
       contactUs: "اتصل بنا",
       address: "٣١٩ مبنى غرهود ستار، دبي، الإمارات",
-      phone: "+٩٧١ ٤ ٢٣٤ ٥٦٧٨",
+      phone: "+٩٧١ ٤ ٤٥٢ ١١١١",
       subscribeNewsletter: "اشترك في النشرة الإخبارية",
       yourEmail: "بريدك الإلكتروني",
       subscribe: "اشترك",
-      copyright: "© 2024 شركة تعامل لخدمات مراجعة الائتمان ذ.م.م. جميع الحقوق محفوظة.",
+      copyright: "© 2025 شركة تعامل لخدمات مراجعة الائتمان ذ.م.م. جميع الحقوق محفوظة.",
       privacyPolicy: "سياسة الخصوصية",
       termsOfService: "شروط الخدمة",
       cookiePolicy: "سياسة ملفات تعريف الارتباط"
@@ -1510,7 +1539,32 @@ const translations = {
       talkToExpert: "تحدث مع خبير",
       contactUs: "تواصل معنا",
       day: "يوم",
-      days: "أيام"
+      days: "أيام",
+      skipToContent: "تخطي إلى المحتوى",
+      howItWorks: "كيف يعمل",
+    },
+    // Not Found
+    notFound: {
+      description: "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+      returnHome: "العودة إلى الرئيسية",
+    },
+    // Calculator Section (Home)
+    calculator: {
+      title: "حاسبة أهلية قرض الأعمال",
+      subtitle: "احصل على تقدير فوري",
+      annualTurnover: "الإيرادات السنوية",
+      minRequirement: "مطلوب سنة واحدة على الأقل في العمل",
+      estimatedAmount: "المبلغ التقديري المؤهل",
+      estimateDisclaimer: "*هذا تقدير. قد يختلف المبلغ الفعلي.",
+      whyChoose: "لماذا تختار تعامل؟",
+      fastTitle: "تمويل قروض أعمال سريع وشفاف",
+      fastDesc: "لقد بسّطنا عملية قرض الأعمال حتى تتمكن من التركيز على ما يهم أكثر - تنمية أعمالك.",
+      benefit1: "تجنب التأخير بسبب المستندات غير المكتملة",
+      benefit2: "الوصول إلى أكثر من 15 بنكاً رائداً في الإمارات",
+      benefit3: "أسعار فائدة تنافسية تبدأ من 7% سنوياً",
+      benefit4: "فترة سداد مرنة تصل إلى 48 شهراً",
+      benefit5: "الحد الأدنى من المستندات المطلوبة",
+      benefit6: "مدير علاقات مخصص",
     },
     // Loan Pages Common
     loanPages: {

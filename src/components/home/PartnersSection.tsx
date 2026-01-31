@@ -4,22 +4,38 @@ import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Banking partner logos
+import rakbankLogo from "@/assets/partners/rakbank.png";
+import ublLogo from "@/assets/partners/ubl.png";
+import ruyaLogo from "@/assets/partners/ruya.png";
+import nbfLogo from "@/assets/partners/nbf.png";
+import wioLogo from "@/assets/partners/wio.png";
+import mashreqLogo from "@/assets/partners/mashreq.png";
+
+// Fintech partner logos
+import credibleXLogo from "@/assets/partners/credible-x.png";
+import flapkapLogo from "@/assets/partners/flapkap.png";
+import comfiLogo from "@/assets/partners/comfi.png";
+import fundingSouqLogo from "@/assets/partners/funding-souq.png";
+import zeloLogo from "@/assets/partners/zelo.png";
+import upfrontLogo from "@/assets/partners/upfront.png";
+
 const partnerBanks = [
-  { name: "RAKBANK", abbr: "RAKBANK" },
-  { name: "UBL", abbr: "UBL" },
-  { name: "Ruya Bank", abbr: "RUYA" },
-  { name: "National Bank of Fujairah", abbr: "NBF" },
-  { name: "WIO Bank", abbr: "WIO" },
-  { name: "Mashreq Bank", abbr: "MASHREQ" },
+  { name: "RAKBANK", logo: rakbankLogo },
+  { name: "UBL", logo: ublLogo },
+  { name: "Ruya Bank", logo: ruyaLogo },
+  { name: "National Bank of Fujairah", logo: nbfLogo },
+  { name: "WIO Bank", logo: wioLogo },
+  { name: "Mashreq Bank", logo: mashreqLogo },
 ];
 
 const fintechPartners = [
-  { name: "Credible X", abbr: "CREDIBLE X" },
-  { name: "Flapcap", abbr: "FLAPCAP" },
-  { name: "Comfi", abbr: "COMFI" },
-  { name: "Funding Souq", abbr: "FUNDING SOUQ" },
-  { name: "Zelo", abbr: "ZELO" },
-  { name: "Flow 48", abbr: "FLOW 48" },
+  { name: "Credible X", logo: credibleXLogo },
+  { name: "Flapkap", logo: flapkapLogo },
+  { name: "Comfi", logo: comfiLogo },
+  { name: "Funding Souq", logo: fundingSouqLogo },
+  { name: "Zelo", logo: zeloLogo },
+  { name: "Upfront", logo: upfrontLogo },
 ];
 
 const PartnersSection = () => {
@@ -29,7 +45,7 @@ const PartnersSection = () => {
     <section className="py-16 bg-muted overflow-hidden">
       <div className="container mx-auto px-4 mb-10">
         <AnimatedSection className={`text-center ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-accent font-semibold mb-2 uppercase tracking-wide text-sm">
+          <p className="text-primary font-semibold mb-2 uppercase tracking-wide text-sm">
             {t('partnersSection.title')}
           </p>
           <h2 className="text-2xl font-bold text-foreground">
@@ -44,19 +60,21 @@ const PartnersSection = () => {
           {t('partnersSection.bankingPartners')}
         </p>
         <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-muted to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-muted to-transparent z-10" />
-          
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-muted to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-muted to-transparent z-10" />
+
           <div className="flex animate-marquee">
             {[...partnerBanks, ...partnerBanks].map((bank, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 group"
+                className="flex-shrink-0 mx-3 sm:mx-8 group"
               >
-                <div className="w-40 h-20 bg-card rounded-xl shadow-sm flex items-center justify-center px-4 grayscale hover:grayscale-0 transition-all duration-300 group-hover:shadow-card">
-                  <span className="text-lg font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                    {bank.abbr}
-                  </span>
+                <div className="w-32 sm:w-40 h-16 sm:h-20 bg-card rounded-xl shadow-sm flex items-center justify-center px-3 sm:px-4 grayscale hover:grayscale-0 transition-all duration-300 group-hover:shadow-card">
+                  <img
+                    src={bank.logo}
+                    alt={bank.name}
+                    className="max-h-10 sm:max-h-12 max-w-[90%] object-contain"
+                  />
                 </div>
               </div>
             ))}
@@ -70,19 +88,21 @@ const PartnersSection = () => {
           {t('partnersSection.fintechPartners')}
         </p>
         <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-muted to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-muted to-transparent z-10" />
-          
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-muted to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-muted to-transparent z-10" />
+
           <div className="flex animate-marquee-reverse">
             {[...fintechPartners, ...fintechPartners].map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 group"
+                className="flex-shrink-0 mx-3 sm:mx-8 group"
               >
-                <div className="w-44 h-20 bg-card rounded-xl shadow-sm flex items-center justify-center px-4 grayscale hover:grayscale-0 transition-all duration-300 group-hover:shadow-card">
-                  <span className="text-sm font-bold text-muted-foreground group-hover:text-accent transition-colors">
-                    {partner.abbr}
-                  </span>
+                <div className="w-36 sm:w-44 h-16 sm:h-20 bg-card rounded-xl shadow-sm flex items-center justify-center px-3 sm:px-4 grayscale hover:grayscale-0 transition-all duration-300 group-hover:shadow-card">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-10 sm:max-h-12 max-w-[90%] object-contain"
+                  />
                 </div>
               </div>
             ))}

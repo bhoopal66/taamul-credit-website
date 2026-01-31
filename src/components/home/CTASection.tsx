@@ -9,7 +9,7 @@ const CTASection = () => {
   const { t, isRTL } = useLanguage();
 
   return (
-    <section className="py-24 gradient-hero relative overflow-hidden">
+    <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <motion.div 
@@ -40,9 +40,9 @@ const CTASection = () => {
               </Link>
             </Button>
             <Button asChild variant="heroOutline" size="xl">
-              <a href="tel:+97142345678" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <a href="tel:+97144521111" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Phone className="h-5 w-5" />
-                {t('ctaSection.callNow')} +971 4 234 5678
+                {t('ctaSection.callNow')} +971 4 452 1111
               </a>
             </Button>
           </div>

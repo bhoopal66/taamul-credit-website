@@ -26,6 +26,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 
 const Services = () => {
   const { t, isRTL } = useLanguage();
@@ -117,10 +118,15 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Our Services | Taamul Credit Review Services"
+        description="Explore Taamul's full range of business financing services in the UAE, from business loans and working capital to trade finance and debt advisory."
+      />
       <Header />
+      <main id="main-content">
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 bg-gradient-to-br from-primary via-primary to-navy-light overflow-hidden">
+      <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-primary via-primary to-navy-light overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-72 h-72 bg-white/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
@@ -203,7 +209,7 @@ const Services = () => {
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="h-1 w-12 bg-primary rounded-full"></div>
-              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
+              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
                 {t('services.loanServices')}
               </p>
             </div>
@@ -232,7 +238,7 @@ const Services = () => {
                       </p>
                       <Link
                         to={service.href}
-                        className={`inline-flex items-center gap-2 text-sm font-medium text-accent hover:gap-3 transition-all ${isRTL ? 'flex-row-reverse' : ''}`}
+                        className={`inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all ${isRTL ? 'flex-row-reverse' : ''}`}
                       >
                         {t('common.learnMore')}
                         <ArrowRight className={`h-4 w-4 ${isRTL ? 'rotate-180' : ''}`} />
@@ -252,7 +258,7 @@ const Services = () => {
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="h-1 w-12 bg-accent rounded-full"></div>
-              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
+              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
                 {t('services.advisoryServices')}
               </p>
             </div>
@@ -269,11 +275,11 @@ const Services = () => {
               <AnimatedItem key={service.titleKey} index={index} baseDelay={0.05}>
                 <div className={`group bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-transparent hover:border-accent/20 h-full ${isRTL ? 'text-right' : ''}`}>
                   <div className={`flex items-start gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                      <service.icon className="h-8 w-8 text-accent group-hover:text-accent-foreground transition-colors" />
+                    <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                      <service.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                      <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                         {t(service.titleKey)}
                       </h3>
                       <p className="text-muted-foreground mb-4">
@@ -301,7 +307,7 @@ const Services = () => {
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="h-1 w-12 bg-primary rounded-full"></div>
-              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
+              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
                 {t('services.faqTitle')}
               </p>
             </div>
@@ -370,6 +376,7 @@ const Services = () => {
           </AnimatedSection>
         </div>
       </section>
+      </main>
 
       <Footer />
       <FloatingButtons />

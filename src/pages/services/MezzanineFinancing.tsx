@@ -20,6 +20,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 
 const MezzanineFinancing = () => {
   const { t, isRTL } = useLanguage();
@@ -75,10 +76,15 @@ const MezzanineFinancing = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Mezzanine Financing in UAE | Taamul Credit Review Services"
+        description="Bridge the gap between debt and equity with mezzanine financing solutions. Flexible capital for UAE business growth and expansion."
+      />
       <Header />
+      <main id="main-content">
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
         </div>
@@ -266,6 +272,7 @@ const MezzanineFinancing = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
       <FloatingButtons />
     </div>

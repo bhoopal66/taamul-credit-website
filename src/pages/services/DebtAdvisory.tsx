@@ -19,6 +19,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 
 const serviceIcons = [TrendingUp, RefreshCw, Handshake, BarChart3];
 const whyChooseIcons = [Target, Users, Zap, Shield];
@@ -77,10 +78,15 @@ const DebtAdvisory = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Debt Advisory Services | Taamul Credit Review Services"
+        description="Expert debt restructuring and advisory services for UAE businesses. Taamul helps optimize your capital structure and manage debt obligations."
+      />
       <Header />
+      <main id="main-content">
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
         </div>
@@ -270,6 +276,7 @@ const DebtAdvisory = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
       <FloatingButtons />
     </div>

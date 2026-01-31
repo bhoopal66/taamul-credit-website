@@ -125,8 +125,8 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
-        <div className={`grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)] ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
+      <div className="container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-20 relative z-10">
+        <div className={`grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[calc(100vh-200px)] ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
           {/* Left Content - Carousel */}
           <Carousel
             setApi={setApi}
@@ -181,7 +181,7 @@ const HeroSection = () => {
                           initial={{ opacity: 0, y: 30 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.2 }}
-                          className="text-xl text-primary-foreground/80 max-w-xl leading-relaxed"
+                          className="text-base md:text-xl text-primary-foreground/80 max-w-xl leading-relaxed"
                         >
                           {slide.description}
                         </motion.p>
@@ -232,7 +232,7 @@ const HeroSection = () => {
                           initial={{ opacity: 0, y: 30 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.4 }}
-                          className={`flex flex-wrap gap-8 pt-8 border-t border-primary-foreground/20 ${isRTL ? 'flex-row-reverse' : ''}`}
+                          className={`flex flex-wrap gap-4 md:gap-8 pt-6 md:pt-8 border-t border-primary-foreground/20 ${isRTL ? 'flex-row-reverse' : ''}`}
                         >
                           {slide.stats.map((stat, statIndex) => (
                             <motion.div 

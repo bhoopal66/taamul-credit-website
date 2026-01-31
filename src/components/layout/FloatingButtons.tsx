@@ -30,7 +30,7 @@ const FloatingButtons = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hi, I'm interested in learning more about TAAMUL's business financing solutions.");
-    window.open(`https://wa.me/97142345678?text=${message}`, "_blank");
+    window.open(`https://wa.me/971508044090?text=${message}`, "_blank");
   };
 
   const handleBackToTop = () => {
@@ -49,7 +49,7 @@ const FloatingButtons = () => {
       {/* WhatsApp Button - Bottom Left */}
       <button
         onClick={handleWhatsApp}
-        className="fixed bottom-6 left-6 z-40 w-14 h-14 bg-success rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-transform duration-200"
+        className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 w-12 h-12 sm:w-14 sm:h-14 bg-success rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-transform duration-200"
         aria-label="Contact on WhatsApp"
       >
         <MessageCircle className="h-7 w-7 text-success-foreground" />
@@ -59,7 +59,7 @@ const FloatingButtons = () => {
       {showBackToTop && (
         <button
           onClick={handleBackToTop}
-          className="fixed bottom-24 right-6 z-40 w-12 h-12 bg-primary rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-all duration-200 animate-fade-in"
+          className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-40 w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-all duration-200 animate-fade-in"
           aria-label="Back to top"
         >
           <ArrowUp className="h-5 w-5 text-primary-foreground" />
@@ -69,7 +69,7 @@ const FloatingButtons = () => {
       {/* Callback Button - Bottom Right */}
       <button
         onClick={() => setIsCallbackOpen(true)}
-        className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-accent rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-transform duration-200 animate-pulse-slow"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 bg-accent rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-transform duration-200 animate-pulse-slow"
         aria-label="Request Callback"
       >
         <Phone className="h-6 w-6 text-accent-foreground" />

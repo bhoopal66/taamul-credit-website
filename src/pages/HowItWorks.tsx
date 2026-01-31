@@ -13,6 +13,7 @@ import {
   Users
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 
 const HowItWorks = () => {
   const { t, isRTL } = useLanguage();
@@ -87,16 +88,21 @@ const HowItWorks = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="How It Works | Taamul Credit Review Services"
+        description="Learn how Taamul helps UAE businesses secure financing in five simple steps, from initial consultation to fund disbursement."
+      />
       <Header />
+      <main id="main-content">
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-primary to-navy-light">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-16 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
           <div className={`max-w-3xl mx-auto text-center text-white ${isRTL ? 'text-right' : ''}`}>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               {t('howItWorks.heading')}
             </h1>
-            <p className="text-xl text-white mb-8">
+            <p className="text-base md:text-xl text-white mb-8">
               {t('howItWorks.description')}
             </p>
           </div>
@@ -210,6 +216,7 @@ const HowItWorks = () => {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

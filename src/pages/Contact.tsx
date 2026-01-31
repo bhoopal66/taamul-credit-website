@@ -38,6 +38,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { t, isRTL } = useLanguage();
@@ -88,7 +89,7 @@ const Contact = () => {
     {
       icon: Phone,
       titleKey: "contact.phone",
-      details: ["+971 4 452 1111", "+971 50 123 4567"],
+      details: ["+971 4 452 1111", "+971 50 804 4090"],
     },
     {
       icon: Mail,
@@ -141,10 +142,15 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Contact Us | Taamul Credit Review Services"
+        description="Get in touch with Taamul Credit Review Services in Dubai. Visit our office, call us, or submit an inquiry online for business financing support."
+      />
       <Header />
+      <main id="main-content">
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 opacity-10">
           <motion.div 
@@ -263,7 +269,7 @@ const Contact = () => {
                         <FormItem className={isRTL ? 'text-right' : ''}>
                           <FormLabel>{t('contact.fullName')} *</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Smith" {...field} className={isRTL ? 'text-right' : ''} />
+                            <Input placeholder={t('contact.namePlaceholder')} {...field} className={isRTL ? 'text-right' : ''} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -310,7 +316,7 @@ const Contact = () => {
                         <FormItem className={isRTL ? 'text-right' : ''}>
                           <FormLabel>{t('contact.companyName')}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Company LLC" {...field} className={isRTL ? 'text-right' : ''} />
+                            <Input placeholder={t('contact.companyPlaceholder')} {...field} className={isRTL ? 'text-right' : ''} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -478,7 +484,7 @@ const Contact = () => {
                 className="border-white text-white hover:bg-white/10"
               >
                 <a
-                  href="https://wa.me/971501234567"
+                  href="https://wa.me/971508044090"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}
@@ -490,6 +496,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
       <FloatingButtons />

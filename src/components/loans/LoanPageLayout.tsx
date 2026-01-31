@@ -65,9 +65,10 @@ const LoanPageLayout = ({
   return (
     <div className="min-h-screen">
       <Header />
+      <main id="main-content">
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
         </div>
@@ -207,15 +208,15 @@ const LoanPageLayout = ({
 
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'text-right' : ''}`}>
               <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <FileText className="h-6 w-6 text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <FileText className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">{t('loanPages.requiredDocuments')}</h3>
               </div>
               <div className="space-y-4">
                 {documentKeys.map((key, index) => (
                   <div key={index} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="text-foreground">{t(key)}</p>
                   </div>
                 ))}
@@ -257,6 +258,7 @@ const LoanPageLayout = ({
         </div>
       </section>
 
+      </main>
       <Footer />
       <FloatingButtons />
     </div>

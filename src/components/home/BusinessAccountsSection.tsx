@@ -43,11 +43,11 @@ const BusinessAccountsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted">
+    <section className="py-12 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <AnimatedSection className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+          <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
             {t('businessAccountsSection.title')}
           </p>
           <h2 className="text-display-sm text-foreground mb-4">
@@ -59,10 +59,10 @@ const BusinessAccountsSection = () => {
         </AnimatedSection>
 
         {/* Account Types */}
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
           {accountTypes.map((account, index) => (
             <AnimatedItem key={account.titleKey} index={index} baseDelay={0.1}>
-              <div className={`flex flex-col items-center p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 min-w-[180px] ${isRTL ? 'text-right' : 'text-center'}`}>
+              <div className={`flex flex-col items-center p-4 md:p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 ${isRTL ? 'text-right' : 'text-center'}`}>
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
                   <account.icon className="h-8 w-8 text-primary" />
                 </div>

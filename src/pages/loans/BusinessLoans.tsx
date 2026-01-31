@@ -24,6 +24,7 @@ import FloatingButtons from "@/components/layout/FloatingButtons";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
 
 const banks = [
   { id: "wio", name: "Wio Bank", maxLimit: 1000000 },
@@ -99,9 +100,13 @@ const BusinessLoans = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <SEO
+        title="Business Loans in UAE | Taamul Credit Review Services"
+        description="Secure business loans in the UAE with competitive rates and flexible terms. Taamul connects you with top banks and financial institutions."
+      />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
         </div>
@@ -237,7 +242,7 @@ const BusinessLoans = () => {
                 className={`mt-8 p-6 rounded-2xl gradient-hero text-primary-foreground ${isRTL ? 'text-right' : ''}`}
               >
                 <p className="text-sm opacity-80 mb-1">{t('businessLoansPage.estimatedAmount')}</p>
-                <p className="text-4xl font-bold mb-2">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
                   {formatCurrency(eligibleAmount)}
                 </p>
                 <p className="text-xs opacity-70 mb-4">{t('businessLoansPage.estimateDisclaimer')}</p>
@@ -419,7 +424,7 @@ const BusinessLoans = () => {
               {/* Bank Selection */}
               <div>
                 <label className={`block text-sm font-medium text-white/80 mb-3 ${isRTL ? 'text-right' : ''}`}>{t('businessLoansPage.selectBank')}</label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {banks.map((bank) => (
                     <button
                       key={bank.id}
@@ -476,7 +481,7 @@ const BusinessLoans = () => {
                 </div>
                 <div className="border-t border-white/20 pt-4 text-center">
                   <p className="text-sm text-white/70 mb-1">{t('businessLoansPage.eligibleLoanAmount')}</p>
-                  <p className="text-4xl font-bold text-accent">{formatCurrency(posEligibleAmount)}</p>
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent">{formatCurrency(posEligibleAmount)}</p>
                 </div>
               </div>
             </div>

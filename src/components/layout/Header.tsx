@@ -65,16 +65,24 @@ const Header = () => {
 
   return (
     <>
+      {/* Skip to Content */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:text-sm focus:font-medium"
+      >
+        {t('common.skipToContent')}
+      </a>
+
       {/* Top Bar */}
       <div className="hidden lg:block bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className={cn("flex items-center justify-between h-10 text-sm", isRTL && "flex-row-reverse")}>
             <div className={cn("flex items-center gap-6", isRTL && "flex-row-reverse")}>
-              <a href="tel:+97142234567" className={cn("flex items-center gap-2 hover:text-accent transition-colors", isRTL && "flex-row-reverse")}>
+              <a href="tel:+97144521111" className={cn("flex items-center gap-2 hover:text-white/80 transition-colors", isRTL && "flex-row-reverse")}>
                 <Phone className="h-3.5 w-3.5" />
-                +971 4 223 4567
+                +971 4 452 1111
               </a>
-              <a href="mailto:info@taamul.ae" className={cn("flex items-center gap-2 hover:text-accent transition-colors", isRTL && "flex-row-reverse")}>
+              <a href="mailto:info@taamul.ae" className={cn("flex items-center gap-2 hover:text-white/80 transition-colors", isRTL && "flex-row-reverse")}>
                 <Mail className="h-3.5 w-3.5" />
                 info@taamul.ae
               </a>
@@ -108,15 +116,17 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className={cn("hidden lg:flex items-center gap-8", isRTL && "flex-row-reverse")}>
+            <div className={cn("hidden lg:flex items-center gap-6", isRTL && "flex-row-reverse")}>
               <NavigationMenu>
-                <NavigationMenuList className={cn("gap-6", isRTL && "flex-row-reverse")}>
+                <NavigationMenuList className={cn("gap-1", isRTL && "flex-row-reverse")}>
                   <NavigationMenuItem>
                     <Link
                       to="/"
                       className={cn(
-                        "text-[15px] font-medium transition-colors hover:text-accent",
-                        isActive("/") ? "text-accent" : "text-foreground"
+                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        isActive("/")
+                          ? "text-primary bg-primary/5 font-semibold"
+                          : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
                       {t('nav.home')}
@@ -127,8 +137,10 @@ const Header = () => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger
                       className={cn(
-                        "text-[15px] font-medium bg-transparent hover:bg-transparent hover:text-accent data-[state=open]:bg-transparent px-0 h-auto",
-                        isLoanActive() ? "text-accent" : "text-foreground"
+                        "text-sm font-medium whitespace-nowrap bg-transparent hover:bg-primary/5 data-[state=open]:bg-primary/5 px-3 h-auto py-2 rounded-md",
+                        isLoanActive()
+                          ? "text-primary font-semibold"
+                          : "text-foreground/70 hover:text-primary data-[state=open]:text-primary"
                       )}
                     >
                       {t('nav.loans')}
@@ -139,20 +151,24 @@ const Header = () => {
                           <h3 className="font-semibold text-foreground">{t('nav.loanProducts')}</h3>
                           <p className="text-sm text-muted-foreground">{t('nav.comprehensiveFinancing')}</p>
                         </div>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="grid grid-cols-2 gap-1">
                           {loanServices.map((loan) => (
                             <NavigationMenuLink key={loan.href} asChild>
                               <Link
                                 to={loan.href}
                                 className={cn(
-                                  "block p-3 rounded-lg hover:bg-muted transition-colors group",
-                                  isActive(loan.href) && "bg-accent/5",
+                                  "block p-3 rounded-lg transition-colors group",
+                                  isActive(loan.href)
+                                    ? "bg-primary/5"
+                                    : "hover:bg-muted/50",
                                   isRTL && "text-right"
                                 )}
                               >
                                 <span className={cn(
-                                  "font-medium text-sm group-hover:text-accent transition-colors",
-                                  isActive(loan.href) ? "text-accent" : "text-foreground"
+                                  "font-medium text-sm transition-colors",
+                                  isActive(loan.href)
+                                    ? "text-primary"
+                                    : "text-foreground group-hover:text-primary"
                                 )}>
                                   {loan.name}
                                 </span>
@@ -164,7 +180,7 @@ const Header = () => {
                         <div className={cn("mt-4 pt-3 border-t border-border", isRTL && "text-right")}>
                           <Link
                             to="/services"
-                            className="text-sm text-accent hover:text-accent/80 font-medium"
+                            className="text-sm text-primary hover:text-primary/80 font-medium"
                           >
                             {t('nav.viewAllServices')} {isRTL ? '←' : '→'}
                           </Link>
@@ -177,28 +193,34 @@ const Header = () => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger
                       className={cn(
-                        "text-[15px] font-medium bg-transparent hover:bg-transparent hover:text-accent data-[state=open]:bg-transparent px-0 h-auto",
-                        isServiceActive() ? "text-accent" : "text-foreground"
+                        "text-sm font-medium whitespace-nowrap bg-transparent hover:bg-primary/5 data-[state=open]:bg-primary/5 px-3 h-auto py-2 rounded-md",
+                        isServiceActive()
+                          ? "text-primary font-semibold"
+                          : "text-foreground/70 hover:text-primary data-[state=open]:text-primary"
                       )}
                     >
                       {t('nav.services')}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="w-[400px] p-6 bg-card border border-border rounded-lg shadow-elevated">
-                        <div className="space-y-2">
+                        <div className="space-y-1">
                           {advisoryServices.map((service) => (
                             <NavigationMenuLink key={service.href} asChild>
                               <Link
                                 to={service.href}
                                 className={cn(
-                                  "block p-3 rounded-lg hover:bg-muted transition-colors group",
-                                  isActive(service.href) && "bg-accent/5",
+                                  "block p-3 rounded-lg transition-colors group",
+                                  isActive(service.href)
+                                    ? "bg-primary/5"
+                                    : "hover:bg-muted/50",
                                   isRTL && "text-right"
                                 )}
                               >
                                 <span className={cn(
-                                  "font-medium text-sm group-hover:text-accent transition-colors",
-                                  isActive(service.href) ? "text-accent" : "text-foreground"
+                                  "font-medium text-sm transition-colors",
+                                  isActive(service.href)
+                                    ? "text-primary"
+                                    : "text-foreground group-hover:text-primary"
                                 )}>
                                   {service.name}
                                 </span>
@@ -215,12 +237,13 @@ const Header = () => {
                     <Link
                       to="/business-accounts"
                       className={cn(
-                        "text-[15px] font-medium transition-colors hover:text-accent leading-tight",
-                        isActive("/business-accounts") ? "text-accent" : "text-foreground"
+                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        isActive("/business-accounts")
+                          ? "text-primary bg-primary/5 font-semibold"
+                          : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
-                      <span className="block text-center">{t('nav.businessAccounts').split(' ')[0]}</span>
-                      <span className="block text-center text-[13px]">{t('nav.businessAccounts').split(' ').slice(1).join(' ')}</span>
+                      {t('nav.businessAccounts')}
                     </Link>
                   </NavigationMenuItem>
 
@@ -228,8 +251,10 @@ const Header = () => {
                     <Link
                       to="/how-it-works"
                       className={cn(
-                        "text-[15px] font-medium transition-colors hover:text-accent",
-                        isActive("/how-it-works") ? "text-accent" : "text-foreground"
+                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        isActive("/how-it-works")
+                          ? "text-primary bg-primary/5 font-semibold"
+                          : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
                       {t('nav.howItWorks')}
@@ -240,25 +265,16 @@ const Header = () => {
                     <Link
                       to="/about"
                       className={cn(
-                        "text-[15px] font-medium transition-colors hover:text-accent",
-                        isActive("/about") ? "text-accent" : "text-foreground"
+                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        isActive("/about")
+                          ? "text-primary bg-primary/5 font-semibold"
+                          : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
                       {t('nav.about')}
                     </Link>
                   </NavigationMenuItem>
 
-                  <NavigationMenuItem>
-                    <Link
-                      to="/contact"
-                      className={cn(
-                        "text-[15px] font-medium transition-colors hover:text-accent",
-                        isActive("/contact") ? "text-accent" : "text-foreground"
-                      )}
-                    >
-                      {t('nav.contact')}
-                    </Link>
-                  </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
@@ -272,7 +288,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 rounded-md hover:bg-muted transition-colors"
+              className="lg:hidden p-2 rounded-md hover:bg-muted/50 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -309,7 +325,7 @@ const Header = () => {
               to="/"
               className={cn(
                 "block px-4 py-3 rounded-lg font-medium transition-colors",
-                isActive("/") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+                isActive("/") ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
               )}
             >
               {t('nav.home')}
@@ -321,7 +337,7 @@ const Header = () => {
                 onClick={() => toggleMobileDropdown("loans")}
                 className={cn(
                   "w-full flex items-center justify-between px-4 py-3 rounded-lg font-medium transition-colors",
-                  isLoanActive() ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted",
+                  isLoanActive() ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50",
                   isRTL && "flex-row-reverse"
                 )}
               >
@@ -346,7 +362,7 @@ const Header = () => {
                       to={loan.href}
                       className={cn(
                         "block px-4 py-2.5 rounded-lg text-sm transition-colors",
-                        isActive(loan.href) ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+                        isActive(loan.href) ? "bg-primary/10 text-primary font-medium" : "text-foreground/80 hover:bg-muted/50 hover:text-foreground"
                       )}
                     >
                       {loan.name}
@@ -362,7 +378,7 @@ const Header = () => {
                 onClick={() => toggleMobileDropdown("services")}
                 className={cn(
                   "w-full flex items-center justify-between px-4 py-3 rounded-lg font-medium transition-colors",
-                  isServiceActive() ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted",
+                  isServiceActive() ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50",
                   isRTL && "flex-row-reverse"
                 )}
               >
@@ -387,7 +403,7 @@ const Header = () => {
                       to={service.href}
                       className={cn(
                         "block px-4 py-2.5 rounded-lg text-sm transition-colors",
-                        isActive(service.href) ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+                        isActive(service.href) ? "bg-primary/10 text-primary font-medium" : "text-foreground/80 hover:bg-muted/50 hover:text-foreground"
                       )}
                     >
                       {service.name}
@@ -401,7 +417,7 @@ const Header = () => {
               to="/business-accounts"
               className={cn(
                 "block px-4 py-3 rounded-lg font-medium transition-colors",
-                isActive("/business-accounts") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+                isActive("/business-accounts") ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
               )}
             >
               {t('nav.businessAccounts')}
@@ -411,7 +427,7 @@ const Header = () => {
               to="/how-it-works"
               className={cn(
                 "block px-4 py-3 rounded-lg font-medium transition-colors",
-                isActive("/how-it-works") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+                isActive("/how-it-works") ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
               )}
             >
               {t('nav.howItWorks')}
@@ -421,7 +437,7 @@ const Header = () => {
               to="/about"
               className={cn(
                 "block px-4 py-3 rounded-lg font-medium transition-colors",
-                isActive("/about") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+                isActive("/about") ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
               )}
             >
               {t('nav.about')}
@@ -431,7 +447,7 @@ const Header = () => {
               to="/contact"
               className={cn(
                 "block px-4 py-3 rounded-lg font-medium transition-colors",
-                isActive("/contact") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+                isActive("/contact") ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
               )}
             >
               {t('nav.contact')}

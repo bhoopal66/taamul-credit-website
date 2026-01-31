@@ -83,11 +83,11 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <AnimatedSection className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+          <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
             {t('servicesSection.title')}
           </p>
           <h2 className="text-display-sm text-foreground mb-4">
