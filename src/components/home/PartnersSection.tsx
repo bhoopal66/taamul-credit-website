@@ -69,7 +69,7 @@ const PartnersSection = () => {
                 key={index}
                 className="flex-shrink-0 mx-3 sm:mx-8 group"
               >
-                <div className="w-32 sm:w-40 h-16 sm:h-20 bg-card rounded-xl shadow-sm flex items-center justify-center px-3 sm:px-4 grayscale hover:grayscale-0 transition-all duration-300 group-hover:shadow-card">
+                <div className="w-32 sm:w-40 h-16 sm:h-20 bg-card rounded-xl shadow-sm flex items-center justify-center px-3 sm:px-4 transition-all duration-300 group-hover:shadow-card">
                   <img
                     src={bank.logo}
                     alt={bank.name}
@@ -97,7 +97,7 @@ const PartnersSection = () => {
                 key={index}
                 className="flex-shrink-0 mx-3 sm:mx-8 group"
               >
-                <div className="w-36 sm:w-44 h-16 sm:h-20 bg-card rounded-xl shadow-sm flex items-center justify-center px-3 sm:px-4 grayscale hover:grayscale-0 transition-all duration-300 group-hover:shadow-card">
+                <div className="w-36 sm:w-44 h-16 sm:h-20 bg-card rounded-xl shadow-sm flex items-center justify-center px-3 sm:px-4 transition-all duration-300 group-hover:shadow-card">
                   <img
                     src={partner.logo}
                     alt={partner.name}

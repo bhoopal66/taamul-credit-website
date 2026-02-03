@@ -61,8 +61,8 @@ const BusinessAccountsSection = () => {
         {/* Account Types */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
           {accountTypes.map((account, index) => (
-            <AnimatedItem key={account.titleKey} index={index} baseDelay={0.1}>
-              <div className={`flex flex-col items-center p-4 md:p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 ${isRTL ? 'text-right' : 'text-center'}`}>
+            <AnimatedItem key={account.titleKey} index={index} baseDelay={0.1} className="h-full">
+              <div className={`flex flex-col items-center p-4 md:p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 h-full ${isRTL ? 'text-right' : 'text-center'}`}>
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
                   <account.icon className="h-8 w-8 text-primary" />
                 </div>

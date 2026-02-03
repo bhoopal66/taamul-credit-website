@@ -117,7 +117,7 @@ const translations = {
       debtAdvisoryDesc: "Optimize your debt portfolio",
       mezzanineFinancing: "Mezzanine & Hybrid Financing",
       mezzanineFinancingDesc: "Flexible capital solutions",
-      bankFinancing: "Bank Financing",
+      bankFinancing: "Business Financing Products",
       bankFinancingDesc: "Comprehensive bank loan products"
     },
     // Hero Section
@@ -125,7 +125,7 @@ const translations = {
       trustedBy: "Trusted by 500+ UAE Businesses",
       unlockPotential: "Unlock Your Business Potential with",
       smartFinancing: "Smart Financing",
-      heroDesc: "Access flexible business loans from AED 50,000 to AED 50 million. Partner with UAE's leading banks through our streamlined application process.",
+      heroDesc: "Access business loans from AED 50,000 to AED 500M, including corporate loans. Partner with UAE's top banks through our streamlined process.",
       completeBanking: "Complete Business Banking",
       yourOneStop: "Your One-Stop Partner for",
       businessSuccess: "Business Success",
@@ -307,9 +307,9 @@ const translations = {
         q1: "What are the basic eligibility requirements for a business loan?",
         a1: "To qualify for a business loan, your company typically needs to be registered in the UAE for at least 1-2 years, have a valid trade license, demonstrate consistent revenue (usually AED 500K+ annually), and have a good credit history.",
         q2: "What documents are required for a loan application?",
-        a2: "Standard documentation includes: valid trade license, company registration documents (MOA/AOA), 6-12 months of bank statements, audited financial statements for the past 2 years, Emirates ID and passport copies of shareholders, and VAT registration certificate.",
+        a2: "Standard documentation includes: valid trade license, company registration documents (MOA/AOA), 6-12 months of bank statements, audited financial statements for the past 1-2 years, Emirates ID and passport copies of shareholders, and VAT registration certificate & returns (last 4 Quarters).",
         q3: "How long does the loan approval process take?",
-        a3: "Our streamlined process typically takes 3-5 days from complete document submission to approval. Simple working capital facilities may be approved within 48-72 hours, while larger corporate loans may take 2-3 weeks.",
+        a3: "Our streamlined process typically takes 2-5 days from complete document submission to approval. Simple working capital facilities may be approved within 48-72 hours, while larger corporate loans may take 2-3 weeks.",
         q4: "What interest rates can I expect?",
         a4: "Interest rates depend on multiple factors including loan type, amount, tenure, collateral, and your company's financial profile. Rates typically range from 7% to 15% per annum."
       }
@@ -437,7 +437,7 @@ const translations = {
         consultationDetails: ["Business profile review", "Requirements assessment", "Solution recommendation", "Timeline discussion"],
         documentCollection: "Document Collection",
         documentCollectionDesc: "Our team collects and reviews all required documentation to ensure a complete, error-free application.",
-        documentCollectionDetails: ["Trade License & MOA", "VAT returns (last 4 Qtrs)", "Bank statements", "Passport & EID copies"],
+        documentCollectionDetails: ["Trade license & MOA/AOA", "Bank & financial statements", "VAT certificate & last 4 returns", "Emirates ID & passports of shareholders"],
         bankSelection: "Bank Selection",
         bankSelectionDesc: "Based on your profile, we match you with the most suitable banks from our partner network for higher approval rates.",
         bankSelectionDetails: ["Compare multiple bank offers", "Match terms to your needs", "Negotiate best rates", "Present top options"],
@@ -723,7 +723,7 @@ const translations = {
       businessLoansFeaturesTitle: "Why Choose Our Business Loans?",
       businessLoansFeaturesDesc: "Designed for UAE businesses looking for structured, long-term financing solutions.",
       flexibleAmounts: "Flexible Amounts",
-      flexibleAmountsDesc: "Loans from AED 100,000 to AED 50 million based on your business needs",
+      flexibleAmountsDesc: "Loans from AED 50,000 to AED 50 million based on your business needs",
       competitiveRates: "Competitive Rates",
       competitiveRatesDesc: "Interest rates starting from 7% p.a. with transparent fee structure",
       longTenure: "Long Tenure",
