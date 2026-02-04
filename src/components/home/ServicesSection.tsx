@@ -87,7 +87,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <AnimatedSection className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
+          <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
             {t('servicesSection.title')}
           </p>
           <h2 className="text-display-sm text-foreground mb-4">
@@ -99,15 +99,15 @@ const ServicesSection = () => {
         </AnimatedSection>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <AnimatedItem key={service.titleKey} index={index} baseDelay={0.05}>
               <Link
                 to={service.href}
                 className={`group bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-accent/20 block h-full ${isRTL ? 'text-right' : ''}`}
               >
-                <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-300 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
-                  <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 transition-all duration-300 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
+                  <service.icon className="h-7 w-7 text-accent group-hover:text-accent-foreground transition-colors" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {t(service.titleKey)}
@@ -126,7 +126,7 @@ const ServicesSection = () => {
 
         {/* CTA Button */}
         <AnimatedSection delay={0.3} direction="none" className="text-center mt-12">
-          <Button asChild variant="default" size="lg">
+          <Button asChild variant="accent" size="lg">
             <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
               {t('servicesSection.talkToExpert')}
               <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />

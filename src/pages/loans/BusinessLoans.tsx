@@ -105,8 +105,9 @@ const BusinessLoans = () => {
         description="Secure business loans in the UAE with competitive rates and flexible terms. Taamul connects you with top banks and financial institutions."
       />
 
+      <main id="main-content">
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-20 md:pb-28 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
         </div>
@@ -144,12 +145,10 @@ const BusinessLoans = () => {
         </div>
 
         {/* Bottom Wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path
-              d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-              fill="hsl(var(--background))"
-            />
+        <div className="absolute -bottom-px left-0 right-0">
+          <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
+            <path d="M0 48V20C240 4 480 0 720 0C960 0 1200 4 1440 20V48H0Z" fill="hsl(var(--background))" />
+            <path d="M0 20C240 4 480 0 720 0C960 0 1200 4 1440 20" stroke="hsl(var(--accent))" strokeWidth="2" opacity="0.35" />
           </svg>
         </div>
       </section>
@@ -174,8 +173,8 @@ const BusinessLoans = () => {
                   key={feature.titleKey}
                   className={`bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 ${isRTL ? 'text-right' : ''}`}
                 >
-                  <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 ${isRTL ? 'ml-auto' : ''}`}>
-                    <feature.icon className="h-7 w-7 text-primary" />
+                  <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 ${isRTL ? 'ml-auto' : ''}`}>
+                    <feature.icon className="h-7 w-7 text-accent" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">
                     {t(feature.titleKey)}
@@ -271,9 +270,11 @@ const BusinessLoans = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
             <h2 className="text-display-sm text-white mb-4">
-              {t('loanPages.taamulAdvantage').split('Taamul')[0]}
-              <span className="text-accent">{t('loanPages.taamul')}</span>
-              {' '}{t('loanPages.advantage')}
+              {isRTL ? (
+                <><span className="text-accent">{t('loanPages.taamul')}</span> {t('loanPages.advantage')}</>
+              ) : (
+                <>The <span className="text-accent">{t('loanPages.taamul')}</span> {t('loanPages.advantage')}</>
+              )}
             </h2>
             <p className="text-lg text-white/80">
               {t('loanPages.advantageDesc')}
@@ -316,7 +317,7 @@ const BusinessLoans = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 ${isRTL ? 'text-right' : ''}`}
               >
-                <div className={`w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
+                <div className={`w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
                   <advantage.icon className="h-6 w-6 text-accent" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{t(advantage.titleKey)}</h3>
@@ -341,9 +342,11 @@ const BusinessLoans = () => {
               {t('businessLoansPage.posFinancing')}
             </div>
             <h2 className="text-display-sm text-white mb-4">
-              {t('businessLoansPage.howPosWorks').split('POS')[0]}
-              <span className="text-accent">{t('businessLoansPage.posLoan')}</span>
-              {t('businessLoansPage.howPosWorks').split('POS Loan')[1] || ' ' + t('businessLoansPage.works')}
+              {isRTL ? (
+                <>{t('businessLoansPage.howThe')} <span className="text-accent">{t('businessLoansPage.posLoan')}</span> {t('businessLoansPage.works')}</>
+              ) : (
+                <>How the <span className="text-accent">{t('businessLoansPage.posLoan')}</span> {t('businessLoansPage.works')}</>
+              )}
             </h2>
             <p className="text-lg text-white/80">
               {t('businessLoansPage.posDesc')}
@@ -631,6 +634,7 @@ const BusinessLoans = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
       <FloatingButtons />
     </div>

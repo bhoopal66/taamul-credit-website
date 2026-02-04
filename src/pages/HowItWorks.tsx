@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FloatingButtons from "@/components/layout/FloatingButtons";
 import { Button } from "@/components/ui/button";
 import { 
   MessageSquare,
@@ -96,7 +97,7 @@ const HowItWorks = () => {
       <main id="main-content">
       
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 bg-gradient-to-br from-primary via-primary to-navy-light">
+      <section className="pt-24 md:pt-32 pb-20 md:pb-28 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
           <div className={`max-w-3xl mx-auto text-center text-white ${isRTL ? 'text-right' : ''}`}>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -177,8 +178,8 @@ const HowItWorks = () => {
                 key={index}
                 className={`bg-card rounded-xl p-6 text-center shadow-md border border-border ${isRTL ? 'text-right' : ''}`}
               >
-                <div className={`w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto mr-0' : 'mx-auto'}`}>
-                  <benefit.icon className="h-7 w-7 text-primary" />
+                <div className={`w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto mr-0' : 'mx-auto'}`}>
+                  <benefit.icon className="h-7 w-7 text-accent" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {t(benefit.titleKey)}
@@ -219,6 +220,7 @@ const HowItWorks = () => {
       </main>
 
       <Footer />
+      <FloatingButtons />
     </div>
   );
 };

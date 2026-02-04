@@ -192,7 +192,7 @@ const BusinessAccounts = () => {
       <main id="main-content">
 
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-20 md:pb-28 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <motion.div 
             className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl"
@@ -264,7 +264,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-14 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.whyChooseUs')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -279,8 +279,8 @@ const BusinessAccounts = () => {
             {benefits.map((benefit, index) => (
               <AnimatedItem key={index} index={index} baseDelay={0.1}>
                 <div className={`group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-elevated transition-all duration-300 h-full ${isRTL ? 'text-right' : ''}`}>
-                  <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors ${isRTL ? 'ml-auto' : ''}`}>
-                    <benefit.icon className="h-7 w-7 text-primary" />
+                  <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors ${isRTL ? 'ml-auto' : ''}`}>
+                    <benefit.icon className="h-7 w-7 text-accent" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">
                     {t(benefit.titleKey)}
@@ -299,7 +299,7 @@ const BusinessAccounts = () => {
       <section id="accounts" className="py-20 bg-muted scroll-mt-20">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-12 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.accountTypes')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -329,7 +329,7 @@ const BusinessAccounts = () => {
           </div>
 
           <AnimatedSection delay={0.3} direction="none" className="text-center">
-            <Button asChild variant="default" size="lg">
+            <Button asChild variant="accent" size="lg">
               <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 {t('common.talkToExpert')}
                 <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -343,7 +343,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-14 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.ourProcess')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -359,7 +359,7 @@ const BusinessAccounts = () => {
               {/* Vertical Line */}
               <div className={`absolute ${isRTL ? 'right-8' : 'left-8'} top-0 bottom-0 w-0.5 bg-border hidden md:block`} />
               
-              <div className="space-y-8">
+              <div className="space-y-5 sm:space-y-6 md:space-y-8">
                 {processSteps.map((step, index) => (
                   <AnimatedItem key={step.step} index={index} baseDelay={0.1}>
                     <div className={`flex gap-6 items-start group ${isRTL ? 'flex-row-reverse' : ''}`}>
@@ -403,7 +403,7 @@ const BusinessAccounts = () => {
             <p className={`text-sm text-muted-foreground max-w-2xl mx-auto mb-6 ${isRTL ? 'text-right' : ''}`}>
               {t('businessAccounts.processDisclaimer')}
             </p>
-            <Button asChild variant="default" size="lg">
+            <Button asChild variant="accent" size="lg">
               <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 {t('common.talkToExpert')}
                 <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -417,7 +417,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-12 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.requiredDocuments')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -466,7 +466,7 @@ const BusinessAccounts = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <AnimatedSection className={`text-center mb-12 ${isRTL ? 'text-right' : ''}`}>
-              <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
+              <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
                 {t('businessAccounts.faq')}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

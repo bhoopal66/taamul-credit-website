@@ -84,7 +84,7 @@ const MezzanineFinancing = () => {
       <main id="main-content">
 
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-20 md:pb-28 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
         </div>
@@ -120,12 +120,10 @@ const MezzanineFinancing = () => {
         </div>
 
         {/* Bottom Wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path
-              d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-              fill="hsl(var(--background))"
-            />
+        <div className="absolute -bottom-px left-0 right-0">
+          <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
+            <path d="M0 48V20C240 4 480 0 720 0C960 0 1200 4 1440 20V48H0Z" fill="hsl(var(--background))" />
+            <path d="M0 20C240 4 480 0 720 0C960 0 1200 4 1440 20" stroke="hsl(var(--accent))" strokeWidth="2" opacity="0.35" />
           </svg>
         </div>
       </section>
@@ -148,8 +146,8 @@ const MezzanineFinancing = () => {
                 key={service.titleKey}
                 className={`bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 ${isRTL ? 'text-right' : ''}`}
               >
-                <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
-                  <service.icon className="h-7 w-7 text-primary" />
+                <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
+                  <service.icon className="h-7 w-7 text-accent" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {t(service.titleKey)}
@@ -189,8 +187,8 @@ const MezzanineFinancing = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 ${isRTL ? 'text-right' : ''}`}
               >
-                <div className={`w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
-                  <item.icon className="h-6 w-6 text-white" />
+                <div className={`w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
+                  <item.icon className="h-6 w-6 text-accent" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{t(item.titleKey)}</h3>
                 <p className="text-sm text-white/70">{t(item.descKey)}</p>

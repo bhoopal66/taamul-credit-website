@@ -43,33 +43,33 @@ const BusinessAccountsSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-24 bg-muted">
+    <section className="py-12 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <AnimatedSection className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
+          <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
             {t('businessAccountsSection.title')}
           </p>
-          <h2 className="text-display-sm text-foreground mb-4">
+          <h2 className="text-display-sm text-white mb-4">
             {t('businessAccountsSection.heading')}
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-white/70">
             {t('businessAccountsSection.description')}
           </p>
         </AnimatedSection>
 
         {/* Account Types */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mb-12">
           {accountTypes.map((account, index) => (
             <AnimatedItem key={account.titleKey} index={index} baseDelay={0.1} className="h-full">
-              <div className={`flex flex-col items-center p-4 md:p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 h-full ${isRTL ? 'text-right' : 'text-center'}`}>
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                  <account.icon className="h-8 w-8 text-primary" />
+              <div className={`flex flex-col items-center p-4 md:p-6 bg-white/10 rounded-2xl border border-white/10 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1 h-full ${isRTL ? 'text-right' : 'text-center'}`}>
+                <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-4">
+                  <account.icon className="h-8 w-8 text-accent" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {t(account.titleKey)}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-white/70">
                   {t(account.descKey)}
                 </p>
               </div>
@@ -79,7 +79,7 @@ const BusinessAccountsSection = () => {
 
         {/* CTA Button */}
         <AnimatedSection delay={0.3} direction="none" className="text-center">
-          <Button asChild variant="default" size="lg">
+          <Button asChild variant="accent" size="lg">
             <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
               {t('common.talkToExpert')}
               <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />

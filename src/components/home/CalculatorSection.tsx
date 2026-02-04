@@ -111,7 +111,7 @@ const CalculatorSection = () => {
           <AnimatedSection direction={isRTL ? "left" : "right"} delay={0.1}>
             <div className={`space-y-8 ${isRTL ? 'text-right' : ''}`}>
               <div>
-                <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
+                <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
                   {t('calculator.whyChoose')}
                 </p>
                 <h2 className="text-display-sm text-foreground mb-4">

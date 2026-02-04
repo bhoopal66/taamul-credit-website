@@ -288,9 +288,10 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 rounded-md hover:bg-muted/50 transition-colors"
+              className="lg:hidden p-2.5 rounded-md hover:bg-muted/50 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6 text-foreground" />
@@ -308,7 +309,7 @@ const Header = () => {
             isMobileMenuOpen ? "max-h-[calc(100vh-4rem)]" : "max-h-0"
           )}
         >
-          <div className={cn("container mx-auto px-4 py-4 space-y-1 max-h-[70vh] overflow-y-auto", isRTL && "text-right")}>
+          <div className={cn("container mx-auto px-4 py-4 space-y-1 max-h-[calc(100vh-5rem)] overflow-y-auto", isRTL && "text-right")}>
             {/* Language Toggle for Mobile */}
             <button
               onClick={toggleLanguage}

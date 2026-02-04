@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FloatingButtons from "@/components/layout/FloatingButtons";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
@@ -114,7 +115,7 @@ const About = () => {
       <main id="main-content">
       
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 bg-gradient-to-br from-primary via-primary to-navy-light">
+      <section className="pt-24 md:pt-32 pb-20 md:pb-28 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
           <div className={cn("max-w-4xl mx-auto text-center text-primary-foreground", isRTL && "text-right")}>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -130,7 +131,7 @@ const About = () => {
       {/* Stats Bar */}
       <section className="py-8 bg-card border-b border-border">
         <div className="container mx-auto px-4">
-          <div className={cn("grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8", isRTL && "direction-rtl")}>
+          <div className={cn("grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8", isRTL && "direction-rtl")}>
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
@@ -149,8 +150,8 @@ const About = () => {
           <div className={cn("grid md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto", isRTL && "direction-rtl")}>
             {/* Mission */}
             <div className={cn("bg-card rounded-2xl p-8 shadow-lg border border-border", isRTL && "text-right")}>
-              <div className={cn("w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6", isRTL && "mr-0 ml-auto")}>
-                <Target className="h-7 w-7 text-primary" />
+              <div className={cn("w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6", isRTL && "mr-0 ml-auto")}>
+                <Target className="h-7 w-7 text-accent" />
               </div>
               <h2 className="text-2xl font-bold text-foreground mb-4">{t('about.mission.title')}</h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -252,8 +253,8 @@ const About = () => {
                 key={index}
                 className="bg-card rounded-xl p-6 text-center shadow-md border border-border hover:shadow-lg transition-shadow"
               >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="h-7 w-7 text-primary" />
+                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                  <value.icon className="h-7 w-7 text-accent" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {value.title}
@@ -402,7 +403,7 @@ const About = () => {
               </Button>
               <Button asChild size="xl" variant="heroOutline">
                 <Link to="/contact">
-                  {t('nav.contactUs')}
+                  {t('common.talkToExpert')}
                 </Link>
               </Button>
             </div>
@@ -412,6 +413,7 @@ const About = () => {
       </main>
 
       <Footer />
+      <FloatingButtons />
     </div>
   );
 };

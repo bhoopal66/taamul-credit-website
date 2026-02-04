@@ -42,13 +42,13 @@ const PartnersSection = () => {
   const { t, isRTL } = useLanguage();
 
   return (
-    <section className="py-16 bg-muted overflow-hidden">
+    <section className="py-12 md:py-24 bg-secondary overflow-hidden">
       <div className="container mx-auto px-4 mb-10">
         <AnimatedSection className={`text-center ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-primary font-semibold mb-2 uppercase tracking-wide text-sm">
+          <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
             {t('partnersSection.title')}
           </p>
-          <h2 className="text-2xl font-bold text-foreground">
+          <h2 className="text-display-sm text-white">
             {t('partnersSection.heading')}
           </h2>
         </AnimatedSection>
@@ -56,12 +56,12 @@ const PartnersSection = () => {
 
       {/* Banking Partners Marquee */}
       <AnimatedSection delay={0.2} direction="none">
-        <p className="text-center text-sm font-medium text-muted-foreground mb-4">
+        <p className="text-center text-sm font-medium text-white/70 mb-4">
           {t('partnersSection.bankingPartners')}
         </p>
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-muted to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-muted to-transparent z-10" />
+        <div className="relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-secondary to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-secondary to-transparent z-10" />
 
           <div className="flex animate-marquee">
             {[...partnerBanks, ...partnerBanks].map((bank, index) => (
@@ -84,12 +84,12 @@ const PartnersSection = () => {
 
       {/* Fintech Partners Marquee */}
       <AnimatedSection delay={0.3} direction="none" className="mt-8">
-        <p className="text-center text-sm font-medium text-muted-foreground mb-4">
+        <p className="text-center text-sm font-medium text-white/70 mb-4">
           {t('partnersSection.fintechPartners')}
         </p>
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-muted to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-muted to-transparent z-10" />
+        <div className="relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-secondary to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-secondary to-transparent z-10" />
 
           <div className="flex animate-marquee-reverse">
             {[...fintechPartners, ...fintechPartners].map((partner, index) => (
@@ -112,7 +112,7 @@ const PartnersSection = () => {
 
       {/* CTA Button */}
       <AnimatedSection delay={0.4} direction="none" className="text-center mt-10">
-        <Button asChild variant="default" size="lg">
+        <Button asChild variant="accent" size="lg">
           <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
             {t('common.talkToExpert')}
             <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />

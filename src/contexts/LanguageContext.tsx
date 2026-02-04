@@ -581,10 +581,33 @@ const translations = {
       subscribeNewsletter: "Subscribe to Newsletter",
       yourEmail: "Your email",
       subscribe: "Subscribe",
-      copyright: "© 2025 TAAMUL Credit Review Services LLC. All rights reserved.",
+      copyright: "© 2026 TAAMUL Credit Review Services LLC. All rights reserved.",
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
       cookiePolicy: "Cookie Policy"
+    },
+    // Callback Modal
+    callback: {
+      title: "Request a Callback",
+      description: "Leave your details and our team will call you back within 24 hours.",
+      fullName: "Full Name",
+      namePlaceholder: "Your full name",
+      phoneNumber: "Phone Number",
+      phonePlaceholder: "+971 50 123 4567",
+      preferredTime: "Preferred Time",
+      selectTime: "Select a time",
+      morning: "Morning (9 AM - 12 PM)",
+      afternoon: "Afternoon (12 PM - 5 PM)",
+      evening: "Evening (5 PM - 8 PM)",
+      submit: "Request Callback",
+      whatsappMessage: "Hi, I'm interested in learning more about TAAMUL's business financing solutions."
+    },
+    // Testimonials
+    testimonials: {
+      quote1: "TAAMUL helped us secure the right financing solution quickly and efficiently. Their team understood our industry and found us the perfect banking partner.",
+      quote2: "As an SME, we struggled to get traditional bank financing. TAAMUL's expertise opened doors we didn't know existed. Highly recommended for any business owner.",
+      quote3: "The transparency and professionalism throughout the process was exceptional. They negotiated rates that saved us significantly in interest over the loan term.",
+      quote4: "From the initial consultation to final approval, the TAAMUL team was incredibly supportive. They made the entire financing process seamless and stress-free."
     },
     // About Page
     about: {
@@ -1282,7 +1305,7 @@ const translations = {
         q2: "ما هي المستندات المطلوبة لتقديم طلب القرض؟",
         a2: "تشمل الوثائق القياسية: الرخصة التجارية السارية، مستندات تسجيل الشركة (عقد التأسيس/النظام الأساسي)، كشوف حساب بنكية لمدة 6-12 شهراً، البيانات المالية المدققة لآخر سنتين، نسخ الهوية الإماراتية وجواز السفر للمساهمين، وشهادة التسجيل الضريبي.",
         q3: "كم تستغرق عملية الموافقة على القرض؟",
-        a3: "تستغرق عمليتنا المبسطة عادة 3-5 أيام من تقديم المستندات الكاملة حتى الموافقة. قد تتم الموافقة على تسهيلات رأس المال العامل البسيطة خلال 48-72 ساعة، بينما قد تستغرق القروض المؤسسية الكبيرة 2-3 أسابيع.",
+        a3: "تستغرق عمليتنا المبسطة عادة 2-5 أيام من تقديم المستندات الكاملة حتى الموافقة. قد تتم الموافقة على تسهيلات رأس المال العامل البسيطة خلال 48-72 ساعة، بينما قد تستغرق القروض المؤسسية الكبيرة 2-3 أسابيع.",
         q4: "ما هي أسعار الفائدة المتوقعة؟",
         a4: "تعتمد أسعار الفائدة على عوامل متعددة بما في ذلك نوع القرض والمبلغ والمدة والضمانات والملف المالي لشركتك. تتراوح الأسعار عادة بين 7% و15% سنوياً."
       }
@@ -1305,10 +1328,10 @@ const translations = {
         bankSelectionDetails: ["مقارنة عروض البنوك المتعددة", "مطابقة الشروط لاحتياجاتك", "التفاوض على أفضل الأسعار", "تقديم أفضل الخيارات"],
         applicationSubmission: "تقديم الطلب",
         applicationSubmissionDesc: "نقدم طلبك مباشرة إلى البنك ونتابع نيابة عنك طوال العملية.",
-        applicationSubmissionDetails: ["تقديم الطلب الكامل", "تسليم المستندات", "التنسيق مع البنك", "تتبع التقدم"],
+        applicationSubmissionDetails: ["تقديم ملف الطلب المكتمل", "تسليم المستندات", "التنسيق مع البنك", "تتبع التقدم"],
         approval: "الموافقة",
         approvalDesc: "يراجع البنك طلبك ويوافق عليه. نساعد في الإعداد النهائي وأي خدمات إضافية تحتاجها.",
-        approvalDetails: ["مراجعة الائتمان البنكي", "إنهاء الشروط", "تأكيد الموافقة", "تفعيل الحساب/القرض"]
+        approvalDetails: ["مراجعة الملف الائتماني من البنك", "إنهاء الشروط", "تأكيد الموافقة", "تفعيل الحساب/القرض"]
       },
       whyChoose: "لماذا تختار عمليتنا؟",
       whyChooseDesc: "صممنا كل خطوة لتحقيق أقصى قدر من الكفاءة وتقليل جهدك",
@@ -1438,15 +1461,38 @@ const translations = {
       faqs: "الأسئلة الشائعة",
       blog: "المدونة",
       contactUs: "اتصل بنا",
-      address: "٣١٩ مبنى غرهود ستار، دبي، الإمارات",
-      phone: "+٩٧١ ٤ ٤٥٢ ١١١١",
+      address: "319 مبنى غرهود ستار، دبي، الإمارات",
+      phone: "+971 4 452 1111",
       subscribeNewsletter: "اشترك في النشرة الإخبارية",
       yourEmail: "بريدك الإلكتروني",
       subscribe: "اشترك",
-      copyright: "© 2025 شركة تعامل لخدمات مراجعة الائتمان ذ.م.م. جميع الحقوق محفوظة.",
+      copyright: "© 2026 شركة تعامل لخدمات مراجعة الائتمان ذ.م.م. جميع الحقوق محفوظة.",
       privacyPolicy: "سياسة الخصوصية",
       termsOfService: "شروط الخدمة",
       cookiePolicy: "سياسة ملفات تعريف الارتباط"
+    },
+    // Callback Modal
+    callback: {
+      title: "طلب معاودة الاتصال",
+      description: "اترك بياناتك وسيتواصل فريقنا معك خلال 24 ساعة.",
+      fullName: "الاسم الكامل",
+      namePlaceholder: "اسمك الكامل",
+      phoneNumber: "رقم الهاتف",
+      phonePlaceholder: "+971 50 123 4567",
+      preferredTime: "الوقت المفضل",
+      selectTime: "اختر وقتاً",
+      morning: "صباحاً (9 ص - 12 م)",
+      afternoon: "ظهراً (12 م - 5 م)",
+      evening: "مساءً (5 م - 8 م)",
+      submit: "طلب معاودة الاتصال",
+      whatsappMessage: "مرحباً، أرغب في معرفة المزيد عن حلول تمويل الأعمال من تعامل."
+    },
+    // Testimonials
+    testimonials: {
+      quote1: "ساعدتنا تعامل في الحصول على حل التمويل المناسب بسرعة وكفاءة. فهم فريقهم صناعتنا ووجدوا لنا الشريك المصرفي المثالي.",
+      quote2: "كشركة صغيرة ومتوسطة، واجهنا صعوبة في الحصول على تمويل مصرفي تقليدي. خبرة تعامل فتحت أبواباً لم نكن نعلم بوجودها. ننصح بها بشدة لأي صاحب عمل.",
+      quote3: "كانت الشفافية والاحترافية طوال العملية استثنائية. تفاوضوا على أسعار وفرت لنا مبالغ كبيرة في الفوائد على مدة القرض.",
+      quote4: "من الاستشارة الأولية إلى الموافقة النهائية، كان فريق تعامل داعماً بشكل لا يصدق. جعلوا عملية التمويل بأكملها سلسة وخالية من التوتر."
     },
     // About Page
     about: {
@@ -1585,11 +1631,11 @@ const translations = {
       businessLoansFeaturesTitle: "لماذا تختار قروض الأعمال لدينا؟",
       businessLoansFeaturesDesc: "مصممة للشركات الإماراتية التي تبحث عن حلول تمويل منظمة وطويلة الأجل.",
       flexibleAmounts: "مبالغ مرنة",
-      flexibleAmountsDesc: "قروض من 100,000 درهم إلى 50 مليون درهم بناءً على احتياجات عملك",
+      flexibleAmountsDesc: "قروض من 50,000 درهم إلى 50 مليون درهم بناءً على احتياجات عملك",
       competitiveRates: "أسعار تنافسية",
       competitiveRatesDesc: "أسعار فائدة تبدأ من 7% سنوياً مع هيكل رسوم شفاف",
       longTenure: "مدة طويلة",
-      longTenureDesc: "فترات سداد تصل إلى 48 شهراً كحد أقصى مع خيارات أقساط قابلة للتخصيص",
+      longTenureDesc: "فترات سداد تصل إلى 48 شهراً كحد أقصى مع خيارات أقساط شهرية قابلة للتخصيص",
       quickApproval: "موافقة سريعة",
       quickApprovalDesc: "عملية توثيق مبسطة مع أوقات استجابة أسرع",
       businessLoansCtaTitle: "هل أنت مستعد لتنمية عملك؟",
@@ -1928,7 +1974,7 @@ const translations = {
       },
       advantageTitle: "ميزة",
       advantageHighlight: "تعامل",
-      advantageWord: "",
+      advantageWord: "الميزة",
       advantageDesc: "خدمات استشارية متخصصة في الديون مدعومة بخبرة سوقية عميقة وعلاقات قوية مع المقرضين.",
       whyChoose: {
         strategicExpertise: "الخبرة الاستراتيجية",
@@ -1983,7 +2029,7 @@ const translations = {
       },
       advantageTitle: "ميزة",
       advantageHighlight: "تعامل",
-      advantageWord: "",
+      advantageWord: "الميزة",
       advantageDesc: "حلول تمويل مختلطة مرنة مصممة للشركات التي تركز على النمو.",
       whyChoose: {
         tailoredStructures: "هياكل مخصصة",

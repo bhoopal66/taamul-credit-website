@@ -145,13 +145,13 @@ const Footer = () => {
             {/* Newsletter */}
             <div className="mt-8">
               <h5 className="font-medium mb-3">{t('footer.subscribeNewsletter')}</h5>
-              <div className={`flex gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <div className={`flex flex-col sm:flex-row gap-3 sm:gap-2 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
                 <Input
                   type="email"
                   placeholder={t('footer.yourEmail')}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                  className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50"
                 />
-                <Button variant="hero" size="default">
+                <Button variant="hero" size="default" className="w-full sm:w-auto">
                   {t('footer.subscribe')}
                 </Button>
               </div>
@@ -168,8 +168,8 @@ const Footer = () => {
               {t('footer.copyright')}
             </p>
             <div className={`flex gap-6 text-sm text-white/50 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <span>{t('footer.privacyPolicy')}</span>
-              <span>{t('footer.termsOfService')}</span>
+              <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.privacyPolicy')}</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">{t('footer.termsOfService')}</Link>
             </div>
           </div>
         </div>

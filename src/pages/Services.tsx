@@ -167,7 +167,7 @@ const Services = () => {
                 <div className="text-sm text-white">{t('services.partnerBanks')}</div>
               </div>
               <div className={`text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 ${isRTL ? 'text-right' : ''}`}>
-                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">AED 500M+</div>
+                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">AED 800M+</div>
                 <div className="text-sm text-white">{t('hero.loansFacilitated')}</div>
               </div>
               <div className={`text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 ${isRTL ? 'text-right' : ''}`}>
@@ -208,8 +208,8 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <div className="h-1 w-12 bg-primary rounded-full"></div>
-              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
+              <div className="h-1 w-12 bg-accent rounded-full"></div>
+              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
                 {t('services.loanServices')}
               </p>
             </div>
@@ -258,7 +258,7 @@ const Services = () => {
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="h-1 w-12 bg-accent rounded-full"></div>
-              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
+              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
                 {t('services.advisoryServices')}
               </p>
             </div>
@@ -306,8 +306,8 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <div className="h-1 w-12 bg-primary rounded-full"></div>
-              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
+              <div className="h-1 w-12 bg-accent rounded-full"></div>
+              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
                 {t('services.faqTitle')}
               </p>
             </div>

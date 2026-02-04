@@ -150,7 +150,7 @@ const Contact = () => {
       <main id="main-content">
 
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-20 md:pb-28 gradient-hero relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 opacity-10">
           <motion.div 
@@ -228,13 +228,11 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Bottom Wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path
-              d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-              fill="hsl(var(--muted))"
-            />
+        {/* Bottom Divider */}
+        <div className="absolute -bottom-px left-0 right-0">
+          <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
+            <path d="M0 48V20C240 4 480 0 720 0C960 0 1200 4 1440 20V48H0Z" fill="hsl(var(--muted))" />
+            <path d="M0 20C240 4 480 0 720 0C960 0 1200 4 1440 20" stroke="hsl(var(--accent))" strokeWidth="2" opacity="0.35" />
           </svg>
         </div>
       </section>
@@ -242,7 +240,7 @@ const Contact = () => {
       {/* Contact Content */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             {/* Contact Form */}
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'lg:col-start-2' : ''}`}>
               <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
@@ -261,7 +259,7 @@ const Contact = () => {
 
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <FormField
                       control={form.control}
                       name="name"
@@ -295,7 +293,7 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <FormField
                       control={form.control}
                       name="phone"
