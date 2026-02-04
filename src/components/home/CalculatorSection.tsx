@@ -21,7 +21,7 @@ const CalculatorSection = () => {
   const [turnover, setTurnover] = useState(5000000);
 
   const eligibleAmount = useMemo(() => {
-    let amount = turnover / 8;
+    const amount = turnover / 8;
     return Math.min(amount, 3000000);
   }, [turnover]);
 

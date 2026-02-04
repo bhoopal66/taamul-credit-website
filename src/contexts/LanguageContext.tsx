@@ -43,17 +43,17 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let value: any = translations[language];
-    
+    let value: Record<string, unknown> | string = translations[language] as Record<string, unknown>;
+
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+        value = (value as Record<string, unknown>)[k] as Record<string, unknown> | string;
       } else {
         // Fallback to English if key not found
-        value = translations.en;
+        value = translations.en as unknown as Record<string, unknown>;
         for (const k of keys) {
           if (value && typeof value === 'object' && k in value) {
-            value = value[k];
+            value = (value as Record<string, unknown>)[k] as Record<string, unknown> | string;
           } else {
             return key; // Return key if not found in any language
           }
