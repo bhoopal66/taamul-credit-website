@@ -185,8 +185,9 @@ const BusinessAccounts = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Business Account Opening | Taamul Credit Review Services"
-        description="Open a business bank account in the UAE with expert guidance from Taamul. We simplify the process for startups, SMEs, and corporate entities."
+        title="Business Bank Account Opening in UAE | Taamul Credit"
+        description="Open a business bank account in the UAE with expert guidance from Taamul. We simplify the process for startups, SMEs, and corporate entities across all emirates."
+        keywords="business bank account UAE, corporate account opening, SME bank account Dubai"
       />
       <Header />
       <main id="main-content">

@@ -108,8 +108,9 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="About Us | Taamul Credit Review Services"
-        description="Learn about Taamul Credit Review Services, our mission, and the experienced team behind over 15 years of business financing expertise in the UAE."
+        title="About Taamul Credit Review Services | UAE Financing"
+        description="Learn about Taamul Credit Review Services and our 15+ years of expertise helping UAE businesses access the right financing from top banks and financial institutions."
+        keywords="about Taamul, business financing experts, UAE financial advisory, credit review services"
       />
       <Header />
       <main id="main-content">
@@ -304,6 +305,7 @@ const About = () => {
                       <img
                         src={member.image}
                         alt={t(member.nameKey)}
+                        loading="lazy"
                         className="w-48 h-48 rounded-full object-cover object-top ring-4 ring-white/20 shadow-2xl group-hover:scale-110 transition-transform duration-500"
                       />
                     ) : (

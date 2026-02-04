@@ -13,10 +13,10 @@ import Autoplay from "embla-carousel-autoplay";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Import background images
-import heroSlide1 from "@/assets/hero-slide-1.png";
-import heroSlide2 from "@/assets/hero-slide-2.png";
-import heroSlide3 from "@/assets/hero-slide-3.png";
-import heroSlide4 from "@/assets/hero-slide-4.png";
+import heroSlide1 from "@/assets/hero-slide-1.webp";
+import heroSlide2 from "@/assets/hero-slide-2.webp";
+import heroSlide3 from "@/assets/hero-slide-3.webp";
+import heroSlide4 from "@/assets/hero-slide-4.webp";
 
 const HeroSection = () => {
   const { t, isRTL } = useLanguage();
@@ -96,7 +96,7 @@ const HeroSection = () => {
   }, [api]);
 
   return (
-    <section className="relative h-[calc(100vh-2rem)] lg:h-[calc(100vh-2rem)] overflow-hidden">
+    <section className="relative h-[calc(100vh-2rem)] overflow-hidden">
       {/* Background Images with Crossfade */}
       <AnimatePresence>
         <motion.div

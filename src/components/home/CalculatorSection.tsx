@@ -114,7 +114,7 @@ const CalculatorSection = () => {
                 <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
                   {t('calculator.whyChoose')}
                 </p>
-                <h2 className="text-display-sm text-foreground mb-4">
+                <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
                   {t('calculator.fastTitle')}
                 </h2>
                 <p className="text-lg text-muted-foreground">
@@ -133,7 +133,7 @@ const CalculatorSection = () => {
                 ))}
               </div>
 
-              <div className={`flex gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
                 <Button asChild variant="default" size="lg">
                   <Link to="/how-it-works">{t('common.howItWorks')}</Link>
                 </Button>

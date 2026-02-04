@@ -82,9 +82,9 @@ const Header = () => {
                 <Phone className="h-3.5 w-3.5" />
                 +971 4 452 1111
               </a>
-              <a href="mailto:info@taamul.ae" className={cn("flex items-center gap-2 hover:text-white/80 transition-colors", isRTL && "flex-row-reverse")}>
+              <a href="mailto:info@taamulcredit.com" className={cn("flex items-center gap-2 hover:text-white/80 transition-colors", isRTL && "flex-row-reverse")}>
                 <Mail className="h-3.5 w-3.5" />
-                info@taamul.ae
+                info@taamulcredit.com
               </a>
             </div>
             <div className={cn("flex items-center gap-4", isRTL && "flex-row-reverse")}>

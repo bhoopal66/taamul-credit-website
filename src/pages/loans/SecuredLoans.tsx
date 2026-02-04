@@ -65,8 +65,9 @@ const SecuredLoans = () => {
     <div className="min-h-screen">
       <Header />
       <SEO
-        title="Secured Loans in UAE | Taamul Credit Review Services"
-        description="Get competitive secured loan rates in the UAE by leveraging your assets. Expert guidance from Taamul on collateral-backed financing options."
+        title="Secured Business Loans in UAE | Taamul Credit"
+        description="Get competitive secured loan rates in the UAE by leveraging your assets. Expert guidance from Taamul on collateral-backed financing from top banking partners."
+        keywords="secured loans UAE, collateral loans Dubai, asset-backed financing, property-backed loans"
       />
 
       <main id="main-content">
@@ -112,10 +113,10 @@ const SecuredLoans = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-display-sm text-foreground mb-4">
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+            <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
               {t('loanPages.securedLoansFeaturesTitle')}
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -144,7 +145,7 @@ const SecuredLoans = () => {
       <TaamulAdvantageSection />
 
       {/* Eligibility & Documents */}
-      <section className="py-24 bg-muted">
+      <section className="py-12 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className={`grid lg:grid-cols-2 gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'text-right lg:col-start-2' : ''}`}>
@@ -188,14 +189,14 @@ const SecuredLoans = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 gradient-hero relative overflow-hidden">
+      <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
+            <h2 className="text-2xl md:text-display-sm text-[hsl(var(--background))] mb-6">
               {t('loanPages.securedLoansCtaTitle')}
             </h2>
             <p className="text-xl text-[hsl(var(--background))] mb-10">

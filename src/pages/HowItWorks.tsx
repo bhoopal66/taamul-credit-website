@@ -90,8 +90,9 @@ const HowItWorks = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="How It Works | Taamul Credit Review Services"
-        description="Learn how Taamul helps UAE businesses secure financing in five simple steps, from initial consultation to fund disbursement."
+        title="How Business Financing Works | Taamul Credit UAE"
+        description="Learn how Taamul helps UAE businesses secure financing in five simple steps: consultation, document collection, lender matching, application, and disbursement."
+        keywords="how business financing works, loan application process, UAE business loans steps"
       />
       <Header />
       <main id="main-content">

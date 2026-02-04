@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <img src={taamulLogo} alt="Taamul Credit Review Services" className="h-[2.85rem] w-auto brightness-0 invert" />
+              <img src={taamulLogo} alt="Taamul Credit Review Services" loading="lazy" className="h-[2.85rem] w-auto brightness-0 invert" />
             </div>
             <p className="text-white/70 leading-relaxed">
               {t('footer.companyDesc')}
@@ -136,8 +136,8 @@ const Footer = () => {
               </li>
               <li className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Mail className="h-5 w-5 text-accent" />
-                <a href="mailto:info@taamul.ae" className="text-white/70 hover:text-white transition-colors">
-                  info@taamul.ae
+                <a href="mailto:info@taamulcredit.com" className="text-white/70 hover:text-white transition-colors">
+                  info@taamulcredit.com
                 </a>
               </li>
             </ul>

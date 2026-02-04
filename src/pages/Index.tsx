@@ -14,8 +14,9 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Taamul Credit Review Services | Business Financing Solutions in UAE"
-        description="Taamul Credit Review Services connects UAE businesses with the right financing solutions, including business loans, working capital, trade finance, and expert credit advisory."
+        title="Business Financing Solutions in UAE | Taamul Credit"
+        description="Taamul Credit Review Services connects UAE businesses with financing solutions including business loans, working capital, trade finance, and expert advisory."
+        keywords="business financing UAE, business loans Dubai, working capital, trade finance, SME loans, corporate financing"
       />
       <Header />
       <main id="main-content">

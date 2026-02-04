@@ -65,8 +65,9 @@ const Syndicated = () => {
     <div className="min-h-screen">
       <Header />
       <SEO
-        title="Syndicated Loans in UAE | Taamul Credit Review Services"
-        description="Access large-scale syndicated loan facilities for major projects in the UAE. Taamul coordinates with multiple lenders on your behalf."
+        title="Syndicated Loans in UAE | Multi-Lender Finance | Taamul"
+        description="Access large-scale syndicated loan facilities for major projects in the UAE. Taamul coordinates with multiple lenders to structure optimal financing packages."
+        keywords="syndicated loans UAE, multi-lender financing, project finance, consortium lending"
       />
 
       <main id="main-content">
@@ -112,10 +113,10 @@ const Syndicated = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-display-sm text-foreground mb-4">
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+            <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
               {t('loanPages.syndicatedFeaturesTitle')}
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -141,7 +142,7 @@ const Syndicated = () => {
       <TaamulAdvantageSection />
 
       {/* Eligibility & Documents */}
-      <section className="py-24 bg-muted">
+      <section className="py-12 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className={`grid lg:grid-cols-2 gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'text-right lg:col-start-2' : ''}`}>
@@ -185,14 +186,14 @@ const Syndicated = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 gradient-hero relative overflow-hidden">
+      <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
+            <h2 className="text-2xl md:text-display-sm text-[hsl(var(--background))] mb-6">
               {t('loanPages.syndicatedCtaTitle')}
             </h2>
             <p className="text-xl text-[hsl(var(--background))] mb-10">

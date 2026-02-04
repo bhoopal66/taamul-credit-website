@@ -48,7 +48,7 @@ const PartnersSection = () => {
           <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
             {t('partnersSection.title')}
           </p>
-          <h2 className="text-display-sm text-white">
+          <h2 className="text-2xl md:text-display-sm text-white">
             {t('partnersSection.heading')}
           </h2>
         </AnimatedSection>
@@ -73,6 +73,7 @@ const PartnersSection = () => {
                   <img
                     src={bank.logo}
                     alt={bank.name}
+                    loading="lazy"
                     className="max-h-10 sm:max-h-12 max-w-[90%] object-contain"
                   />
                 </div>
@@ -101,6 +102,7 @@ const PartnersSection = () => {
                   <img
                     src={partner.logo}
                     alt={partner.name}
+                    loading="lazy"
                     className="max-h-10 sm:max-h-12 max-w-[90%] object-contain"
                   />
                 </div>

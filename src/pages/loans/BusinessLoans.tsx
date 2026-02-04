@@ -101,8 +101,9 @@ const BusinessLoans = () => {
     <div className="min-h-screen">
       <Header />
       <SEO
-        title="Business Loans in UAE | Taamul Credit Review Services"
-        description="Secure business loans in the UAE with competitive rates and flexible terms. Taamul connects you with top banks and financial institutions."
+        title="Business Loans in UAE | Competitive Rates | Taamul"
+        description="Secure business loans in the UAE with competitive rates and flexible terms. Taamul connects you with top banks and financial institutions for optimal financing."
+        keywords="business loans UAE, commercial loans Dubai, business financing, bank loans UAE"
       />
 
       <main id="main-content">
@@ -154,10 +155,10 @@ const BusinessLoans = () => {
       </section>
 
       {/* Features Section with Calculator */}
-      <section id="calculator" className="py-24 bg-background">
+      <section id="calculator" className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-display-sm text-foreground mb-4">
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+            <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
               {t('loanPages.businessLoansFeaturesTitle')}
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -262,14 +263,14 @@ const BusinessLoans = () => {
       </section>
 
       {/* Taamul Advantage Section */}
-      <section className="py-24 gradient-hero relative overflow-hidden">
+      <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-display-sm text-white mb-4">
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+            <h2 className="text-2xl md:text-display-sm text-white mb-4">
               {isRTL ? (
                 <><span className="text-accent">{t('loanPages.taamul')}</span> {t('loanPages.advantage')}</>
               ) : (
@@ -329,19 +330,19 @@ const BusinessLoans = () => {
       </section>
 
       {/* POS Machine Loan Section */}
-      <section className="py-24 gradient-hero relative overflow-hidden">
+      <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           {/* Header */}
-          <div className={`text-center max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
             <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white text-sm font-medium backdrop-blur-sm mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <CreditCard className="h-4 w-4" />
               {t('businessLoansPage.posFinancing')}
             </div>
-            <h2 className="text-display-sm text-white mb-4">
+            <h2 className="text-2xl md:text-display-sm text-white mb-4">
               {isRTL ? (
                 <>{t('businessLoansPage.howThe')} <span className="text-accent">{t('businessLoansPage.posLoan')}</span> {t('businessLoansPage.works')}</>
               ) : (
@@ -354,7 +355,7 @@ const BusinessLoans = () => {
           </div>
 
           {/* How It Works Steps */}
-          <div className={`grid md:grid-cols-4 gap-6 mb-16 ${isRTL ? 'md:grid-flow-dense' : ''}`}>
+          <div className={`grid md:grid-cols-4 gap-6 mb-8 md:mb-16 ${isRTL ? 'md:grid-flow-dense' : ''}`}>
             {[
               {
                 step: "01",
@@ -412,7 +413,7 @@ const BusinessLoans = () => {
           </div>
 
           {/* Interactive POS Calculator */}
-          <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto mb-16 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
                 <Calculator className="h-6 w-6 text-accent" />
@@ -467,7 +468,7 @@ const BusinessLoans = () => {
 
               {/* Calculation Display */}
               <div className="bg-white/10 rounded-xl p-6">
-                <div className="grid grid-cols-3 gap-4 text-center mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center mb-4">
                   <div>
                     <p className="text-xs text-white/60 mb-1">{t('businessLoansPage.annualTurnover')}</p>
                     <p className="text-lg font-bold text-white">{formatCurrency(posTurnover)}</p>
@@ -559,7 +560,7 @@ const BusinessLoans = () => {
       </section>
 
       {/* Eligibility & Documents */}
-      <section className="py-24 bg-muted">
+      <section className="py-12 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className={`grid lg:grid-cols-2 gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             {/* Eligibility */}
@@ -606,14 +607,14 @@ const BusinessLoans = () => {
 
 
       {/* CTA Section */}
-      <section className="py-24 gradient-hero relative overflow-hidden">
+      <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[hsl(var(--background))] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-display-sm text-[hsl(var(--background))] mb-6">
+            <h2 className="text-2xl md:text-display-sm text-[hsl(var(--background))] mb-6">
               {t('loanPages.businessLoansCtaTitle')}
             </h2>
             <p className="text-xl text-[hsl(var(--background))]/80 mb-10">

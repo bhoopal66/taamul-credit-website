@@ -119,8 +119,9 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Our Services | Taamul Credit Review Services"
-        description="Explore Taamul's full range of business financing services in the UAE, from business loans and working capital to trade finance and debt advisory."
+        title="Business Financing Services in UAE | Taamul Credit"
+        description="Explore Taamul's business financing services: business loans, working capital, trade finance, equipment financing, debt advisory, and corporate lending in the UAE."
+        keywords="business financing services, UAE loans, trade finance, equipment financing, debt advisory"
       />
       <Header />
       <main id="main-content">
@@ -147,7 +148,7 @@ const Services = () => {
               </p>
               
               {/* CTA Buttons */}
-              <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
+              <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-8 md:mb-16 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
                 <Button size="xl" variant="hero" asChild>
                   <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     {t('services.getStarted')}
@@ -213,7 +214,7 @@ const Services = () => {
                 {t('services.loanServices')}
               </p>
             </div>
-            <h2 className="text-display-sm text-foreground mb-4">
+            <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
               {t('services.businessFinancingProducts')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl">
@@ -262,7 +263,7 @@ const Services = () => {
                 {t('services.advisoryServices')}
               </p>
             </div>
-            <h2 className="text-display-sm text-foreground mb-4">
+            <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
               {t('services.strategicFinancial')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl">
@@ -313,7 +314,7 @@ const Services = () => {
             </div>
             <div className={`flex flex-col md:flex-row md:items-end md:justify-between gap-4 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
               <div>
-                <h2 className="text-display-sm text-foreground mb-4">
+                <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
                   {t('services.faqHeading')}
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl">
@@ -356,7 +357,7 @@ const Services = () => {
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-display-sm text-primary-foreground mb-6">
+            <h2 className="text-2xl md:text-display-sm text-primary-foreground mb-6">
               {t('ctaSection.heading')}
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8">

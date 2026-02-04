@@ -61,7 +61,7 @@ const FloatingButtons = () => {
       {showBackToTop && (
         <button
           onClick={handleBackToTop}
-          className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-40 w-11 h-11 sm:w-12 sm:h-12 bg-primary rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-all duration-200 animate-fade-in"
+          className="fixed bottom-24 right-4 sm:bottom-28 sm:right-6 z-40 w-11 h-11 sm:w-12 sm:h-12 bg-primary rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-all duration-200 animate-fade-in"
           aria-label={isRTL ? "العودة للأعلى" : "Back to top"}
         >
           <ArrowUp className="h-5 w-5 text-primary-foreground" />

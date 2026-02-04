@@ -94,7 +94,7 @@ const Contact = () => {
     {
       icon: Mail,
       titleKey: "contact.email",
-      details: ["info@taamul.ae", "support@taamul.ae"],
+      details: ["info@taamulcredit.com", "support@taamulcredit.com"],
     },
     {
       icon: Clock,
@@ -143,8 +143,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Contact Us | Taamul Credit Review Services"
-        description="Get in touch with Taamul Credit Review Services in Dubai. Visit our office, call us, or submit an inquiry online for business financing support."
+        title="Contact Taamul Credit Review Services | Dubai, UAE"
+        description="Get in touch with Taamul Credit Review Services in Dubai. Call +971 4 452 1111, visit our TECOM office, or submit an inquiry for business financing support."
+        keywords="contact Taamul, business financing Dubai, TECOM office, financing inquiry"
       />
       <Header />
       <main id="main-content">

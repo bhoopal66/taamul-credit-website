@@ -11,12 +11,12 @@ const NotFound = () => {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Page Not Found | Taamul Credit Review Services"
-        description="The page you are looking for could not be found. Return to the Taamul Credit Review Services homepage or contact us for assistance."
+        description="The page you are looking for could not be found. Return to the Taamul Credit Review Services homepage or contact us for assistance with business financing."
       />
       <Header />
       <main id="main-content" className="flex-1 flex items-center justify-center bg-muted">
         <div className="text-center px-4 py-20">
-          <h1 className="text-7xl font-bold text-primary mb-4">404</h1>
+          <h1 className="text-5xl md:text-7xl font-bold text-primary mb-4">404</h1>
           <p className="text-xl text-muted-foreground mb-8">
             {t('notFound.description')}
           </p>
