@@ -217,6 +217,18 @@ const translations = {
       ctaHeading: "Need Expert Financing Guidance?",
       ctaDesc: "Our team helps UAE businesses secure the right financing solutions. Get in touch for personalized advice."
     },
+    // Blog Post
+    blogPost: {
+      notFound: "Article Not Found",
+      notFoundDesc: "The article you're looking for doesn't exist.",
+      inThisArticle: "In This Article",
+      contentUpdating: "Article content is being updated.",
+    },
+    // Accessibility
+    accessibility: {
+      previousSlide: "Previous slide",
+      nextSlide: "Next slide",
+    },
     // Calculator Section
     calculatorSection: {
       title: "Loan Calculator",
@@ -1263,6 +1275,18 @@ const translations = {
       relatedArticles: "مقالات ذات صلة",
       ctaHeading: "هل تحتاج إلى إرشاد تمويلي متخصص؟",
       ctaDesc: "فريقنا يساعد الشركات في الإمارات على تأمين الحلول التمويلية المناسبة. تواصل معنا للحصول على استشارة شخصية."
+    },
+    // Blog Post
+    blogPost: {
+      notFound: "المقال غير موجود",
+      notFoundDesc: "المقال الذي تبحث عنه غير موجود.",
+      inThisArticle: "محتويات المقال",
+      contentUpdating: "محتوى المقال قيد التحديث.",
+    },
+    // Accessibility
+    accessibility: {
+      previousSlide: "الشريحة السابقة",
+      nextSlide: "الشريحة التالية",
     },
     // Calculator Section
     calculatorSection: {

@@ -136,7 +136,7 @@ const About = () => {
       {/* Stats Bar */}
       <section className="py-8 bg-card border-b border-border">
         <div className="container mx-auto px-4">
-          <div className={cn("grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8", isRTL && "direction-rtl")}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
@@ -152,7 +152,7 @@ const About = () => {
       {/* Mission & Vision */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className={cn("grid md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto", isRTL && "direction-rtl")}>
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto">
             {/* Mission */}
             <div className={cn("bg-card rounded-2xl p-8 shadow-lg border border-border", isRTL && "text-right")}>
               <div className={cn("w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6", isRTL && "mr-0 ml-auto")}>
@@ -198,13 +198,15 @@ const About = () => {
                 isRTL ? "right-4 md:right-1/2 md:translate-x-1/2" : "left-4 md:left-1/2 md:-translate-x-1/2"
               )} />
 
-              {milestones.map((milestone, index) => (
-                <div 
+              {milestones.map((milestone, index) => {
+                // In LTR: even=left, odd=right. In RTL: mirror it.
+                const contentOnLeft = isRTL ? (index % 2 !== 0) : (index % 2 === 0);
+                return (
+                <div
                   key={index}
                   className={cn(
                     "relative flex items-start gap-8 mb-12 last:mb-0",
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
-                    isRTL && "flex-row-reverse"
+                    contentOnLeft ? 'md:flex-row' : 'md:flex-row-reverse'
                   )}
                 >
                   {/* Timeline Dot */}
@@ -217,9 +219,8 @@ const About = () => {
                   <div className={cn(
                     "md:w-1/2",
                     isRTL ? "mr-12 md:mr-0" : "ml-12 md:ml-0",
-                    index % 2 === 0 
-                      ? (isRTL ? 'md:pl-12 md:text-left' : 'md:pr-12 md:text-right')
-                      : (isRTL ? 'md:pr-12 md:text-right' : 'md:pl-12')
+                    contentOnLeft ? 'md:pr-12' : 'md:pl-12',
+                    isRTL ? 'md:text-right' : (contentOnLeft ? 'md:text-right' : '')
                   )}>
                     <div className={cn("bg-card rounded-xl p-6 shadow-md border border-border", isRTL && "text-right")}>
                       <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full mb-3">
@@ -234,7 +235,8 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -252,7 +254,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className={cn("grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto", isRTL && "direction-rtl")}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {values.map((value, index) => (
               <div 
                 key={index}
@@ -347,8 +349,8 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className={cn("grid md:grid-cols-2 gap-12 items-center", isRTL && "direction-rtl")}>
-              <div className={isRTL ? "text-right" : ""}>
+            <div className={cn("grid md:grid-cols-2 gap-12 items-center", isRTL && "md:grid-flow-dense")}>
+              <div className={isRTL ? "text-right md:col-start-2" : ""}>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   {t('about.whyPartner.title')}
                 </h2>

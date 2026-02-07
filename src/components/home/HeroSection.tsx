@@ -135,7 +135,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 pt-10 pb-12 md:pt-14 md:pb-16 relative z-10 h-full">
         <div className={`grid lg:grid-cols-2 gap-4 lg:gap-8 items-center h-full ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
           {/* Left Content */}
-          <div className={`flex flex-col justify-center ${isRTL ? 'text-right' : ''}`}>
+          <div className={`flex flex-col justify-center ${isRTL ? 'text-right lg:col-start-2' : ''}`}>
             {/* Grid-stacked slides — tallest slide sets the height, no layout shift */}
             <div
               className="grid"
@@ -204,7 +204,7 @@ const HeroSection = () => {
                   <p className="text-xs text-primary/70">{t('hero.needBusinessAccount')}</p>
                   <p className="text-sm font-bold text-primary uppercase tracking-wide group-hover:underline">{t('hero.businessBankAccount')}</p>
                 </div>
-                <ArrowRight className={`h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 ${isRTL ? 'rotate-180 translate-x-2 group-hover:translate-x-0' : '-translate-x-2 group-hover:translate-x-0'}`} />
+                <ArrowRight className={`h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 ${isRTL ? 'rotate-180 -translate-x-2 group-hover:translate-x-0' : 'translate-x-2 group-hover:translate-x-0'}`} />
               </Link>
             </div>
 
@@ -269,14 +269,14 @@ const HeroSection = () => {
                 <button
                   onClick={() => isRTL ? goNext() : goPrev()}
                   className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all backdrop-blur-sm"
-                  aria-label="Previous slide"
+                  aria-label={t('accessibility.previousSlide')}
                 >
                   <ChevronLeft className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
                 </button>
                 <button
                   onClick={() => isRTL ? goPrev() : goNext()}
                   className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all backdrop-blur-sm"
-                  aria-label="Next slide"
+                  aria-label={t('accessibility.nextSlide')}
                 >
                   <ChevronRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
                 </button>

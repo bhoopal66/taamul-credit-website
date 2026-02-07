@@ -48,10 +48,10 @@ const FloatingButtons = () => {
 
   return (
     <>
-      {/* WhatsApp Button - Bottom Left */}
+      {/* WhatsApp Button - Bottom Left (LTR) / Bottom Right (RTL) */}
       <button
         onClick={handleWhatsApp}
-        className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 w-14 h-14 sm:w-14 sm:h-14 bg-success rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-transform duration-200"
+        className={`fixed bottom-4 sm:bottom-6 z-40 w-14 h-14 sm:w-14 sm:h-14 bg-success rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-transform duration-200 ${isRTL ? 'right-4 sm:right-6' : 'left-4 sm:left-6'}`}
         aria-label={isRTL ? "تواصل عبر واتساب" : "Contact on WhatsApp"}
       >
         <MessageCircle className="h-7 w-7 text-success-foreground" />
@@ -61,7 +61,7 @@ const FloatingButtons = () => {
       {showBackToTop && (
         <button
           onClick={handleBackToTop}
-          className="fixed bottom-24 right-4 sm:bottom-28 sm:right-6 z-40 w-11 h-11 sm:w-12 sm:h-12 bg-primary rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-all duration-200 animate-fade-in"
+          className={`fixed bottom-24 sm:bottom-28 z-40 w-11 h-11 sm:w-12 sm:h-12 bg-primary rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-all duration-200 animate-fade-in ${isRTL ? 'left-4 sm:left-6' : 'right-4 sm:right-6'}`}
           aria-label={isRTL ? "العودة للأعلى" : "Back to top"}
         >
           <ArrowUp className="h-5 w-5 text-primary-foreground" />
@@ -71,7 +71,7 @@ const FloatingButtons = () => {
       {/* Callback Button - Bottom Right */}
       <button
         onClick={() => setIsCallbackOpen(true)}
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-14 h-14 sm:w-14 sm:h-14 bg-accent rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-transform duration-200 animate-pulse-slow"
+        className={`fixed bottom-4 sm:bottom-6 z-40 w-14 h-14 sm:w-14 sm:h-14 bg-accent rounded-full shadow-elevated flex items-center justify-center hover:scale-110 transition-transform duration-200 animate-pulse-slow ${isRTL ? 'left-4 sm:left-6' : 'right-4 sm:right-6'}`}
         aria-label={t('callback.title')}
       >
         <Phone className="h-6 w-6 text-accent-foreground" />

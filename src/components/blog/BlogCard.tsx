@@ -67,7 +67,7 @@ const BlogCard = ({ slug, title, description, category, date, readTime, heroImag
           </div>
           <span className={`flex items-center gap-1 text-sm font-medium text-primary ${isRTL ? "flex-row-reverse" : ""}`}>
             {t("knowledgeCenter.readMore")}
-            <ArrowRight className={`h-4 w-4 group-hover:translate-x-1 transition-transform ${isRTL ? "rotate-180 group-hover:-translate-x-1" : ""}`} />
+            <ArrowRight className={`h-4 w-4 transition-transform ${isRTL ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`} />
           </span>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/layout/FloatingButtons";
@@ -57,9 +58,9 @@ const BlogPost = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-2xl font-semibold mb-4">Article Not Found</h1>
+          <h1 className="text-2xl font-semibold mb-4">{t("blogPost.notFound")}</h1>
           <p className="text-muted-foreground mb-8">
-            The article you're looking for doesn't exist.
+            {t("blogPost.notFoundDesc")}
           </p>
           <Button asChild>
             <Link to="/knowledge-center">{t("knowledgeCenter.backToKnowledge")}</Link>
@@ -95,6 +96,27 @@ const BlogPost = () => {
         description={post.description}
         keywords={post.keywords}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "description": post.description,
+          "image": post.heroImage,
+          "datePublished": post.date,
+          "author": { "@type": "Organization", "name": "Taamul Credit Review Services" },
+          "publisher": { "@type": "Organization", "name": "Taamul Credit Review Services" }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taamulcredit.com" },
+            { "@type": "ListItem", "position": 2, "name": "Knowledge Center", "item": "https://taamulcredit.com/knowledge-center" },
+            { "@type": "ListItem", "position": 3, "name": post.title }
+          ]
+        })}</script>
+      </Helmet>
       <Header />
       <main id="main-content">
         {/* Hero */}
@@ -194,7 +216,7 @@ const BlogPost = () => {
                         isRTL && "text-right"
                       )}
                     >
-                      {language === "ar" ? "محتويات المقال" : "In This Article"}
+                      {t("blogPost.inThisArticle")}
                     </h4>
                     <nav className="space-y-1">
                       {h2Sections.map((section, i) => {
@@ -235,9 +257,7 @@ const BlogPost = () => {
                 {post.sections.length === 0 ? (
                   <div className="py-12 text-center">
                     <p className="text-muted-foreground">
-                      {language === "ar"
-                        ? "محتوى المقال قيد التحديث."
-                        : "Article content is being updated."}
+                      {t("blogPost.contentUpdating")}
                     </p>
                   </div>
                 ) : (

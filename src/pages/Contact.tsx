@@ -284,8 +284,9 @@ const Contact = () => {
                             <Input
                               type="email"
                               placeholder="john@company.com"
+                              dir="ltr"
                               {...field}
-                              className={isRTL ? 'text-right' : ''}
+                              className={isRTL ? 'text-left' : ''}
                             />
                           </FormControl>
                           <FormMessage />
@@ -302,7 +303,7 @@ const Contact = () => {
                         <FormItem className={isRTL ? 'text-right' : ''}>
                           <FormLabel>{t('contact.phoneNumber')} *</FormLabel>
                           <FormControl>
-                            <Input placeholder="+971 50 123 4567" {...field} className={isRTL ? 'text-right' : ''} />
+                            <Input placeholder="+971 50 123 4567" dir="ltr" {...field} className={isRTL ? 'text-left' : ''} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>

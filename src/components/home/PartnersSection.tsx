@@ -63,7 +63,7 @@ const PartnersSection = () => {
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-secondary to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-secondary to-transparent z-10" />
 
-          <div className="flex animate-marquee">
+          <div className={`flex ${isRTL ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
             {[...partnerBanks, ...partnerBanks].map((bank, index) => (
               <div
                 key={index}
@@ -92,7 +92,7 @@ const PartnersSection = () => {
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-secondary to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-secondary to-transparent z-10" />
 
-          <div className="flex animate-marquee-reverse">
+          <div className={`flex ${isRTL ? 'animate-marquee' : 'animate-marquee-reverse'}`}>
             {[...fintechPartners, ...fintechPartners].map((partner, index) => (
               <div
                 key={index}
