@@ -225,7 +225,7 @@ const Services = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {loanServices.map((service, index) => (
               <AnimatedItem key={service.titleKey} index={index} baseDelay={0.05}>
-                <div className={`group bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-transparent hover:border-accent/20 h-full ${isRTL ? 'text-right' : ''}`}>
+                <div className={`group bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-border hover:border-accent/20 h-full ${isRTL ? 'text-right' : ''}`}>
                   <div className={`flex items-start gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
                       <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
@@ -274,7 +274,7 @@ const Services = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {advisoryServices.map((service, index) => (
               <AnimatedItem key={service.titleKey} index={index} baseDelay={0.05}>
-                <div className={`group bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-transparent hover:border-accent/20 h-full ${isRTL ? 'text-right' : ''}`}>
+                <div className={`group bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-border hover:border-accent/20 h-full ${isRTL ? 'text-right' : ''}`}>
                   <div className={`flex items-start gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                       <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />

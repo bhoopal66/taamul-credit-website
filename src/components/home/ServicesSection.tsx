@@ -108,7 +108,7 @@ const ServicesSection = () => {
             <AnimatedItem key={service.titleKey} index={index} baseDelay={0.05}>
               <Link
                 to={service.href}
-                className={`group bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-accent/20 block h-full ${isRTL ? 'text-right' : ''}`}
+                className={`group bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 border border-border hover:border-accent/20 block h-full ${isRTL ? 'text-right' : ''}`}
               >
                 <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 transition-all duration-300 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
                   <service.icon className="h-7 w-7 text-primary group-hover:text-accent-foreground transition-colors" />

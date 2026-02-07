@@ -7,10 +7,10 @@
 @layer base {
   :root {
     /* TAAMUL Corporate Color Palette */
-    --background: 205 30% 96%;
+    --background: 205 25% 98%;
     --foreground: 205 60% 10%;
 
-    --card: 205 25% 98%;
+    --card: 0 0% 100%;
     --card-foreground: 205 60% 10%;
 
     --popover: 205 20% 91%;

@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <AnimatedItem key={index} index={index} baseDelay={0.1}>
-              <div className={`bg-card rounded-2xl p-5 sm:p-6 md:p-8 shadow-card hover:shadow-elevated transition-all duration-300 relative h-full ${isRTL ? 'text-right' : ''}`}>
+              <div className={`bg-card rounded-2xl p-5 sm:p-6 md:p-8 shadow-card hover:shadow-elevated transition-all duration-300 relative h-full border border-border ${isRTL ? 'text-right' : ''}`}>
                 {/* Quote Icon */}
                 <div className={`absolute -top-4 ${isRTL ? 'right-8' : 'left-8'}`}>
                   <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">

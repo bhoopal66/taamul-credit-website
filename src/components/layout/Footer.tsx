@@ -128,8 +128,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 text-white">{t('footer.contactUs')}</h4>
             <ul className="space-y-4">
               <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <MapPin className="h-5 w-5 mt-1 text-accent" />
-                <span className="text-white">
+                <MapPin className="h-5 w-5 mt-0.5 text-accent flex-shrink-0" />
+                <span className="text-white whitespace-nowrap">
                   {t('footer.address')}
                 </span>
               </li>

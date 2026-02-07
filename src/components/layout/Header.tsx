@@ -123,9 +123,9 @@ const Header = () => {
                     <Link
                       to="/"
                       className={cn(
-                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        "text-[15px] font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
                         isActive("/")
-                          ? "text-primary bg-primary/5 font-semibold"
+                          ? "text-primary font-semibold bg-primary/[0.07]"
                           : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
@@ -137,9 +137,9 @@ const Header = () => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger
                       className={cn(
-                        "text-sm font-medium whitespace-nowrap bg-transparent hover:bg-primary/5 data-[state=open]:bg-primary/5 px-3 h-auto py-2 rounded-md",
+                        "text-[15px] font-medium whitespace-nowrap bg-transparent hover:bg-primary/5 data-[state=open]:bg-primary/5 px-3 h-auto py-2 rounded-md",
                         isLoanActive()
-                          ? "text-primary font-semibold"
+                          ? "text-primary font-semibold bg-primary/[0.07]"
                           : "text-foreground/70 hover:text-primary data-[state=open]:text-primary"
                       )}
                     >
@@ -193,9 +193,9 @@ const Header = () => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger
                       className={cn(
-                        "text-sm font-medium whitespace-nowrap bg-transparent hover:bg-primary/5 data-[state=open]:bg-primary/5 px-3 h-auto py-2 rounded-md",
+                        "text-[15px] font-medium whitespace-nowrap bg-transparent hover:bg-primary/5 data-[state=open]:bg-primary/5 px-3 h-auto py-2 rounded-md",
                         isServiceActive()
-                          ? "text-primary font-semibold"
+                          ? "text-primary font-semibold bg-primary/[0.07]"
                           : "text-foreground/70 hover:text-primary data-[state=open]:text-primary"
                       )}
                     >
@@ -237,9 +237,9 @@ const Header = () => {
                     <Link
                       to="/business-accounts"
                       className={cn(
-                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        "text-[15px] font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
                         isActive("/business-accounts")
-                          ? "text-primary bg-primary/5 font-semibold"
+                          ? "text-primary font-semibold bg-primary/[0.07]"
                           : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
@@ -251,9 +251,9 @@ const Header = () => {
                     <Link
                       to="/knowledge-center"
                       className={cn(
-                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        "text-[15px] font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
                         isActive("/knowledge-center") || location.pathname.startsWith("/knowledge-center/")
-                          ? "text-primary bg-primary/5 font-semibold"
+                          ? "text-primary font-semibold bg-primary/[0.07]"
                           : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
@@ -265,9 +265,9 @@ const Header = () => {
                     <Link
                       to="/how-it-works"
                       className={cn(
-                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        "text-[15px] font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
                         isActive("/how-it-works")
-                          ? "text-primary bg-primary/5 font-semibold"
+                          ? "text-primary font-semibold bg-primary/[0.07]"
                           : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
@@ -279,9 +279,9 @@ const Header = () => {
                     <Link
                       to="/about"
                       className={cn(
-                        "text-sm font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
+                        "text-[15px] font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
                         isActive("/about")
-                          ? "text-primary bg-primary/5 font-semibold"
+                          ? "text-primary font-semibold bg-primary/[0.07]"
                           : "text-foreground/70 hover:text-primary hover:bg-primary/5"
                       )}
                     >
