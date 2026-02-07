@@ -40,7 +40,7 @@ const TaamulAdvantageSection = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
       </div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
           <h2 className="text-2xl md:text-display-sm text-white mb-4">
             {isRTL ? (
               <><span className="text-accent">{t('loanPages.taamul')}</span> {t('loanPages.advantage')}</>

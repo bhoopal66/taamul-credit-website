@@ -44,7 +44,7 @@ const PartnersSection = () => {
   return (
     <section className="py-12 md:py-24 bg-secondary overflow-hidden">
       <div className="container mx-auto px-4 mb-10">
-        <AnimatedSection className={`text-center ${isRTL ? 'text-right' : ''}`}>
+        <AnimatedSection className="text-center">
           <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
             {t('partnersSection.title')}
           </p>
@@ -60,8 +60,8 @@ const PartnersSection = () => {
           {t('partnersSection.bankingPartners')}
         </p>
         <div className="relative overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-secondary to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-secondary to-transparent z-10" />
+          <div className={`absolute top-0 bottom-0 w-16 sm:w-32 z-10 ${isRTL ? 'right-0 bg-gradient-to-l' : 'left-0 bg-gradient-to-r'} from-secondary to-transparent`} />
+          <div className={`absolute top-0 bottom-0 w-16 sm:w-32 z-10 ${isRTL ? 'left-0 bg-gradient-to-r' : 'right-0 bg-gradient-to-l'} from-secondary to-transparent`} />
 
           <div className={`flex ${isRTL ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
             {[...partnerBanks, ...partnerBanks].map((bank, index) => (
@@ -89,8 +89,8 @@ const PartnersSection = () => {
           {t('partnersSection.fintechPartners')}
         </p>
         <div className="relative overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-secondary to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-secondary to-transparent z-10" />
+          <div className={`absolute top-0 bottom-0 w-16 sm:w-32 z-10 ${isRTL ? 'right-0 bg-gradient-to-l' : 'left-0 bg-gradient-to-r'} from-secondary to-transparent`} />
+          <div className={`absolute top-0 bottom-0 w-16 sm:w-32 z-10 ${isRTL ? 'left-0 bg-gradient-to-r' : 'right-0 bg-gradient-to-l'} from-secondary to-transparent`} />
 
           <div className={`flex ${isRTL ? 'animate-marquee' : 'animate-marquee-reverse'}`}>
             {[...fintechPartners, ...fintechPartners].map((partner, index) => (

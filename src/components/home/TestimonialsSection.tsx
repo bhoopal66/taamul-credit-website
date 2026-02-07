@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
     <section className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <AnimatedSection className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+        <AnimatedSection className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
           <div className="flex items-center justify-center gap-2 mb-3">
             <span className="w-8 h-0.5 bg-accent rounded-full"></span>
             <p className="text-primary font-semibold uppercase tracking-wide text-sm">

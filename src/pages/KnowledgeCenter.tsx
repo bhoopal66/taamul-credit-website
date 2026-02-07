@@ -35,7 +35,7 @@ const KnowledgeCenter = () => {
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2" />
           </div>
           <div className="container mx-auto px-4 relative z-10">
-            <AnimatedSection className={`max-w-3xl mx-auto text-center ${isRTL ? "text-right" : ""}`}>
+            <AnimatedSection className="max-w-3xl mx-auto text-center">
               <span className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-accent text-sm font-medium mb-6 ${isRTL ? "flex-row-reverse" : ""}`}>
                 <BookOpen className="h-4 w-4" />
                 {t("knowledgeCenter.badge")}

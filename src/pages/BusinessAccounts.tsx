@@ -207,7 +207,7 @@ const BusinessAccounts = () => {
           />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className={`max-w-4xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
+          <div className="max-w-4xl mx-auto text-center">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -264,7 +264,7 @@ const BusinessAccounts = () => {
       {/* Benefits Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <AnimatedSection className={`text-center max-w-3xl mx-auto mb-14 ${isRTL ? 'text-right' : ''}`}>
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-14">
             <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.whyChooseUs')}
             </p>
@@ -299,7 +299,7 @@ const BusinessAccounts = () => {
       {/* Account Types Grid */}
       <section id="accounts" className="py-20 bg-muted scroll-mt-20">
         <div className="container mx-auto px-4">
-          <AnimatedSection className={`text-center max-w-3xl mx-auto mb-12 ${isRTL ? 'text-right' : ''}`}>
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.accountTypes')}
             </p>
@@ -343,7 +343,7 @@ const BusinessAccounts = () => {
       {/* How We Do It Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <AnimatedSection className={`text-center max-w-3xl mx-auto mb-14 ${isRTL ? 'text-right' : ''}`}>
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-14">
             <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.ourProcess')}
             </p>
@@ -358,7 +358,7 @@ const BusinessAccounts = () => {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Vertical Line */}
-              <div className={`absolute ${isRTL ? 'right-8' : 'left-8'} top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent to-accent/20 hidden md:block`} />
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent to-accent/20 hidden md:block" />
               
               <div className="space-y-5 sm:space-y-6 md:space-y-8">
                 {processSteps.map((step, index) => (
@@ -417,7 +417,7 @@ const BusinessAccounts = () => {
       {/* Requirements Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <AnimatedSection className={`text-center max-w-3xl mx-auto mb-12 ${isRTL ? 'text-right' : ''}`}>
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.requiredDocuments')}
             </p>
@@ -466,7 +466,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <AnimatedSection className={`text-center mb-12 ${isRTL ? 'text-right' : ''}`}>
+            <AnimatedSection className="text-center mb-12">
               <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
                 {t('businessAccounts.faq')}
               </p>
@@ -515,7 +515,7 @@ const BusinessAccounts = () => {
           />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
+          <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {t('businessAccounts.ctaHeading')}
             </h2>

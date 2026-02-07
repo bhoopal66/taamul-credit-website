@@ -25,7 +25,7 @@ const CTASection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <AnimatedSection className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
+        <AnimatedSection className="max-w-3xl mx-auto text-center">
           <h2 className="text-display-sm md:text-display text-primary-foreground mb-6">
             {t('ctaSection.heading')}
           </h2>

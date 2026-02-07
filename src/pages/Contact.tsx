@@ -167,7 +167,7 @@ const Contact = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className={`max-w-4xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
+          <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -195,7 +195,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className={`text-xl text-white mb-10 max-w-2xl ${isRTL ? 'mr-0' : 'mx-auto'}`}
+              className="text-xl text-white mb-10 max-w-2xl mx-auto"
             >
               {t('contact.description')}
             </motion.p>

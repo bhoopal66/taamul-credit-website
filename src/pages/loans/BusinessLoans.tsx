@@ -157,7 +157,7 @@ const BusinessLoans = () => {
       {/* Features Section with Calculator */}
       <section id="calculator" className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16`}>
             <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
               {t('loanPages.businessLoansFeaturesTitle')}
             </h2>
@@ -256,7 +256,7 @@ const BusinessLoans = () => {
             </div>
           </div>
 
-          <p className={`text-sm text-muted-foreground text-center mt-8 ${isRTL ? 'text-right' : ''}`}>
+          <p className={`text-sm text-muted-foreground text-center mt-8`}>
             {t('loanPages.disclaimer')}
           </p>
         </div>
@@ -269,7 +269,7 @@ const BusinessLoans = () => {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16`}>
             <h2 className="text-2xl md:text-display-sm text-white mb-4">
               {isRTL ? (
                 <><span className="text-accent">{t('loanPages.taamul')}</span> {t('loanPages.advantage')}</>
@@ -337,7 +337,7 @@ const BusinessLoans = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           {/* Header */}
-          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16`}>
             <div className={`inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent text-sm font-medium backdrop-blur-sm mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <CreditCard className="h-4 w-4" />
               {t('businessLoansPage.posFinancing')}
@@ -490,7 +490,7 @@ const BusinessLoans = () => {
               </div>
             </div>
             
-            <p className={`text-sm text-white/60 text-center mt-6 ${isRTL ? 'text-right' : ''}`}>
+            <p className={`text-sm text-white/60 text-center mt-6`}>
               {t('businessLoansPage.posDisclaimer')}
             </p>
           </div>
@@ -599,7 +599,7 @@ const BusinessLoans = () => {
               </div>
             </div>
           </div>
-          <p className={`text-sm text-muted-foreground text-center mt-8 ${isRTL ? 'text-right' : ''}`}>
+          <p className={`text-sm text-muted-foreground text-center mt-8`}>
             {t('loanPages.documentsDisclaimer')}
           </p>
         </div>
@@ -613,7 +613,7 @@ const BusinessLoans = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
+          <div className={`max-w-3xl mx-auto text-center`}>
             <h2 className="text-2xl md:text-display-sm text-white mb-6">
               {t('loanPages.businessLoansCtaTitle')}
             </h2>

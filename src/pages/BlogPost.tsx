@@ -348,7 +348,7 @@ const BlogPost = () => {
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <AnimatedSection
-              className={cn("max-w-2xl mx-auto text-center", isRTL && "text-right")}
+              className="max-w-2xl mx-auto text-center"
             >
               <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
                 {t("knowledgeCenter.ctaHeading")}

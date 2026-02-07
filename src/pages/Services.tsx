@@ -134,8 +134,8 @@ const Services = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection className={`max-w-5xl mx-auto ${isRTL ? 'text-right' : ''}`}>
-            <div className={`text-center mb-12 ${isRTL ? 'text-right' : ''}`}>
+          <AnimatedSection className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
               <p className="font-semibold mb-4 uppercase tracking-widest text-sm text-gold">
                 {t('services.title')}
               </p>
@@ -143,7 +143,7 @@ const Services = () => {
                 {t('services.heading')}{" "}
                 <span className="text-gold">{t('services.headingHighlight')}</span>
               </h1>
-              <p className={`text-lg md:text-xl text-white max-w-3xl ${isRTL ? 'mr-0' : 'mx-auto'} mb-10`}>
+              <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-10">
                 {t('services.description')}
               </p>
               
@@ -163,19 +163,19 @@ const Services = () => {
             
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              <div className={`text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 ${isRTL ? 'text-right' : ''}`}>
+              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
                 <div className="text-3xl md:text-4xl font-bold text-gold mb-2">15+</div>
                 <div className="text-sm text-white">{t('services.partnerBanks')}</div>
               </div>
-              <div className={`text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 ${isRTL ? 'text-right' : ''}`}>
+              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
                 <div className="text-3xl md:text-4xl font-bold text-gold mb-2">AED 800M+</div>
                 <div className="text-sm text-white">{t('hero.loansFacilitated')}</div>
               </div>
-              <div className={`text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 ${isRTL ? 'text-right' : ''}`}>
+              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
                 <div className="text-3xl md:text-4xl font-bold text-gold mb-2">10+</div>
                 <div className="text-sm text-white">{t('services.financingProducts')}</div>
               </div>
-              <div className={`text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 ${isRTL ? 'text-right' : ''}`}>
+              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
                 <div className="text-3xl md:text-4xl font-bold text-gold mb-2">100%</div>
                 <div className="text-sm text-white">{t('services.freeConsultation')}</div>
               </div>
@@ -356,7 +356,7 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-4">
-          <AnimatedSection className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
+          <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-display-sm text-primary-foreground mb-6">
               {t('ctaSection.heading')}
             </h2>

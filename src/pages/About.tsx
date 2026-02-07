@@ -118,7 +118,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="pt-24 md:pt-32 pb-20 md:pb-28 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
-          <div className={cn("max-w-4xl mx-auto text-center text-primary-foreground", isRTL && "text-right")}>
+          <div className="max-w-4xl mx-auto text-center text-primary-foreground">
             <span className={cn("inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-accent text-sm font-medium mb-6", isRTL && "flex-row-reverse")}>
               <Building2 className="h-4 w-4" />
               {t('about.badge')}
@@ -126,7 +126,7 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {t('about.title')}
             </h1>
-            <p className={cn("text-base md:text-xl text-white mb-8 max-w-3xl mx-auto", isRTL && "mx-0")}>
+            <p className="text-base md:text-xl text-white mb-8 max-w-3xl mx-auto">
               {t('about.subtitle')}
             </p>
           </div>
@@ -181,11 +181,11 @@ const About = () => {
       {/* Our Story / Timeline */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className={cn("text-center mb-16", isRTL && "text-right")}>
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {t('about.journey.title')}
             </h2>
-            <p className={cn("text-muted-foreground max-w-2xl mx-auto", isRTL && "mx-0")}>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               {t('about.journey.subtitle')}
             </p>
           </div>
@@ -245,11 +245,11 @@ const About = () => {
       {/* Values */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className={cn("text-center mb-16", isRTL && "text-right")}>
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {t('about.values.title')}
             </h2>
-            <p className={cn("text-muted-foreground max-w-2xl mx-auto", isRTL && "mx-0")}>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               {t('about.values.subtitle')}
             </p>
           </div>
@@ -278,14 +278,14 @@ const About = () => {
       {/* Team Section */}
       <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4">
-          <div className={cn("text-center mb-16", isRTL && "text-right")}>
+          <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-4">
               {t('about.team.ourLeadership')}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {t('about.team.title')}
             </h2>
-            <p className={cn("text-muted-foreground max-w-2xl mx-auto text-lg", isRTL && "mx-0")}>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               {t('about.team.subtitle')}
             </p>
           </div>
@@ -395,7 +395,7 @@ const About = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
-          <div className={cn("max-w-3xl mx-auto text-center text-primary-foreground", isRTL && "text-right")}>
+          <div className="max-w-3xl mx-auto text-center text-primary-foreground">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {t('about.cta.title')}
             </h2>

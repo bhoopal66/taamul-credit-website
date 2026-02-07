@@ -115,7 +115,7 @@ const WorkingCapital = () => {
       {/* Features Section */}
       <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16`}>
             <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
               {t('loanPages.workingCapitalFeaturesTitle')}
             </h2>
@@ -135,7 +135,7 @@ const WorkingCapital = () => {
               </div>
             ))}
           </div>
-          <p className={`text-sm text-muted-foreground text-center mt-8 ${isRTL ? 'text-right' : ''}`}>
+          <p className={`text-sm text-muted-foreground text-center mt-8`}>
             {t('loanPages.disclaimer')}
           </p>
         </div>
@@ -182,7 +182,7 @@ const WorkingCapital = () => {
               </div>
             </div>
           </div>
-          <p className={`text-sm text-muted-foreground text-center mt-8 ${isRTL ? 'text-right' : ''}`}>
+          <p className={`text-sm text-muted-foreground text-center mt-8`}>
             {t('loanPages.documentsDisclaimer')}
           </p>
         </div>
@@ -195,7 +195,7 @@ const WorkingCapital = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
+          <div className={`max-w-3xl mx-auto text-center`}>
             <h2 className="text-2xl md:text-display-sm text-white mb-6">
               {t('loanPages.workingCapitalCtaTitle')}
             </h2>
