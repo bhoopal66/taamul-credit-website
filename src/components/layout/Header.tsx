@@ -327,9 +327,9 @@ const Header = () => {
             {/* Language Toggle for Mobile */}
             <button
               onClick={toggleLanguage}
-              className={cn("w-full flex items-center justify-between px-4 py-3 rounded-lg font-medium bg-primary/10 text-primary mb-2", isRTL && "flex-row-reverse")}
+              className="w-full flex items-center justify-between px-4 py-3 rounded-lg font-medium bg-primary/10 text-primary mb-2"
             >
-              <span className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
+              <span className="flex items-center gap-2">
                 <Globe className="h-4 w-4" />
                 {language === 'en' ? 'Switch to Arabic' : 'التبديل إلى الإنجليزية'}
               </span>
@@ -352,8 +352,7 @@ const Header = () => {
                 onClick={() => toggleMobileDropdown("loans")}
                 className={cn(
                   "w-full flex items-center justify-between px-4 py-3 rounded-lg font-medium transition-colors",
-                  isLoanActive() ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50",
-                  isRTL && "flex-row-reverse"
+                  isLoanActive() ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
                 )}
               >
                 <span>{t('nav.loans')}</span>
@@ -370,14 +369,15 @@ const Header = () => {
                   openMobileDropdown === "loans" ? "max-h-96" : "max-h-0"
                 )}
               >
-                <div className={cn("pl-4 py-2 space-y-1", isRTL && "pl-0 pr-4")}>
+                <div className={cn("py-2 space-y-1", isRTL ? "pr-4" : "pl-4")}>
                   {loanServices.map((loan) => (
                     <Link
                       key={loan.href}
                       to={loan.href}
                       className={cn(
                         "block px-4 py-2.5 rounded-lg text-sm transition-colors",
-                        isActive(loan.href) ? "bg-primary/10 text-primary font-medium" : "text-foreground/80 hover:bg-muted/50 hover:text-foreground"
+                        isActive(loan.href) ? "bg-primary/10 text-primary font-medium" : "text-foreground/80 hover:bg-muted/50 hover:text-foreground",
+                        isRTL && "text-right"
                       )}
                     >
                       {loan.name}
@@ -393,8 +393,7 @@ const Header = () => {
                 onClick={() => toggleMobileDropdown("services")}
                 className={cn(
                   "w-full flex items-center justify-between px-4 py-3 rounded-lg font-medium transition-colors",
-                  isServiceActive() ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50",
-                  isRTL && "flex-row-reverse"
+                  isServiceActive() ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
                 )}
               >
                 <span>{t('nav.services')}</span>
@@ -411,14 +410,15 @@ const Header = () => {
                   openMobileDropdown === "services" ? "max-h-60" : "max-h-0"
                 )}
               >
-                <div className={cn("pl-4 py-2 space-y-1", isRTL && "pl-0 pr-4")}>
+                <div className={cn("py-2 space-y-1", isRTL ? "pr-4" : "pl-4")}>
                   {advisoryServices.map((service) => (
                     <Link
                       key={service.href}
                       to={service.href}
                       className={cn(
                         "block px-4 py-2.5 rounded-lg text-sm transition-colors",
-                        isActive(service.href) ? "bg-primary/10 text-primary font-medium" : "text-foreground/80 hover:bg-muted/50 hover:text-foreground"
+                        isActive(service.href) ? "bg-primary/10 text-primary font-medium" : "text-foreground/80 hover:bg-muted/50 hover:text-foreground",
+                        isRTL && "text-right"
                       )}
                     >
                       {service.name}

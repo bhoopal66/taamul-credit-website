@@ -98,7 +98,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-2rem)] overflow-hidden">
+    <section className="relative min-h-[calc(100dvh-2rem)] overflow-hidden">
       {/* Background Images with Crossfade */}
       <AnimatePresence>
         <motion.div
