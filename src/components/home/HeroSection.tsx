@@ -1,15 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Calculator, Building2, Users, Award, ChevronLeft, ChevronRight, Lightbulb, CheckCircle2, Landmark, RefreshCw } from "lucide-react";
+import { ArrowRight, Calculator, Building2, Users, Award, ChevronLeft, ChevronRight, Lightbulb, CheckCircle2, Landmark, RefreshCw, Clock, TrendingUp, CreditCard, ShieldCheck, Globe, Target, Layers, Zap, Percent, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Import background images
@@ -20,8 +13,9 @@ import heroSlide4 from "@/assets/hero-slide-4.webp";
 
 const HeroSection = () => {
   const { t, isRTL } = useLanguage();
-  const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(0);
 
   const heroSlides = [
     {
@@ -32,9 +26,9 @@ const HeroSection = () => {
       description: t('hero.heroDesc'),
       backgroundImage: heroSlide1,
       stats: [
-        { icon: Building2, value: "15+", label: t('hero.yearsExperience') },
+        { icon: Clock, value: "15+", label: t('hero.yearsExperience') },
         { icon: Users, value: "500+", label: t('hero.businessesServed') },
-        { icon: Award, value: "AED 800M+", label: t('hero.loansFacilitated') },
+        { icon: TrendingUp, value: "AED 800M+", label: t('hero.loansFacilitated') },
       ],
     },
     {
@@ -45,9 +39,9 @@ const HeroSection = () => {
       description: t('hero.bankingDesc'),
       backgroundImage: heroSlide2,
       stats: [
-        { icon: Building2, value: "5+", label: t('hero.accountTypes') },
-        { icon: Users, value: "100%", label: t('hero.compliance') },
-        { icon: Award, value: "24/7", label: t('hero.onlineBanking') },
+        { icon: CreditCard, value: "5+", label: t('hero.accountTypes') },
+        { icon: ShieldCheck, value: "100%", label: t('hero.compliance') },
+        { icon: Globe, value: "24/7", label: t('hero.onlineBanking') },
       ],
     },
     {
@@ -58,9 +52,9 @@ const HeroSection = () => {
       description: t('hero.solutionsDesc'),
       backgroundImage: heroSlide3,
       stats: [
-        { icon: Building2, value: "10+", label: t('hero.financingSolutions') },
+        { icon: Layers, value: "10+", label: t('hero.financingSolutions') },
         { icon: Users, value: isRTL ? "خبراء" : "Expert", label: t('hero.advisoryTeam') },
-        { icon: Award, value: "100%", label: t('hero.clientFocus') },
+        { icon: Target, value: "100%", label: t('hero.clientFocus') },
       ],
     },
     {
@@ -71,32 +65,40 @@ const HeroSection = () => {
       description: t('hero.refinancingDesc'),
       backgroundImage: heroSlide4,
       stats: [
-        { icon: Building2, value: isRTL ? "سريع" : "Quick", label: t('hero.processing') },
-        { icon: Users, value: isRTL ? "أفضل" : "Better", label: t('hero.terms') },
-        { icon: Award, value: isRTL ? "مرن" : "Flexible", label: t('hero.options') },
+        { icon: Zap, value: isRTL ? "سريع" : "Quick", label: t('hero.processing') },
+        { icon: Percent, value: isRTL ? "أفضل" : "Better", label: t('hero.terms') },
+        { icon: SlidersHorizontal, value: isRTL ? "مرن" : "Flexible", label: t('hero.options') },
       ],
     },
   ];
 
+  // Auto-advance timer
   useEffect(() => {
-    if (!api) return;
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused, heroSlides.length]);
 
-    setCurrent(api.selectedScrollSnap());
-    const onSelect = () => {
-      setCurrent(api.selectedScrollSnap());
-    };
-    api.on("select", onSelect);
-    return () => {
-      api.off("select", onSelect);
-    };
-  }, [api]);
+  const scrollTo = (index: number) => setCurrent(index);
+  const goNext = () => setCurrent(prev => (prev + 1) % heroSlides.length);
+  const goPrev = () => setCurrent(prev => (prev - 1 + heroSlides.length) % heroSlides.length);
 
-  const scrollTo = useCallback((index: number) => {
-    api?.scrollTo(index);
-  }, [api]);
+  // Touch swipe handlers (mobile only)
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(delta) > 50) {
+      if (isRTL ? delta > 0 : delta < 0) goNext();
+      else goPrev();
+    }
+  };
 
   return (
-    <section className="relative h-[calc(100vh-2rem)] overflow-hidden">
+    <section className="relative min-h-[calc(100vh-2rem)] overflow-hidden">
       {/* Background Images with Crossfade */}
       <AnimatePresence>
         <motion.div
@@ -118,75 +120,60 @@ const HeroSection = () => {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <motion.div 
+        <motion.div
           className="absolute top-0 right-0 w-96 h-96 bg-primary-foreground rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"
           animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.15, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"
           animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.12, 0.1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
       </div>
 
-      <div className="container mx-auto px-4 pt-4 pb-12 md:pt-6 md:pb-16 relative z-10 h-full">
+      <div className="container mx-auto px-4 pt-10 pb-12 md:pt-14 md:pb-16 relative z-10 h-full">
         <div className={`grid lg:grid-cols-2 gap-4 lg:gap-8 items-center h-full ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
           {/* Left Content */}
           <div className={`flex flex-col justify-center ${isRTL ? 'text-right' : ''}`}>
-            {/* Carousel - only animated text content */}
-            <Carousel
-              setApi={setApi}
-              opts={{
-                align: "start",
-                loop: true,
-                direction: isRTL ? "rtl" : "ltr",
-                watchDrag: false,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 6000,
-                  stopOnInteraction: false,
-                  stopOnMouseEnter: true,
-                }),
-              ]}
-              className="w-full overflow-visible"
+            {/* Grid-stacked slides — tallest slide sets the height, no layout shift */}
+            <div
+              className="grid"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
             >
-              <CarouselContent className="-ml-0" allowOverflow>
-                {heroSlides.map((slide, index) => (
-                  <CarouselItem key={index} className="pl-0 overflow-visible">
-                    <AnimatePresence mode="wait">
-                      {current === index && (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, y: 12 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -12 }}
-                          transition={{ duration: 0.6, ease: "easeInOut" }}
-                          className="space-y-4 min-h-[180px] md:min-h-[220px]"
-                        >
-                          <div
-                            className={`inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full text-primary-foreground/90 text-sm font-medium backdrop-blur-sm border border-primary-foreground/20 ${isRTL ? 'flex-row-reverse' : ''}`}
-                          >
-                            <slide.badgeIcon className="h-4 w-4" />
-                            {slide.badge}
-                          </div>
+              {heroSlides.map((s, index) => (
+                <motion.div
+                  key={index}
+                  className="col-start-1 row-start-1 space-y-4"
+                  initial={false}
+                  animate={{
+                    opacity: current === index ? 1 : 0,
+                    y: current === index ? 0 : 8,
+                  }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  aria-hidden={current !== index}
+                >
+                  <div
+                    className={`inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full text-primary-foreground/90 text-sm font-medium backdrop-blur-sm border border-primary-foreground/20 ${isRTL ? 'flex-row-reverse' : ''}`}
+                  >
+                    <s.badgeIcon className="h-4 w-4" />
+                    {s.badge}
+                  </div>
 
-                          <h1 className="text-display-sm md:text-display text-primary-foreground leading-tight">
-                            {slide.title}{" "}
-                            <span className="text-accent">{slide.highlight}</span>
-                          </h1>
+                  <h1 className="text-display-sm md:text-display text-primary-foreground leading-tight">
+                    {s.title}{" "}
+                    <span className="text-accent">{s.highlight}</span>
+                  </h1>
 
-                          <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl leading-relaxed">
-                            {slide.description}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+                  <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl leading-relaxed">
+                    {s.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
 
             {/* Static elements - fixed position regardless of slide */}
             <div className={`flex flex-col sm:flex-row gap-3 flex-wrap mt-5 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
@@ -208,7 +195,7 @@ const HeroSection = () => {
             <div className="mt-5">
               <Link
                 to="/business-accounts"
-                className={`inline-flex items-center gap-3 px-4 py-2.5 bg-accent hover:bg-accent/90 border border-accent rounded-xl text-primary transition-all duration-300 group shadow-lg ${isRTL ? 'flex-row-reverse' : ''}`}
+                className={`inline-flex items-center gap-3 px-4 py-2.5 bg-white hover:bg-white/90 border border-white/20 rounded-xl text-primary transition-all duration-300 group shadow-lg ${isRTL ? 'flex-row-reverse' : ''}`}
               >
                 <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
                   <Landmark className="h-4 w-4 text-accent" />
@@ -251,7 +238,7 @@ const HeroSection = () => {
             </div>
 
             {/* Carousel Navigation */}
-            <div className="flex items-center gap-4 mt-6">
+            <div className={`flex items-center gap-4 mt-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               {/* Dots with Progress */}
               <div className="flex gap-2">
                 {heroSlides.map((_, index) => (
@@ -278,16 +265,16 @@ const HeroSection = () => {
               </div>
 
               {/* Arrows */}
-              <div className={`flex gap-2 ${isRTL ? 'mr-auto' : 'ml-auto'}`}>
+              <div className="flex gap-2">
                 <button
-                  onClick={() => isRTL ? api?.scrollNext() : api?.scrollPrev()}
+                  onClick={() => isRTL ? goNext() : goPrev()}
                   className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all backdrop-blur-sm"
                   aria-label="Previous slide"
                 >
                   <ChevronLeft className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
                 </button>
                 <button
-                  onClick={() => isRTL ? api?.scrollPrev() : api?.scrollNext()}
+                  onClick={() => isRTL ? goPrev() : goNext()}
                   className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all backdrop-blur-sm"
                   aria-label="Next slide"
                 >
@@ -299,7 +286,7 @@ const HeroSection = () => {
 
           {/* Right Content - Free Service Card */}
           <div className="hidden lg:flex items-center justify-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
@@ -314,14 +301,14 @@ const HeroSection = () => {
                     className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3"
                   >
                     <motion.div
-                      animate={{ 
+                      animate={{
                         scale: [1, 1.1, 1],
                         opacity: [1, 0.8, 1]
                       }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity, 
-                        ease: "easeInOut" 
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
                       }}
                     >
                       <CheckCircle2 className="h-7 w-7 text-primary" />
@@ -330,11 +317,11 @@ const HeroSection = () => {
                   <h3 className="text-2xl font-bold text-primary mb-1">{t('hero.free100')}</h3>
                   <p className="text-lg font-semibold text-primary">{t('hero.noStrings')}</p>
                 </div>
-                
+
                 <div className="space-y-3">
                   {[
                     t('hero.noServiceFees'),
-                    t('hero.noConsultancyCharges'), 
+                    t('hero.noConsultancyCharges'),
                     t('hero.noHiddenCosts')
                   ].map((item, index) => (
                     <motion.div

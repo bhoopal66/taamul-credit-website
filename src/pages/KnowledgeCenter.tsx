@@ -36,11 +36,10 @@ const KnowledgeCenter = () => {
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <AnimatedSection className={`max-w-3xl mx-auto text-center ${isRTL ? "text-right" : ""}`}>
-              <div className="flex justify-center mb-6">
-                <div className="bg-accent/20 w-14 h-14 rounded-xl flex items-center justify-center">
-                  <BookOpen className="h-7 w-7 text-accent" />
-                </div>
-              </div>
+              <span className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-accent text-sm font-medium mb-6 ${isRTL ? "flex-row-reverse" : ""}`}>
+                <BookOpen className="h-4 w-4" />
+                {t("knowledgeCenter.badge")}
+              </span>
               <h1 className="text-display-sm md:text-display text-primary-foreground mb-4">
                 {t("knowledgeCenter.title")}
               </h1>

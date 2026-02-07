@@ -133,7 +133,7 @@ const translations = {
       bankingDesc: "Beyond financing, we help you open the perfect business account, set up trade finance solutions, and manage your corporate banking needs.",
       simpleSolutions: "Simple Solutions for Complex Challenges",
       situationsComplex: "Situations can be complex,",
-      solutionsSimple: "SOLUTIONS NEED NOT BE !!",
+      solutionsSimple: "Solutions Need Not Be",
       solutionsDesc: "We simplify complex financial challenges with straightforward solutions. Our expert team navigates the complexities so you can focus on growing your business.",
       flexibleRefinancing: "Flexible Refinancing Solutions",
       topUpBuyout: "Top-up &",
@@ -206,6 +206,7 @@ const translations = {
     },
     // Knowledge Center
     knowledgeCenter: {
+      badge: "Insights & Guides",
       title: "Knowledge Center",
       subtitle: "Insights & Guides for UAE Business Financing",
       allCategories: "All",
@@ -440,6 +441,7 @@ const translations = {
     },
     // How It Works Page
     howItWorks: {
+      badge: "Our Process",
       title: "How It Works",
       heading: "How It Works",
       description: "From application to disbursement, we've streamlined the business loan process to get you funded faster with minimum hassle.",
@@ -624,6 +626,7 @@ const translations = {
     },
     // About Page
     about: {
+      badge: "About Us",
       title: "About TAAMUL",
       subtitle: "We are a trusted Direct Selling Agent (DSA) bridging the gap between ambitious UAE businesses and the financing they need to grow.",
       stats: {
@@ -1177,7 +1180,7 @@ const translations = {
       bankingDesc: "بالإضافة إلى التمويل، نساعدك في فتح حساب الأعمال المثالي وإعداد حلول تمويل التجارة وإدارة احتياجاتك المصرفية.",
       simpleSolutions: "حلول بسيطة للتحديات المعقدة",
       situationsComplex: "قد تكون المواقف معقدة،",
-      solutionsSimple: "لكن الحلول لا يجب أن تكون كذلك!!",
+      solutionsSimple: "لكن الحلول لا يجب أن تكون كذلك",
       solutionsDesc: "نحن نبسط التحديات المالية المعقدة بحلول واضحة. فريق خبرائنا يتعامل مع التعقيدات حتى تتمكن من التركيز على تنمية أعمالك.",
       flexibleRefinancing: "حلول إعادة تمويل مرنة",
       topUpBuyout: "تعبئة و",
@@ -1250,6 +1253,7 @@ const translations = {
     },
     // Knowledge Center
     knowledgeCenter: {
+      badge: "رؤى وإرشادات",
       title: "مركز المعرفة",
       subtitle: "رؤى وأدلة لتمويل الأعمال في الإمارات",
       allCategories: "الكل",
@@ -1373,6 +1377,7 @@ const translations = {
     },
     // How It Works Page
     howItWorks: {
+      badge: "آلية العمل",
       title: "كيف يعمل",
       heading: "كيف يعمل",
       description: "من التقديم إلى الصرف، قمنا بتبسيط عملية القرض التجاري لتمويلك بشكل أسرع مع أقل قدر من المتاعب.",
@@ -1557,6 +1562,7 @@ const translations = {
     },
     // About Page
     about: {
+      badge: "من نحن",
       title: "عن تعامل",
       subtitle: "نحن وكيل مبيعات مباشر موثوق نربط بين الشركات الإماراتية الطموحة والتمويل الذي تحتاجه للنمو.",
       stats: {

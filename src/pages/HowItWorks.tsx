@@ -5,13 +5,14 @@ import FloatingButtons from "@/components/layout/FloatingButtons";
 import { Button } from "@/components/ui/button";
 import { 
   MessageSquare,
-  FileCheck, 
-  Search, 
-  Send, 
+  FileCheck,
+  Search,
+  Send,
   CheckCircle2,
   ArrowRight,
   Shield,
-  Users
+  Users,
+  Settings
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
@@ -101,6 +102,10 @@ const HowItWorks = () => {
       <section className="pt-24 md:pt-32 pb-20 md:pb-28 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
           <div className={`max-w-3xl mx-auto text-center text-white ${isRTL ? 'text-right' : ''}`}>
+            <span className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-accent text-sm font-medium mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <Settings className="h-4 w-4" />
+              {t('howItWorks.badge')}
+            </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               {t('howItWorks.heading')}
             </h1>

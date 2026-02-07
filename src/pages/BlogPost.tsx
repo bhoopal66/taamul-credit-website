@@ -130,7 +130,7 @@ const BlogPost = () => {
                 </nav>
 
                 {/* Category Badge */}
-                <span className="inline-block px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-semibold mb-3">
+                <span className="inline-block px-3 py-1 rounded-full bg-accent text-primary text-xs font-semibold mb-3">
                   {category}
                 </span>
 

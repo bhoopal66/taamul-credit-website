@@ -119,6 +119,10 @@ const About = () => {
       <section className="pt-24 md:pt-32 pb-20 md:pb-28 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
           <div className={cn("max-w-4xl mx-auto text-center text-primary-foreground", isRTL && "text-right")}>
+            <span className={cn("inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-accent text-sm font-medium mb-6", isRTL && "flex-row-reverse")}>
+              <Building2 className="h-4 w-4" />
+              {t('about.badge')}
+            </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {t('about.title')}
             </h1>
