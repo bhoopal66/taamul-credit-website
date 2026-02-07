@@ -23,6 +23,8 @@ const BusinessAccounts = lazy(() => import("./pages/BusinessAccounts"));
 const Contact = lazy(() => import("./pages/Contact"));
 const HowItWorks = lazy(() => import("./pages/HowItWorks"));
 const About = lazy(() => import("./pages/About"));
+const KnowledgeCenter = lazy(() => import("./pages/KnowledgeCenter"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
@@ -50,6 +52,8 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/how-it-works" element={<HowItWorks />} />
               <Route path="/about" element={<About />} />
+              <Route path="/knowledge-center" element={<KnowledgeCenter />} />
+              <Route path="/knowledge-center/:slug" element={<BlogPost />} />
 
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

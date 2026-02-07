@@ -86,7 +86,8 @@ const translations = {
       contactUs: "Contact Us",
       viewAllServices: "View all services",
       loanProducts: "Loan Products",
-      comprehensiveFinancing: "Comprehensive financing solutions for your business"
+      comprehensiveFinancing: "Comprehensive financing solutions for your business",
+      knowledgeCenter: "Knowledge Center"
     },
     // Top Bar
     topBar: {
@@ -202,6 +203,18 @@ const translations = {
       heading: "Ready to Accelerate Your Business Growth?",
       description: "Get pre-approved in 48 hours. Our experts are ready to find the perfect financing solution for your business.",
       callNow: "Call"
+    },
+    // Knowledge Center
+    knowledgeCenter: {
+      title: "Knowledge Center",
+      subtitle: "Insights & Guides for UAE Business Financing",
+      allCategories: "All",
+      readMore: "Read More",
+      minRead: "min read",
+      backToKnowledge: "Back to Knowledge Center",
+      relatedArticles: "Related Articles",
+      ctaHeading: "Need Expert Financing Guidance?",
+      ctaDesc: "Our team helps UAE businesses secure the right financing solutions. Get in touch for personalized advice."
     },
     // Calculator Section
     calculatorSection: {
@@ -1117,7 +1130,8 @@ const translations = {
       contactUs: "تواصل معنا",
       viewAllServices: "عرض جميع الخدمات",
       loanProducts: "منتجات القروض",
-      comprehensiveFinancing: "حلول تمويل شاملة لأعمالك"
+      comprehensiveFinancing: "حلول تمويل شاملة لأعمالك",
+      knowledgeCenter: "مركز المعرفة"
     },
     // Top Bar
     topBar: {
@@ -1233,6 +1247,18 @@ const translations = {
       heading: "هل أنت مستعد لتسريع نمو أعمالك؟",
       description: "احصل على موافقة مسبقة خلال 48 ساعة. خبراؤنا مستعدون لإيجاد حل التمويل المثالي لعملك.",
       callNow: "اتصل"
+    },
+    // Knowledge Center
+    knowledgeCenter: {
+      title: "مركز المعرفة",
+      subtitle: "رؤى وأدلة لتمويل الأعمال في الإمارات",
+      allCategories: "الكل",
+      readMore: "اقرأ المزيد",
+      minRead: "دقيقة قراءة",
+      backToKnowledge: "العودة إلى مركز المعرفة",
+      relatedArticles: "مقالات ذات صلة",
+      ctaHeading: "هل تحتاج إلى إرشاد تمويلي متخصص؟",
+      ctaDesc: "فريقنا يساعد الشركات في الإمارات على تأمين الحلول التمويلية المناسبة. تواصل معنا للحصول على استشارة شخصية."
     },
     // Calculator Section
     calculatorSection: {

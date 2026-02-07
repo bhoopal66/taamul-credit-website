@@ -111,6 +111,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/knowledge-center" className="text-white/70 hover:text-white transition-colors">
+                  {t('nav.knowledgeCenter')}
+                </Link>
+              </li>
+              <li>
                 <Link to="/#calculator" className="text-white/70 hover:text-white transition-colors">
                   {t('footer.loanCalculator')}
                 </Link>
