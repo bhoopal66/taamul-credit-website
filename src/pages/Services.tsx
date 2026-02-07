@@ -149,7 +149,7 @@ const Services = () => {
               
               {/* CTA Buttons */}
               <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-8 md:mb-16 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-                <Button size="xl" variant="hero" asChild>
+                <Button size="xl" variant="accent" asChild>
                   <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     {t('services.getStarted')}
                     <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -210,7 +210,7 @@ const Services = () => {
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="h-1 w-12 bg-accent rounded-full"></div>
-              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
+              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
                 {t('services.loanServices')}
               </p>
             </div>
@@ -227,8 +227,8 @@ const Services = () => {
               <AnimatedItem key={service.titleKey} index={index} baseDelay={0.05}>
                 <div className={`group bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-transparent hover:border-accent/20 h-full ${isRTL ? 'text-right' : ''}`}>
                   <div className={`flex items-start gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <div className={`w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
-                      <service.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors" />
+                    <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300`}>
+                      <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
@@ -259,7 +259,7 @@ const Services = () => {
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="h-1 w-12 bg-accent rounded-full"></div>
-              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
+              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
                 {t('services.advisoryServices')}
               </p>
             </div>
@@ -276,8 +276,8 @@ const Services = () => {
               <AnimatedItem key={service.titleKey} index={index} baseDelay={0.05}>
                 <div className={`group bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-transparent hover:border-accent/20 h-full ${isRTL ? 'text-right' : ''}`}>
                   <div className={`flex items-start gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <service.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors" />
+                    <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                      <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
@@ -308,7 +308,7 @@ const Services = () => {
           <AnimatedSection className={`mb-12 ${isRTL ? 'text-right' : ''}`}>
             <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="h-1 w-12 bg-accent rounded-full"></div>
-              <p className="text-accent font-semibold uppercase tracking-wide text-sm">
+              <p className="text-primary font-semibold uppercase tracking-wide text-sm">
                 {t('services.faqTitle')}
               </p>
             </div>
@@ -364,7 +364,7 @@ const Services = () => {
               {t('ctaSection.description')}
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button size="lg" variant="secondary" asChild>
+              <Button size="lg" variant="accent" asChild>
                 <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('common.getStarted')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />

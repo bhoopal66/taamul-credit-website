@@ -79,22 +79,22 @@ const Syndicated = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-3xl ${isRTL ? 'mr-0 text-right' : ''}`}>
-            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-[hsl(var(--background))]/10 rounded-full text-[hsl(var(--background))]/90 text-sm font-medium backdrop-blur-sm mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-[hsl(var(--background))]/10 rounded-full text-white/90 text-sm font-medium backdrop-blur-sm mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <Users className="h-4 w-4" />
               {t('loanPages.businessLoans')}
             </div>
 
-            <h1 className="text-display-sm md:text-display text-[hsl(var(--background))] mb-6">
+            <h1 className="text-display-sm md:text-display text-white mb-6">
               {t('loanPages.syndicatedTitle')}{" "}
               <span className="text-accent">{t('loanPages.syndicatedHighlight')}</span>
             </h1>
 
-            <p className="text-xl text-[hsl(var(--background))] mb-8 max-w-2xl">
+            <p className="text-xl text-white mb-8 max-w-2xl">
               {t('loanPages.syndicatedDesc')}
             </p>
 
             <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button asChild variant="hero" size="xl">
+              <Button asChild variant="accent" size="xl">
                 <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('common.contactUs')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -128,7 +128,7 @@ const Syndicated = () => {
             {features.map((feature) => (
               <div key={feature.title} className={`bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 ${isRTL ? 'text-right' : ''}`}>
                 <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 ${isRTL ? 'ml-auto' : ''}`}>
-                  <feature.icon className="h-7 w-7 text-accent" />
+                  <feature.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
@@ -147,8 +147,8 @@ const Syndicated = () => {
           <div className={`grid lg:grid-cols-2 gap-12 ${isRTL ? 'lg:grid-flow-dense' : ''}`}>
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'text-right lg:col-start-2' : ''}`}>
               <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
-                  <Shield className="h-6 w-6 text-success" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <Shield className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">{t('loanPages.eligibilityCriteria')}</h3>
               </div>
@@ -164,15 +164,15 @@ const Syndicated = () => {
 
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'text-right lg:col-start-1' : ''}`}>
               <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <FileText className="h-6 w-6 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <FileText className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">{t('loanPages.requiredDocuments')}</h3>
               </div>
               <div className="space-y-4">
                 {documents.map((item, index) => (
                   <div key={index} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
                     <p className={`text-foreground ${isRTL ? 'text-right flex-1' : ''}`}>{item}</p>
                   </div>
                 ))}
@@ -193,14 +193,14 @@ const Syndicated = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-2xl md:text-display-sm text-[hsl(var(--background))] mb-6">
+            <h2 className="text-2xl md:text-display-sm text-white mb-6">
               {t('loanPages.syndicatedCtaTitle')}
             </h2>
-            <p className="text-xl text-[hsl(var(--background))] mb-10">
+            <p className="text-xl text-white mb-10">
               {t('loanPages.syndicatedCtaDesc')}
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button asChild variant="hero" size="xl">
+              <Button asChild variant="accent" size="xl">
                 <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('common.contactUs')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />

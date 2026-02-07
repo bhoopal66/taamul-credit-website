@@ -48,7 +48,7 @@ const TaamulAdvantageSection = () => {
               <>The <span className="text-accent">{t('loanPages.taamul')}</span> {t('loanPages.advantage')}</>
             )}
           </h2>
-          <p className="text-lg text-white">
+          <p className="text-lg text-white/80">
             {t('taamulAdvantage.description')}
           </p>
         </div>
@@ -63,8 +63,8 @@ const TaamulAdvantageSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 ${isRTL ? 'text-right' : ''}`}
             >
-              <div className={`w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
-                <item.icon className="h-6 w-6 text-accent" />
+              <div className={`w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
+                <item.icon className="h-7 w-7 text-accent" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">{t(item.titleKey)}</h3>
               <p className="text-sm text-white/80">{t(item.descKey)}</p>

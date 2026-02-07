@@ -130,7 +130,7 @@ const Footer = () => {
               </li>
               <li className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Phone className="h-5 w-5 text-accent" />
-                <a href="tel:+97144521111" className="text-white/70 hover:text-white transition-colors" dir="ltr">
+                <a href="tel:+97145528000" className="text-white/70 hover:text-white transition-colors" dir="ltr">
                   {t('footer.phone')}
                 </a>
               </li>
@@ -144,14 +144,14 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div className="mt-8">
-              <h5 className="font-medium mb-3">{t('footer.subscribeNewsletter')}</h5>
+              <h5 className="font-medium mb-3 text-accent">{t('footer.subscribeNewsletter')}</h5>
               <div className={`flex flex-col sm:flex-row gap-3 sm:gap-2 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
                 <Input
                   type="email"
                   placeholder={t('footer.yourEmail')}
                   className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50"
                 />
-                <Button variant="hero" size="default" className="w-full sm:w-auto">
+                <Button variant="accent" size="default" className="w-full sm:w-auto">
                   {t('footer.subscribe')}
                 </Button>
               </div>

@@ -33,16 +33,16 @@ const CTASection = () => {
             {t('ctaSection.description')}
           </p>
           <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-            <Button asChild variant="hero" size="xl">
+            <Button asChild variant="accent" size="xl">
               <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 {t('common.contactUs')}
                 <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
               </Link>
             </Button>
             <Button asChild variant="heroOutline" size="xl">
-              <a href="tel:+97144521111" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <a href="tel:+971529015022" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Phone className="h-5 w-5" />
-                {t('ctaSection.callNow')} +971 4 452 1111
+                {t('ctaSection.callNow')} +971 52 901 5022
               </a>
             </Button>
           </div>

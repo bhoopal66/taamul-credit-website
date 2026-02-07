@@ -152,7 +152,7 @@ const About = () => {
             {/* Mission */}
             <div className={cn("bg-card rounded-2xl p-8 shadow-lg border border-border", isRTL && "text-right")}>
               <div className={cn("w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6", isRTL && "mr-0 ml-auto")}>
-                <Target className="h-7 w-7 text-accent" />
+                <Target className="h-7 w-7 text-primary" />
               </div>
               <h2 className="text-2xl font-bold text-foreground mb-4">{t('about.mission.title')}</h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -163,7 +163,7 @@ const About = () => {
             {/* Vision */}
             <div className={cn("bg-card rounded-2xl p-8 shadow-lg border border-border", isRTL && "text-right")}>
               <div className={cn("w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6", isRTL && "mr-0 ml-auto")}>
-                <Eye className="h-7 w-7 text-accent" />
+                <Eye className="h-7 w-7 text-primary" />
               </div>
               <h2 className="text-2xl font-bold text-foreground mb-4">{t('about.vision.title')}</h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -254,8 +254,8 @@ const About = () => {
                 key={index}
                 className="bg-card rounded-xl p-6 text-center shadow-md border border-border hover:shadow-lg transition-shadow"
               >
-                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="h-7 w-7 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                  <value.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {value.title}
@@ -397,7 +397,7 @@ const About = () => {
               {t('about.cta.subtitle')}
             </p>
             <div className={cn("flex flex-col sm:flex-row gap-4 justify-center", isRTL && "sm:flex-row-reverse")}>
-              <Button asChild size="xl" variant="hero">
+              <Button asChild size="xl" variant="accent">
                 <Link to="/contact">
                   {t('nav.contactUs')}
                   <ArrowRight className={cn("h-5 w-5", isRTL ? "mr-2 rotate-180" : "ml-2")} />

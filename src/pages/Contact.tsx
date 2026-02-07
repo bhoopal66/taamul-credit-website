@@ -89,7 +89,7 @@ const Contact = () => {
     {
       icon: Phone,
       titleKey: "contact.phone",
-      details: ["+971 4 452 1111", "+971 50 804 4090"],
+      details: ["+971 4 552 800 (Landline)", "+971 52 901 5022 (Mobile / WhatsApp)"],
     },
     {
       icon: Mail,
@@ -144,7 +144,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Contact Taamul Credit Review Services | Dubai, UAE"
-        description="Get in touch with Taamul Credit Review Services in Dubai. Call +971 4 452 1111, visit our TECOM office, or submit an inquiry for business financing support."
+        description="Get in touch with Taamul Credit Review Services in Dubai. Call +971 4 552 800, visit our TECOM office, or submit an inquiry for business financing support."
         keywords="contact Taamul, business financing Dubai, TECOM office, financing inquiry"
       />
       <Header />
@@ -208,19 +208,19 @@ const Contact = () => {
               className={`flex flex-wrap justify-center gap-6 md:gap-10 ${isRTL ? 'flex-row-reverse' : ''}`}
             >
               <div className={`flex items-center gap-2 text-white ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                   <CheckCircle2 className="h-5 w-5 text-accent" />
                 </div>
                 <span className="text-sm font-medium">{t('contact.freeConsultation')}</span>
               </div>
               <div className={`flex items-center gap-2 text-white ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                   <Clock className="h-5 w-5 text-accent" />
                 </div>
                 <span className="text-sm font-medium">{t('contact.quickResponse')}</span>
               </div>
               <div className={`flex items-center gap-2 text-white ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                   <Shield className="h-5 w-5 text-accent" />
                 </div>
                 <span className="text-sm font-medium">{t('contact.confidential')}</span>
@@ -245,8 +245,8 @@ const Contact = () => {
             {/* Contact Form */}
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'lg:col-start-2' : ''}`}>
               <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <MessageSquare className="h-6 w-6 text-primary" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <MessageSquare className="h-7 w-7 text-primary" />
                 </div>
                 <div className={isRTL ? 'text-right' : ''}>
                   <h2 className="text-2xl font-semibold text-foreground">
@@ -399,8 +399,8 @@ const Contact = () => {
                     key={info.titleKey}
                     className={`bg-card rounded-2xl p-6 shadow-card ${isRTL ? 'text-right' : ''}`}
                   >
-                    <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
-                      <info.icon className="h-6 w-6 text-primary" />
+                    <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
+                      <info.icon className="h-7 w-7 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
                       {t(info.titleKey)}
@@ -468,10 +468,10 @@ const Contact = () => {
             <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
               <Button
                 asChild
-                variant="hero"
+                variant="accent"
                 size="xl"
               >
-                <a href="tel:+97144521111" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <a href="tel:+971529015022" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Phone className="h-5 w-5" />
                   {t('contact.callNow')}
                 </a>
@@ -483,7 +483,7 @@ const Contact = () => {
                 className="border-white text-white hover:bg-white/10"
               >
                 <a
-                  href="https://wa.me/971508044090"
+                  href="https://wa.me/971529015022"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}

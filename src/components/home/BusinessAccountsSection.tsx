@@ -63,8 +63,8 @@ const BusinessAccountsSection = () => {
           {accountTypes.map((account, index) => (
             <AnimatedItem key={account.titleKey} index={index} baseDelay={0.1} className="h-full">
               <div className={`flex flex-col items-center p-4 md:p-6 bg-white/10 rounded-2xl border border-white/10 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1 h-full ${isRTL ? 'text-right' : 'text-center'}`}>
-                <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-4">
-                  <account.icon className="h-8 w-8 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                  <account.icon className="h-7 w-7 text-accent" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">
                   {t(account.titleKey)}

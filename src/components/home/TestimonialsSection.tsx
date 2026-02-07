@@ -39,9 +39,13 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <AnimatedSection className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
-            {t('testimonialsSection.title')}
-          </p>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <span className="w-8 h-0.5 bg-accent rounded-full"></span>
+            <p className="text-primary font-semibold uppercase tracking-wide text-sm">
+              {t('testimonialsSection.title')}
+            </p>
+            <span className="w-8 h-0.5 bg-accent rounded-full"></span>
+          </div>
           <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
             {t('testimonialsSection.heading')}
           </h2>

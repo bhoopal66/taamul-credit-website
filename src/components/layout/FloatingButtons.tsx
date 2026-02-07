@@ -32,7 +32,7 @@ const FloatingButtons = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent(t('callback.whatsappMessage'));
-    window.open(`https://wa.me/971508044090?text=${message}`, "_blank");
+    window.open(`https://wa.me/971529015022?text=${message}`, "_blank");
   };
 
   const handleBackToTop = () => {

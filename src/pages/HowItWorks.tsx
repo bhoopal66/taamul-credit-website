@@ -119,13 +119,13 @@ const HowItWorks = () => {
               <div key={step.number} className="relative">
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
-                  <div className={`absolute ${isRTL ? 'right-8' : 'left-8'} top-24 bottom-0 w-0.5 bg-gradient-to-b from-primary to-primary/20 hidden md:block`} />
+                  <div className={`absolute ${isRTL ? 'right-8' : 'left-8'} top-24 bottom-0 w-0.5 bg-gradient-to-b from-accent to-accent/20 hidden md:block`} />
                 )}
                 
                 <div className={`flex flex-col md:flex-row gap-6 mb-12 last:mb-0 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
                   {/* Step Number & Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-lg relative z-10">
+                    <div className="w-16 h-16 rounded-2xl bg-accent text-accent-foreground flex items-center justify-center shadow-lg relative z-10">
                       <step.icon className="h-8 w-8" />
                     </div>
                   </div>
@@ -179,8 +179,8 @@ const HowItWorks = () => {
                 key={index}
                 className={`bg-card rounded-xl p-6 text-center shadow-md border border-border ${isRTL ? 'text-right' : ''}`}
               >
-                <div className={`w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto mr-0' : 'mx-auto'}`}>
-                  <benefit.icon className="h-7 w-7 text-accent" />
+                <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto mr-0' : 'mx-auto'}`}>
+                  <benefit.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {t(benefit.titleKey)}
@@ -198,14 +198,14 @@ const HowItWorks = () => {
       <section className="py-20 bg-gradient-to-br from-primary via-primary to-navy-light">
         <div className="container mx-auto px-4">
           <div className={`max-w-3xl mx-auto text-center text-primary-foreground ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               {t('howItWorks.ctaHeading')}
             </h2>
-            <p className="text-xl opacity-90 mb-8">
+            <p className="text-xl text-white/90 mb-8">
               {t('howItWorks.ctaDesc')}
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button asChild size="xl" variant="hero">
+              <Button asChild size="xl" variant="accent">
                 <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('common.talkToExpert')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />

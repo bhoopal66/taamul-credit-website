@@ -87,9 +87,13 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <AnimatedSection className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
-          <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
-            {t('servicesSection.title')}
-          </p>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <span className="w-8 h-0.5 bg-accent rounded-full"></span>
+            <p className="text-primary font-semibold uppercase tracking-wide text-sm">
+              {t('servicesSection.title')}
+            </p>
+            <span className="w-8 h-0.5 bg-accent rounded-full"></span>
+          </div>
           <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
             {t('servicesSection.heading')}
           </h2>
@@ -107,7 +111,7 @@ const ServicesSection = () => {
                 className={`group bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-accent/20 block h-full ${isRTL ? 'text-right' : ''}`}
               >
                 <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 transition-all duration-300 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
-                  <service.icon className="h-7 w-7 text-accent group-hover:text-accent-foreground transition-colors" />
+                  <service.icon className="h-7 w-7 text-primary group-hover:text-accent-foreground transition-colors" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {t(service.titleKey)}
@@ -115,7 +119,7 @@ const ServicesSection = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {t(service.descKey)}
                 </p>
-                <span className={`inline-flex items-center gap-2 text-sm font-medium text-accent group-hover:gap-3 transition-all ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <span className={`inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('servicesSection.learnMore')}
                   <ArrowRight className={`h-4 w-4 ${isRTL ? 'rotate-180' : ''}`} />
                 </span>

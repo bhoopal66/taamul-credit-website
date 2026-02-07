@@ -190,7 +190,7 @@ const HeroSection = () => {
 
             {/* Static elements - fixed position regardless of slide */}
             <div className={`flex flex-col sm:flex-row gap-3 flex-wrap mt-5 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button asChild variant="hero" size="xl">
+              <Button asChild variant="accent" size="xl">
                 <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('common.contactUs')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -311,7 +311,7 @@ const HeroSection = () => {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.7, type: "spring" }}
-                    className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3"
+                    className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3"
                   >
                     <motion.div
                       animate={{ 
@@ -345,7 +345,7 @@ const HeroSection = () => {
                       className={`flex items-center gap-3 p-3 rounded-lg bg-muted/50 ${isRTL ? 'flex-row-reverse' : ''}`}
                     >
                       <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 className="h-4 w-4 text-accent" />
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
                       <span className="text-foreground font-medium">{item}</span>
                     </motion.div>

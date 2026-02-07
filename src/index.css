@@ -16,8 +16,8 @@
     --popover: 205 20% 91%;
     --popover-foreground: 205 60% 10%;
 
-    /* Primary - Deep Navy #02253E */
-    --primary: 205 94% 13%;
+    /* Primary - Deep Navy #072447 */
+    --primary: 213 82% 15%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary - Dark Navy #072C47 */
@@ -30,36 +30,36 @@
 
     /* Accent - Golden Yellow #F8BB2C */
     --accent: 42 94% 57%;
-    --accent-foreground: 205 94% 13%;
+    --accent-foreground: 213 82% 15%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 85% 97%;
 
     --border: 205 20% 83%;
     --input: 205 20% 83%;
-    --ring: 205 94% 13%;
+    --ring: 213 82% 15%;
 
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --navy-dark: 205 94% 13%;
+    --navy-dark: 213 82% 15%;
     --navy-light: 205 70% 28%;
     --success: 142 70% 40%;
     --success-foreground: 0 0% 100%;
     --gold: 42 94% 57%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(205, 94%, 11%) 0%, hsl(205, 85%, 17%) 50%, hsl(205, 70%, 25%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(205, 20%, 98%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(205, 70%, 35%) 0%, hsl(205, 94%, 13%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(213, 82%, 13%) 0%, hsl(213, 75%, 19%) 50%, hsl(213, 60%, 27%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(213, 20%, 98%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(213, 60%, 35%) 0%, hsl(213, 82%, 15%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
     --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
     --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
     --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-    --shadow-card: 0 4px 20px hsl(205 85% 17% / 0.08);
-    --shadow-elevated: 0 8px 30px hsl(205 85% 17% / 0.12);
+    --shadow-card: 0 4px 20px hsl(213 75% 19% / 0.08);
+    --shadow-elevated: 0 8px 30px hsl(213 75% 19% / 0.12);
 
   }
 }

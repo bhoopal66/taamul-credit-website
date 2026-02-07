@@ -240,7 +240,7 @@ const BusinessAccounts = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}
             >
-              <Button asChild variant="hero" size="xl">
+              <Button asChild variant="accent" size="xl">
                 <a href="#accounts" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('businessAccounts.exploreAccounts')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -265,7 +265,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-14 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.whyChooseUs')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -281,7 +281,7 @@ const BusinessAccounts = () => {
               <AnimatedItem key={index} index={index} baseDelay={0.1}>
                 <div className={`group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-elevated transition-all duration-300 h-full ${isRTL ? 'text-right' : ''}`}>
                   <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors ${isRTL ? 'ml-auto' : ''}`}>
-                    <benefit.icon className="h-7 w-7 text-accent" />
+                    <benefit.icon className="h-7 w-7 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">
                     {t(benefit.titleKey)}
@@ -300,7 +300,7 @@ const BusinessAccounts = () => {
       <section id="accounts" className="py-20 bg-muted scroll-mt-20">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-12 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.accountTypes')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -315,8 +315,8 @@ const BusinessAccounts = () => {
             {accountTypes.map((account, index) => (
               <AnimatedItem key={index} index={index} baseDelay={0.1}>
                 <div className={`flex flex-col items-center p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 min-w-[180px] border border-border hover:border-primary/30 ${isRTL ? 'text-right' : ''}`}>
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                    <account.icon className="h-8 w-8 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                    <account.icon className="h-7 w-7 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground text-center mb-2">
                     {t(account.titleKey)}
@@ -344,7 +344,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-14 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.ourProcess')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -358,14 +358,14 @@ const BusinessAccounts = () => {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Vertical Line */}
-              <div className={`absolute ${isRTL ? 'right-8' : 'left-8'} top-0 bottom-0 w-0.5 bg-border hidden md:block`} />
+              <div className={`absolute ${isRTL ? 'right-8' : 'left-8'} top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent to-accent/20 hidden md:block`} />
               
               <div className="space-y-5 sm:space-y-6 md:space-y-8">
                 {processSteps.map((step, index) => (
                   <AnimatedItem key={step.step} index={index} baseDelay={0.1}>
                     <div className={`flex gap-6 items-start group ${isRTL ? 'flex-row-reverse' : ''}`}>
                       <div className="relative z-10 flex-shrink-0">
-                        <div className="w-16 h-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        <div className="w-16 h-16 rounded-2xl bg-accent text-accent-foreground flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
                           <step.icon className="h-7 w-7" />
                         </div>
                         <span className={`absolute -top-2 ${isRTL ? '-left-2' : '-right-2'} w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center`}>
@@ -418,7 +418,7 @@ const BusinessAccounts = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <AnimatedSection className={`text-center max-w-3xl mx-auto mb-12 ${isRTL ? 'text-right' : ''}`}>
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+            <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
               {t('businessAccounts.requiredDocuments')}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -444,7 +444,7 @@ const BusinessAccounts = () => {
                   <ul className="space-y-3">
                     {req.documentsKeys.map((docKey) => (
                       <li key={docKey} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <Check className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
                         <span className="text-muted-foreground">{t(docKey)}</span>
                       </li>
                     ))}
@@ -467,7 +467,7 @@ const BusinessAccounts = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <AnimatedSection className={`text-center mb-12 ${isRTL ? 'text-right' : ''}`}>
-              <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
+              <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
                 {t('businessAccounts.faq')}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -523,7 +523,7 @@ const BusinessAccounts = () => {
               {t('businessAccounts.ctaDesc')}
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button asChild variant="hero" size="xl">
+              <Button asChild variant="accent" size="xl">
                 <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('common.contactUs')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -535,7 +535,7 @@ const BusinessAccounts = () => {
                 size="xl"
                 className="border-white text-white hover:bg-white/10"
               >
-                <a href="tel:+97144521111" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <a href="tel:+971529015022" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Phone className="h-5 w-5" />
                   {t('businessAccounts.speakToAdvisor')}
                 </a>

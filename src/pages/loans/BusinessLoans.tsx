@@ -115,22 +115,22 @@ const BusinessLoans = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-3xl ${isRTL ? 'mr-0 text-right' : ''}`}>
-            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-[hsl(var(--background))]/10 rounded-full text-[hsl(var(--background))]/90 text-sm font-medium backdrop-blur-sm mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-[hsl(var(--background))]/10 rounded-full text-white/90 text-sm font-medium backdrop-blur-sm mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <Building2 className="h-4 w-4" />
               {t('loanPages.businessLoans')}
             </div>
 
-            <h1 className="text-display-sm md:text-display text-[hsl(var(--background))] mb-6">
+            <h1 className="text-display-sm md:text-display text-white mb-6">
               {t('loanPages.businessLoansTitle')}{" "}
               <span className="text-accent">{t('loanPages.businessLoansHighlight')}</span>
             </h1>
 
-            <p className="text-xl text-[hsl(var(--background))] mb-8 max-w-2xl">
+            <p className="text-xl text-white mb-8 max-w-2xl">
               {t('loanPages.businessLoansDesc')}
             </p>
 
             <div className={`flex flex-col sm:flex-row gap-4 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button asChild variant="hero" size="xl">
+              <Button asChild variant="accent" size="xl">
                 <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('common.contactUs')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -175,7 +175,7 @@ const BusinessLoans = () => {
                   className={`bg-card rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 ${isRTL ? 'text-right' : ''}`}
                 >
                   <div className={`w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 ${isRTL ? 'ml-auto' : ''}`}>
-                    <feature.icon className="h-7 w-7 text-accent" />
+                    <feature.icon className="h-7 w-7 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">
                     {t(feature.titleKey)}
@@ -190,8 +190,8 @@ const BusinessLoans = () => {
             {/* Calculator */}
             <div className={`bg-card rounded-3xl p-8 shadow-elevated border border-border ${isRTL ? 'text-right' : ''}`}>
               <div className={`flex items-center gap-3 mb-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <Calculator className="h-6 w-6 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <Calculator className="h-7 w-7 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">{t('businessLoansPage.loanCalculator')}</h3>
@@ -246,7 +246,7 @@ const BusinessLoans = () => {
                   {formatCurrency(eligibleAmount)}
                 </p>
                 <p className="text-xs opacity-70 mb-4">{t('businessLoansPage.estimateDisclaimer')}</p>
-                <Button asChild variant="hero" size="lg" className="w-full">
+                <Button asChild variant="accent" size="lg" className="w-full">
                   <Link to="/contact" className={`flex items-center justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     {t('common.talkToExpert')}
                     <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -338,7 +338,7 @@ const BusinessLoans = () => {
         <div className="container mx-auto px-4 relative z-10">
           {/* Header */}
           <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16 ${isRTL ? 'text-right' : ''}`}>
-            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white text-sm font-medium backdrop-blur-sm mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent text-sm font-medium backdrop-blur-sm mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <CreditCard className="h-4 w-4" />
               {t('businessLoansPage.posFinancing')}
             </div>
@@ -392,8 +392,8 @@ const BusinessLoans = () => {
               >
                 <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 h-full ${isRTL ? 'text-right' : ''}`}>
                   <div className="text-5xl font-bold text-white/20 mb-4">{item.step}</div>
-                  <div className={`w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
-                    <item.icon className="h-6 w-6 text-white" />
+                  <div className={`w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-4 ${isRTL ? 'ml-auto' : ''}`}>
+                    <item.icon className="h-7 w-7 text-accent" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{t(item.titleKey)}</h3>
                   <p className="text-sm text-white/70">{t(item.descKey)}</p>
@@ -500,7 +500,7 @@ const BusinessLoans = () => {
             {/* POS Eligibility */}
             <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 ${isRTL ? 'text-right' : ''}`}>
               <div className={`flex items-center gap-3 mb-5 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                   <BadgeCheck className="h-5 w-5 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold text-white">{t('businessLoansPage.posEligibility')}</h3>
@@ -525,7 +525,7 @@ const BusinessLoans = () => {
             {/* Benefits */}
             <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 ${isRTL ? 'text-right' : ''}`}>
               <div className={`flex items-center gap-3 mb-5 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                   <Zap className="h-5 w-5 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold text-white">{t('businessLoansPage.whyPosFinancing')}</h3>
@@ -549,7 +549,7 @@ const BusinessLoans = () => {
 
           {/* CTA */}
           <div className="text-center mt-12">
-            <Button asChild variant="hero" size="lg">
+            <Button asChild variant="accent" size="lg">
               <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 {t('businessLoansPage.talkAboutPos')}
                 <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -566,8 +566,8 @@ const BusinessLoans = () => {
             {/* Eligibility */}
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'text-right' : ''}`}>
               <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
-                  <Shield className="h-6 w-6 text-success" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <Shield className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">{t('loanPages.eligibilityCriteria')}</h3>
               </div>
@@ -584,15 +584,15 @@ const BusinessLoans = () => {
             {/* Documents */}
             <div className={`bg-card rounded-2xl p-8 shadow-card ${isRTL ? 'text-right' : ''}`}>
               <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <FileText className="h-6 w-6 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <FileText className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">{t('loanPages.requiredDocuments')}</h3>
               </div>
               <div className="space-y-4">
                 {documents.map((key, index) => (
                   <div key={index} className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
                     <p className={`text-foreground ${isRTL ? 'text-right flex-1' : ''}`}>{t(key)}</p>
                   </div>
                 ))}
@@ -614,14 +614,14 @@ const BusinessLoans = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-3xl mx-auto text-center ${isRTL ? 'text-right' : ''}`}>
-            <h2 className="text-2xl md:text-display-sm text-[hsl(var(--background))] mb-6">
+            <h2 className="text-2xl md:text-display-sm text-white mb-6">
               {t('loanPages.businessLoansCtaTitle')}
             </h2>
-            <p className="text-xl text-[hsl(var(--background))]/80 mb-10">
+            <p className="text-xl text-white/80 mb-10">
               {t('loanPages.businessLoansCtaDesc')}
             </p>
             <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-              <Button asChild variant="hero" size="xl">
+              <Button asChild variant="accent" size="xl">
                 <Link to="/contact" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {t('common.contactUs')}
                   <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />

@@ -41,8 +41,8 @@ const CalculatorSection = () => {
           <AnimatedSection direction={isRTL ? "right" : "left"}>
             <div className={`bg-card rounded-3xl p-8 shadow-elevated border border-border ${isRTL ? 'text-right' : ''}`}>
               <div className={`flex items-center gap-3 mb-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <Calculator className="h-6 w-6 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <Calculator className="h-7 w-7 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">{t('calculator.title')}</h3>
@@ -97,7 +97,7 @@ const CalculatorSection = () => {
                   {formatCurrency(eligibleAmount)}
                 </p>
                 <p className="text-xs opacity-70 mb-4">{t('calculator.estimateDisclaimer')}</p>
-                <Button asChild variant="hero" size="lg" className="w-full">
+                <Button asChild variant="accent" size="lg" className="w-full">
                   <Link to="/contact" className={`flex items-center justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     {t('common.talkToExpert')}
                     <ArrowRight className={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -111,9 +111,12 @@ const CalculatorSection = () => {
           <AnimatedSection direction={isRTL ? "left" : "right"} delay={0.1}>
             <div className={`space-y-8 ${isRTL ? 'text-right' : ''}`}>
               <div>
-                <p className="text-accent font-semibold mb-3 uppercase tracking-wide text-sm">
-                  {t('calculator.whyChoose')}
-                </p>
+                <div className={`flex items-center gap-2 mb-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <span className="w-8 h-0.5 bg-accent rounded-full"></span>
+                  <p className="text-primary font-semibold uppercase tracking-wide text-sm">
+                    {t('calculator.whyChoose')}
+                  </p>
+                </div>
                 <h2 className="text-2xl md:text-display-sm text-foreground mb-4">
                   {t('calculator.fastTitle')}
                 </h2>
