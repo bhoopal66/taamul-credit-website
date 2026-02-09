@@ -112,7 +112,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/knowledge-center" className="text-white/70 hover:text-white transition-colors">
-                  {t('nav.knowledgeCenter')}
+                  {t('nav.knowledgeHub')}
                 </Link>
               </li>
               <li>

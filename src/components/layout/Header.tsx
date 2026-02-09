@@ -38,6 +38,15 @@ const Header = () => {
     { name: t('advisoryServices.bankFinancing'), href: "/services", description: t('advisoryServices.bankFinancingDesc') },
   ];
 
+  const knowledgeHubItems = [
+    { name: t('nav.knowledgeBlog'), href: "/knowledge-center", description: t('nav.knowledgeBlogDesc') },
+    { name: t('nav.knowledgeEvents'), href: "/knowledge/events", description: t('nav.knowledgeEventsDesc') },
+    { name: t('nav.knowledgeCaseStudies'), href: "/knowledge/case-studies", description: t('nav.knowledgeCaseStudiesDesc') },
+    { name: t('nav.knowledgeResearchPapers'), href: "/knowledge/research-papers", description: t('nav.knowledgeResearchPapersDesc') },
+    { name: t('nav.knowledgeWebinars'), href: "/knowledge/webinars", description: t('nav.knowledgeWebinarsDesc') },
+    { name: t('nav.knowledgeVideos'), href: "/knowledge/videos", description: t('nav.knowledgeVideosDesc') },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -54,6 +63,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
   const isLoanActive = () => location.pathname.startsWith("/loans/");
   const isServiceActive = () => location.pathname.startsWith("/services");
+  const isKnowledgeActive = () => location.pathname.startsWith("/knowledge");
 
   const toggleMobileDropdown = (dropdown: string) => {
     setOpenMobileDropdown(openMobileDropdown === dropdown ? null : dropdown);
@@ -116,7 +126,8 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className={cn("hidden lg:flex items-center gap-6", isRTL && "flex-row-reverse")}>
+            <div className={cn("hidden lg:flex items-center", isRTL && "flex-row-reverse")}>
+              {/* Left nav group – dropdowns use default left-aligned viewport */}
               <NavigationMenu>
                 <NavigationMenuList className={cn("gap-1", isRTL && "flex-row-reverse")}>
                   <NavigationMenuItem>
@@ -246,19 +257,58 @@ const Header = () => {
                       {t('nav.businessAccounts')}
                     </Link>
                   </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
 
+              {/* Right nav group – viewport right-aligned so Knowledge Hub dropdown appears under its trigger */}
+              <NavigationMenu className={cn(!isRTL && "[&>div]:right-0 [&>div]:left-auto", isRTL && "[&>div]:left-0")}>
+                <NavigationMenuList className={cn("gap-1", isRTL && "flex-row-reverse")}>
+                  {/* Knowledge Hub Dropdown */}
                   <NavigationMenuItem>
-                    <Link
-                      to="/knowledge-center"
+                    <NavigationMenuTrigger
                       className={cn(
-                        "text-[15px] font-medium px-3 py-2 rounded-md transition-colors whitespace-nowrap",
-                        isActive("/knowledge-center") || location.pathname.startsWith("/knowledge-center/")
+                        "text-[15px] font-medium whitespace-nowrap bg-transparent hover:bg-primary/5 data-[state=open]:bg-primary/5 px-3 h-auto py-2 rounded-md",
+                        isKnowledgeActive()
                           ? "text-primary font-semibold bg-primary/[0.07]"
-                          : "text-foreground/70 hover:text-primary hover:bg-primary/5"
+                          : "text-foreground/70 hover:text-primary data-[state=open]:text-primary"
                       )}
                     >
-                      {t('nav.knowledgeCenter')}
-                    </Link>
+                      {t('nav.knowledgeHub')}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="w-[400px] p-6 bg-card border border-border rounded-lg shadow-elevated">
+                        <div className={cn("mb-4 pb-3 border-b border-border", isRTL && "text-right")}>
+                          <h3 className="font-semibold text-foreground">{t('nav.knowledgeHub')}</h3>
+                          <p className="text-sm text-muted-foreground">{t('nav.knowledgeHubDesc')}</p>
+                        </div>
+                        <div className="space-y-1">
+                          {knowledgeHubItems.map((item) => (
+                            <NavigationMenuLink key={item.href} asChild>
+                              <Link
+                                to={item.href}
+                                className={cn(
+                                  "block p-3 rounded-lg transition-colors group",
+                                  isActive(item.href)
+                                    ? "bg-primary/5"
+                                    : "hover:bg-muted/50",
+                                  isRTL && "text-right"
+                                )}
+                              >
+                                <span className={cn(
+                                  "font-medium text-sm transition-colors",
+                                  isActive(item.href)
+                                    ? "text-primary"
+                                    : "text-foreground group-hover:text-primary"
+                                )}>
+                                  {item.name}
+                                </span>
+                                <p className="text-xs text-muted-foreground mt-0.5">{item.description}</p>
+                              </Link>
+                            </NavigationMenuLink>
+                          ))}
+                        </div>
+                      </div>
+                    </NavigationMenuContent>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
@@ -288,7 +338,6 @@ const Header = () => {
                       {t('nav.about')}
                     </Link>
                   </NavigationMenuItem>
-
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
@@ -438,15 +487,46 @@ const Header = () => {
               {t('nav.businessAccounts')}
             </Link>
 
-            <Link
-              to="/knowledge-center"
-              className={cn(
-                "block px-4 py-3 rounded-lg font-medium transition-colors",
-                isActive("/knowledge-center") || location.pathname.startsWith("/knowledge-center/") ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
-              )}
-            >
-              {t('nav.knowledgeCenter')}
-            </Link>
+            {/* Mobile Knowledge Hub Accordion */}
+            <div>
+              <button
+                onClick={() => toggleMobileDropdown("knowledge")}
+                className={cn(
+                  "w-full flex items-center justify-between px-4 py-3 rounded-lg font-medium transition-colors",
+                  isKnowledgeActive() ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted/50"
+                )}
+              >
+                <span>{t('nav.knowledgeHub')}</span>
+                <ChevronDown
+                  className={cn(
+                    "h-4 w-4 transition-transform duration-200",
+                    openMobileDropdown === "knowledge" && "rotate-180"
+                  )}
+                />
+              </button>
+              <div
+                className={cn(
+                  "overflow-hidden transition-all duration-200",
+                  openMobileDropdown === "knowledge" ? "max-h-96" : "max-h-0"
+                )}
+              >
+                <div className={cn("py-2 space-y-1", isRTL ? "pr-4" : "pl-4")}>
+                  {knowledgeHubItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className={cn(
+                        "block px-4 py-2.5 rounded-lg text-sm transition-colors",
+                        isActive(item.href) ? "bg-primary/10 text-primary font-medium" : "text-foreground/80 hover:bg-muted/50 hover:text-foreground",
+                        isRTL && "text-right"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <Link
               to="/how-it-works"

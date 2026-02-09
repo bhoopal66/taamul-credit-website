@@ -343,10 +343,16 @@ const HeroSection = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 1.2 }}
-                  className="mt-5 pt-5 border-t border-border text-center"
+                  className={`mt-5 pt-5 border-t border-border ${isRTL ? 'text-right' : 'text-left'}`}
                 >
-                  <p className="text-sm text-muted-foreground">
-                    {t('hero.weEarnFromBanks')}
+                  <p className="text-sm font-semibold text-primary">
+                    {t('hero.authorizedDsaLine1')}
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {t('hero.authorizedDsaLine2')}
+                  </p>
+                  <p className="text-[11px] text-muted-foreground/70 mt-1 italic">
+                    {t('hero.authorizedDsaLine3')}
                   </p>
                 </motion.div>
               </div>

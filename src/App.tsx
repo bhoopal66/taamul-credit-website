@@ -25,6 +25,9 @@ const HowItWorks = lazy(() => import("./pages/HowItWorks"));
 const About = lazy(() => import("./pages/About"));
 const KnowledgeCenter = lazy(() => import("./pages/KnowledgeCenter"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const Events = lazy(() => import("./pages/knowledge/Events"));
+const CaseStudies = lazy(() => import("./pages/knowledge/CaseStudies"));
+const ComingSoon = lazy(() => import("./pages/knowledge/ComingSoon"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
@@ -54,6 +57,11 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/knowledge-center" element={<KnowledgeCenter />} />
               <Route path="/knowledge-center/:slug" element={<BlogPost />} />
+              <Route path="/knowledge/events" element={<Events />} />
+              <Route path="/knowledge/case-studies" element={<CaseStudies />} />
+              <Route path="/knowledge/research-papers" element={<ComingSoon pageKey="research" />} />
+              <Route path="/knowledge/webinars" element={<ComingSoon pageKey="webinars" />} />
+              <Route path="/knowledge/videos" element={<ComingSoon pageKey="videos" />} />
 
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
