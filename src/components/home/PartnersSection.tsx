@@ -11,6 +11,8 @@ import ruyaLogo from "@/assets/partners/ruya.png";
 import nbfLogo from "@/assets/partners/nbf.png";
 import wioLogo from "@/assets/partners/wio.png";
 import mashreqLogo from "@/assets/partners/mashreq.png";
+import nbbLogo from "@/assets/partners/nbb.png";
+import ajmanBankLogo from "@/assets/partners/ajman-bank.png";
 
 // Fintech partner logos
 import credibleXLogo from "@/assets/partners/credible-x.png";
@@ -19,6 +21,9 @@ import comfiLogo from "@/assets/partners/comfi.png";
 import fundingSouqLogo from "@/assets/partners/funding-souq.png";
 import zeloLogo from "@/assets/partners/zelo.png";
 import upfrontLogo from "@/assets/partners/upfront.png";
+import hallidayLogo from "@/assets/partners/halliday.png";
+import grenkeLogo from "@/assets/partners/grenke.png";
+import invoicemateLogo from "@/assets/partners/invoicemate.png";
 
 const partnerBanks = [
   { name: "RAKBANK", logo: rakbankLogo },
@@ -27,6 +32,8 @@ const partnerBanks = [
   { name: "National Bank of Fujairah", logo: nbfLogo },
   { name: "WIO Bank", logo: wioLogo },
   { name: "Mashreq Bank", logo: mashreqLogo },
+  { name: "National Bank of Bahrain", logo: nbbLogo },
+  { name: "Ajman Bank", logo: ajmanBankLogo },
 ];
 
 const fintechPartners = [
@@ -36,6 +43,9 @@ const fintechPartners = [
   { name: "Funding Souq", logo: fundingSouqLogo },
   { name: "Zelo", logo: zeloLogo },
   { name: "Upfront", logo: upfrontLogo },
+  { name: "Halliday", logo: hallidayLogo },
+  { name: "Grenke", logo: grenkeLogo },
+  { name: "Invoicemate", logo: invoicemateLogo },
 ];
 
 const PartnersSection = () => {
