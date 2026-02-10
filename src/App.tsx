@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieConsent from "./components/CookieConsent";
 import Index from "./pages/Index";
 
 // Lazy-loaded pages for code splitting
@@ -28,6 +29,8 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Events = lazy(() => import("./pages/knowledge/Events"));
 const CaseStudies = lazy(() => import("./pages/knowledge/CaseStudies"));
 const ComingSoon = lazy(() => import("./pages/knowledge/ComingSoon"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
@@ -62,11 +65,14 @@ const App = () => (
               <Route path="/knowledge/research-papers" element={<ComingSoon pageKey="research" />} />
               <Route path="/knowledge/webinars" element={<ComingSoon pageKey="webinars" />} />
               <Route path="/knowledge/videos" element={<ComingSoon pageKey="videos" />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
 
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          <CookieConsent />
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>

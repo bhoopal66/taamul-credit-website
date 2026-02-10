@@ -427,7 +427,7 @@ const Contact = () => {
               <div className="bg-card rounded-2xl overflow-hidden shadow-card">
                 <div className="aspect-video">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1804.0876543210987!2d55.342345!3d25.251748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d4c5b6a7890%3A0x1234567890abcdef!2sGarhoud%20Star%20Building!5e0!3m2!1sen!2sae!4v1704067200000!5m2!1sen!2sae"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1!2d55.3421018!3d25.2516939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d0788ceee8f%3A0xbf3a778a33345dfa!2sTaamul%20credit%20review%20services!5e0!3m2!1sen!2sae!4v1704067200000!5m2!1sen!2sae"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -439,7 +439,7 @@ const Contact = () => {
                 </div>
                 <div className="p-4 bg-primary/5">
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=25.251748,55.342345"
+                    href="https://www.google.com/maps/place/Taamul+credit+review+services/@25.2516939,55.3421018,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f5d0788ceee8f:0xbf3a778a33345dfa"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`text-primary font-medium text-sm hover:underline flex items-center justify-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}
