@@ -6,6 +6,7 @@ import HeroSection from "@/components/home/HeroSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import BusinessAccountsSection from "@/components/home/BusinessAccountsSection";
 import CalculatorSection from "@/components/home/CalculatorSection";
+import WhyChooseTaamulSection from "@/components/home/WhyChooseTaamulSection";
 import PartnersSection from "@/components/home/PartnersSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
@@ -24,6 +25,7 @@ const Index = () => {
         <ServicesSection />
         <BusinessAccountsSection />
         <CalculatorSection />
+        <WhyChooseTaamulSection />
         <PartnersSection />
         <TestimonialsSection />
         <CTASection />
