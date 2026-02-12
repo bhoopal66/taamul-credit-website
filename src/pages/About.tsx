@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { cn } from "@/lib/utils";
 import teamBhoopal from "@/assets/team-bhoopal.jpg";
+import teamGeetha from "@/assets/team-geetha.png";
 import { 
   Target, 
   Eye, 
@@ -86,7 +87,7 @@ const About = () => {
       nameKey: "about.team.geetha.name",
       roleKey: "about.team.geetha.role",
       bioKey: "about.team.geetha.bio",
-      image: null
+      image: teamGeetha
     }
   ];
 

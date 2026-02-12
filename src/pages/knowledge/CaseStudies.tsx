@@ -5,7 +5,7 @@ import FloatingButtons from "@/components/layout/FloatingButtons";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section";
-import { TrendingUp, ArrowRight, Building2, DollarSign, Clock } from "lucide-react";
+import { TrendingUp, ArrowRight, Building2, Clock, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
@@ -75,85 +75,101 @@ const CaseStudies = () => {
           </div>
         </section>
 
-        {/* Case Studies Grid */}
+        {/* Case Studies */}
         <section className="py-12 md:py-20">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8">
-              {studies.map((study, index) => (
+            <div className="max-w-5xl mx-auto space-y-10">
+              {studies.map((study, index) => {
+                const resultItems = study.results.split(". ").map(s => s.replace(/\.$/, "")).filter(Boolean);
+                return (
                 <AnimatedItem key={index} index={index} baseDelay={0.1}>
                   <div className={cn(
-                    "bg-card rounded-2xl border border-border shadow-card overflow-hidden h-full flex flex-col hover:shadow-elevated hover:-translate-y-1 transition-all duration-300",
+                    "bg-card rounded-2xl border border-border shadow-card overflow-hidden",
                     isRTL && "text-right"
                   )}>
-                    {/* Header */}
-                    <div className="p-8 border-b border-border">
-                      <span className="text-xs font-medium text-primary uppercase tracking-wider">
-                        {t("caseStudies.caseStudyLabel")}
+                    {/* Card Header */}
+                    <div className={cn("flex items-center justify-between px-6 md:px-8 py-5", isRTL && "flex-row-reverse")}>
+                      <div className={cn("flex items-center gap-3", isRTL && "flex-row-reverse")}>
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Building2 className="h-5 w-5 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">{study.client}</h3>
+                          <p className="text-sm text-primary/70">{study.industry}</p>
+                        </div>
+                      </div>
+                      <span className="hidden sm:inline-flex items-center px-4 py-1.5 bg-primary text-white text-xs font-semibold rounded-full whitespace-nowrap">
+                        {t("caseStudies.caseStudyLabel")} #{index + 1}
                       </span>
-                      <h3 className="text-xl font-semibold text-foreground mt-1">{study.client}</h3>
-                      <div className={cn("flex items-center gap-2 mt-2", isRTL && "flex-row-reverse")}>
-                        <Building2 className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">{study.industry}</span>
-                      </div>
-
-                      {/* Metrics Grid */}
-                      <div className="grid grid-cols-2 gap-3 mt-6">
-                        <div className="bg-emerald-50 rounded-xl px-4 py-3 border border-emerald-100">
-                          <div className={cn("flex items-center gap-1.5 mb-1", isRTL && "flex-row-reverse")}>
-                            <DollarSign className="h-3.5 w-3.5 text-emerald-600" />
-                            <p className="text-[10px] text-emerald-600 font-medium uppercase tracking-wider">{t("caseStudies.fundingAmount")}</p>
-                          </div>
-                          <p className="text-base font-bold text-foreground">{study.funding}</p>
-                        </div>
-                        <div className="bg-sky-50 rounded-xl px-4 py-3 border border-sky-100">
-                          <div className={cn("flex items-center gap-1.5 mb-1", isRTL && "flex-row-reverse")}>
-                            <Clock className="h-3.5 w-3.5 text-sky-600" />
-                            <p className="text-[10px] text-sky-600 font-medium uppercase tracking-wider">{t("caseStudies.approvalTime")}</p>
-                          </div>
-                          <p className="text-base font-bold text-foreground">{study.timeline}</p>
-                        </div>
-                      </div>
-
-                      {/* Growth Journey */}
-                      <div className="mt-4 rounded-xl bg-gradient-to-r from-slate-50 to-emerald-50 p-4 border border-emerald-100/60">
-                        <div className={cn("flex items-center gap-4", isRTL && "flex-row-reverse")}>
-                          <div className={isRTL ? "text-right" : "text-left"}>
-                            <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider">{t("caseStudies.before")}</p>
-                            <p className="text-sm font-semibold text-slate-500 mt-0.5">{study.before}</p>
-                          </div>
-                          <div className="flex-1 flex items-center gap-1.5">
-                            <div className="flex-1 h-px bg-gradient-to-r from-slate-300 to-emerald-300" />
-                            <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
-                              <TrendingUp className="h-4 w-4 text-emerald-600" />
-                            </div>
-                            <div className="flex-1 h-px bg-gradient-to-r from-emerald-300 to-emerald-500" />
-                          </div>
-                          <div className={isRTL ? "text-left" : "text-right"}>
-                            <p className="text-[10px] text-emerald-600 font-medium uppercase tracking-wider">{t("caseStudies.after")}</p>
-                            <p className="text-sm font-bold text-emerald-700 mt-0.5">{study.after}</p>
-                          </div>
-                        </div>
-                      </div>
                     </div>
 
-                    {/* Body */}
-                    <div className="p-8 flex-1 space-y-5">
-                      <div>
-                        <h4 className="text-sm font-semibold text-foreground mb-2">{t("caseStudies.challenge")}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{study.challenge}</p>
+                    {/* Divider */}
+                    <div className="h-0.5 bg-primary/20" />
+
+                    {/* Body: Two Column Layout */}
+                    <div className={cn("grid md:grid-cols-2 gap-8 p-6 md:p-8", isRTL && "md:grid-flow-dense")}>
+                      {/* Left Column: Challenge & Solution */}
+                      <div className={cn("space-y-6", isRTL && "md:col-start-2")}>
+                        <div>
+                          <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-3">{t("caseStudies.challenge")}</h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{study.challenge}</p>
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-3">{t("caseStudies.solution")}</h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{study.solution}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-foreground mb-2">{t("caseStudies.solution")}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{study.solution}</p>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-foreground mb-2">{t("caseStudies.keyResults")}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{study.results}</p>
+
+                      {/* Right Column: Key Results */}
+                      <div className={isRTL ? "md:col-start-1" : ""}>
+                        <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-3">{t("caseStudies.keyResults")}</h4>
+                        <ul className="space-y-3">
+                          {resultItems.map((item, i) => (
+                            <li key={i} className={cn("flex items-start gap-2.5", isRTL && "flex-row-reverse")}>
+                              <CheckCircle2 className="h-4.5 w-4.5 text-primary/70 flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* Metrics */}
+                        <div className={cn("grid grid-cols-2 gap-3 mt-6", isRTL && "direction-rtl")}>
+                          <div className="bg-primary/5 rounded-xl px-4 py-3 border border-primary/10">
+                            <div className={cn("flex items-center gap-1.5 mb-1", isRTL && "flex-row-reverse")}>
+                              <TrendingUp className="h-3.5 w-3.5 text-primary/60" />
+                              <p className="text-[10px] text-primary/60 font-medium uppercase tracking-wider">{t("caseStudies.fundingAmount")}</p>
+                            </div>
+                            <p className="text-base font-bold text-foreground">{study.funding}</p>
+                          </div>
+                          <div className="bg-primary/5 rounded-xl px-4 py-3 border border-primary/10">
+                            <div className={cn("flex items-center gap-1.5 mb-1", isRTL && "flex-row-reverse")}>
+                              <Clock className="h-3.5 w-3.5 text-primary/60" />
+                              <p className="text-[10px] text-primary/60 font-medium uppercase tracking-wider">{t("caseStudies.approvalTime")}</p>
+                            </div>
+                            <p className="text-base font-bold text-foreground">{study.timeline}</p>
+                          </div>
+                        </div>
+
+                        {/* Before / After */}
+                        <div className="mt-3 rounded-xl bg-primary/5 p-4 border border-primary/10">
+                          <div className={cn("flex items-center justify-between gap-4", isRTL && "flex-row-reverse")}>
+                            <div className={isRTL ? "text-right" : "text-left"}>
+                              <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{t("caseStudies.before")}</p>
+                              <p className="text-lg font-bold text-foreground mt-0.5">{study.before}</p>
+                            </div>
+                            <ArrowRight className={cn("h-5 w-5 text-primary/40 flex-shrink-0", isRTL && "rotate-180")} />
+                            <div className={isRTL ? "text-left" : "text-right"}>
+                              <p className="text-[10px] text-primary font-medium uppercase tracking-wider">{t("caseStudies.after")}</p>
+                              <p className="text-lg font-bold text-primary mt-0.5">{study.after}</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </AnimatedItem>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
