@@ -414,7 +414,7 @@ const translations = {
       s1Content: "Taamul Credit Review Services LLC (\"Taamul\", \"we\", \"us\") is a Direct Selling Agent (DSA) and credit advisory firm based in Dubai, UAE. We act as an intermediary between businesses seeking financing and our banking and fintech partners. This Privacy Policy explains how we collect, use, store, and protect your personal and business data in compliance with UAE Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data (PDPL).",
       s2Title: "Data Controller",
       s2Content: "Taamul Credit Review Services LLC is the data controller responsible for your personal data. For any data-related inquiries, you may contact us at:",
-      s2Items: "Email: info@taamulcredit.com|Phone: +971 4 552 800|Address: 319 Garhoud Star Building, Dubai, UAE",
+      s2Items: "Email: info@taamulcredit.com|Phone: +971 4 550 2800|Address: 319 Garhoud Star Building, Dubai, UAE",
       s3Title: "Data We Collect",
       s3Content: "In the course of providing our credit advisory services, we may collect the following categories of data:",
       s3Items: "Personal identification: name, Emirates ID, passport, visa copy, contact details|Business information: trade license, company registration, ownership structure|Financial data: bank statements, financial statements, revenue records, existing loan details|Employment details: salary certificates, employer information (for individual financing)|Communication records: emails, WhatsApp messages, call records related to your application",
@@ -448,7 +448,7 @@ const translations = {
       s13Content: "We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. We will notify you of any material changes by posting the updated policy on our website with a revised \"Last Updated\" date. We encourage you to review this policy periodically.",
       s14Title: "Contact & Complaints",
       s14Content: "If you have questions, concerns, or complaints about how we handle your personal data, please contact us:",
-      s14Items: "Email: info@taamulcredit.com|Phone: +971 4 552 800|Address: 319 Garhoud Star Building, Dubai, UAE",
+      s14Items: "Email: info@taamulcredit.com|Phone: +971 4 550 2800|Address: 319 Garhoud Star Building, Dubai, UAE",
       s14Note: "If you are not satisfied with our response, you have the right to lodge a complaint with the UAE Data Office.",
     },
     terms: {
@@ -492,7 +492,7 @@ const translations = {
       s13Content: "Taamul reserves the right to modify these Terms at any time. Changes will be effective upon posting on our website with an updated \"Last Updated\" date. Continued use of our services after changes are posted constitutes acceptance of the revised Terms. We recommend reviewing these Terms periodically.",
       s14Title: "Contact Information",
       s14Content: "For questions or concerns regarding these Terms of Service, please contact us:",
-      s14Items: "Email: info@taamulcredit.com|Phone: +971 4 552 800|Address: 319 Garhoud Star Building, Dubai, UAE",
+      s14Items: "Email: info@taamulcredit.com|Phone: +971 4 550 2800|Address: 319 Garhoud Star Building, Dubai, UAE",
     },
     // Accessibility
     accessibility: {
@@ -547,6 +547,8 @@ const translations = {
       whatsappUs: "WhatsApp Us",
       successTitle: "Message Sent Successfully",
       successDescription: "We'll get back to you within 24 hours.",
+      errorTitle: "Submission Failed",
+      errorDescription: "Something went wrong. Please try again or contact us directly.",
       validation: {
         nameRequired: "Name is required",
         nameTooLong: "Name must be less than 100 characters",
@@ -874,7 +876,7 @@ const translations = {
       blog: "Blog",
       contactUs: "Contact Us",
       address: "319 Gharhoud Star Building, Dubai, UAE",
-      phone: "+971 4 552 800",
+      phone: "+971 4 550 2800",
       subscribeNewsletter: "Subscribe to Newsletter",
       yourEmail: "Your email",
       subscribe: "Subscribe",
@@ -897,7 +899,19 @@ const translations = {
       afternoon: "Afternoon (12 PM - 5 PM)",
       evening: "Evening (5 PM - 8 PM)",
       submit: "Request Callback",
+      sending: "Sending...",
+      successTitle: "Callback Requested",
+      successDescription: "We'll call you back at your preferred time.",
+      errorTitle: "Request Failed",
+      errorDescription: "Something went wrong. Please try again.",
       whatsappMessage: "Hi, I'm interested in learning more about TAAMUL's business financing solutions."
+    },
+    newsletter: {
+      invalidEmail: "Please enter a valid email address",
+      successTitle: "Subscribed!",
+      successDescription: "You'll receive our latest updates and insights.",
+      errorTitle: "Subscription Failed",
+      errorDescription: "Something went wrong. Please try again.",
     },
     // Testimonials
     testimonials: {
@@ -1405,7 +1419,7 @@ const translations = {
       'about.title': 'About Taamul Credit Review Services | UAE Financing',
       'about.description': 'Learn about Taamul Credit Review Services and our 15+ years of expertise helping UAE businesses access the right financing from top banks and financial institutions.',
       'contact.title': 'Contact Taamul Credit Review Services | Dubai, UAE',
-      'contact.description': 'Get in touch with Taamul Credit Review Services in Dubai. Call +971 4 552 800, visit our TECOM office, or submit an inquiry for business financing support.',
+      'contact.description': 'Get in touch with Taamul Credit Review Services in Dubai. Call +971 4 550 2800, visit our TECOM office, or submit an inquiry for business financing support.',
       'howItWorks.title': 'How Business Financing Works | Taamul Credit UAE',
       'howItWorks.description': 'Learn how Taamul helps UAE businesses secure financing in five simple steps: consultation, document collection, lender matching, application, and disbursement.',
       'businessAccounts.title': 'Business Bank Account Opening in UAE | Taamul Credit',
@@ -1906,6 +1920,8 @@ const translations = {
       whatsappUs: "راسلنا على واتساب",
       successTitle: "تم إرسال الرسالة بنجاح",
       successDescription: "سنتواصل معك خلال 24 ساعة.",
+      errorTitle: "فشل الإرسال",
+      errorDescription: "حدث خطأ. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.",
       validation: {
         nameRequired: "الاسم مطلوب",
         nameTooLong: "يجب أن يكون الاسم أقل من 100 حرف",
@@ -2122,7 +2138,7 @@ const translations = {
       blog: "المدونة",
       contactUs: "اتصل بنا",
       address: "319 مبنى غرهود ستار، دبي، الإمارات",
-      phone: "+971 4 552 800",
+      phone: "+971 4 550 2800",
       subscribeNewsletter: "اشترك في النشرة الإخبارية",
       yourEmail: "بريدك الإلكتروني",
       subscribe: "اشترك",
@@ -2145,7 +2161,19 @@ const translations = {
       afternoon: "ظهراً (12 م - 5 م)",
       evening: "مساءً (5 م - 8 م)",
       submit: "طلب معاودة الاتصال",
+      sending: "...جارٍ الإرسال",
+      successTitle: "تم طلب الاتصال",
+      successDescription: "سنتصل بك في الوقت المفضل لديك.",
+      errorTitle: "فشل الطلب",
+      errorDescription: "حدث خطأ. يرجى المحاولة مرة أخرى.",
       whatsappMessage: "مرحباً، أرغب في معرفة المزيد عن حلول تمويل الأعمال من تعامل."
+    },
+    newsletter: {
+      invalidEmail: "يرجى إدخال بريد إلكتروني صالح",
+      successTitle: "تم الاشتراك!",
+      successDescription: "ستتلقى أحدث تحديثاتنا ورؤيتنا.",
+      errorTitle: "فشل الاشتراك",
+      errorDescription: "حدث خطأ. يرجى المحاولة مرة أخرى.",
     },
     // Testimonials
     testimonials: {

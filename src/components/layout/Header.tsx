@@ -88,9 +88,9 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className={cn("flex items-center justify-between h-10 text-sm", isRTL && "flex-row-reverse")}>
             <div className={cn("flex items-center gap-6", isRTL && "flex-row-reverse")}>
-              <a href="tel:+97145528000" className={cn("flex items-center gap-2 hover:text-white/80 transition-colors", isRTL && "flex-row-reverse")}>
+              <a href="tel:+97145502800" className={cn("flex items-center gap-2 hover:text-white/80 transition-colors", isRTL && "flex-row-reverse")}>
                 <Phone className="h-3.5 w-3.5" />
-                +971 4 552 800
+                +971 4 550 2800
               </a>
               <a href="mailto:info@taamulcredit.com" className={cn("flex items-center gap-2 hover:text-white/80 transition-colors", isRTL && "flex-row-reverse")}>
                 <Mail className="h-3.5 w-3.5" />

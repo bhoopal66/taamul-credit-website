@@ -1,12 +1,61 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useToast } from "@/hooks/use-toast";
 import taamulLogo from "@/assets/taamul-logo.png";
 
 const Footer = () => {
   const { t, isRTL } = useLanguage();
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      toast({
+        title: t('newsletter.invalidEmail'),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: trimmedEmail }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Subscription failed");
+      }
+
+      toast({
+        title: t('newsletter.successTitle'),
+        description: t('newsletter.successDescription'),
+      });
+
+      setEmail("");
+    } catch {
+      toast({
+        title: t('newsletter.errorTitle'),
+        description: t('newsletter.errorDescription'),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <footer className="bg-navy-dark text-white">
@@ -135,7 +184,7 @@ const Footer = () => {
               </li>
               <li className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Phone className="h-5 w-5 text-accent" />
-                <a href="tel:+97145528000" className="text-white/70 hover:text-white transition-colors" dir="ltr">
+                <a href="tel:+97145502800" className="text-white/70 hover:text-white transition-colors" dir="ltr">
                   {t('footer.phone')}
                 </a>
               </li>
@@ -150,16 +199,19 @@ const Footer = () => {
             {/* Newsletter */}
             <div className="mt-8">
               <h5 className="font-medium mb-3 text-accent">{t('footer.subscribeNewsletter')}</h5>
-              <div className={`flex flex-col sm:flex-row gap-3 sm:gap-2 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
+              <form onSubmit={handleNewsletterSubmit} className={`flex flex-col sm:flex-row gap-3 sm:gap-2 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
                 <Input
                   type="email"
                   placeholder={t('footer.yourEmail')}
                   className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
-                <Button variant="accent" size="default" className="w-full sm:w-auto">
-                  {t('footer.subscribe')}
+                <Button type="submit" variant="accent" size="default" className="w-full sm:w-auto" disabled={isSubmitting}>
+                  {isSubmitting ? "..." : t('footer.subscribe')}
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </div>

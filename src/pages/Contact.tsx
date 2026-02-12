@@ -89,7 +89,7 @@ const Contact = () => {
     {
       icon: Phone,
       titleKey: "contact.phone",
-      details: ["+971 4 552 800 (Landline)", "+971 52 901 5022 (Mobile / WhatsApp)"],
+      details: ["+971 4 550 2800 (Landline)", "+971 52 901 5022 (Mobile / WhatsApp)"],
     },
     {
       icon: Mail,
@@ -129,22 +129,42 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    
-    toast({
-      title: t('contact.successTitle'),
-      description: t('contact.successDescription'),
-    });
-    
-    form.reset();
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Submission failed");
+      }
+
+      toast({
+        title: t('contact.successTitle'),
+        description: t('contact.successDescription'),
+      });
+
+      form.reset();
+    } catch {
+      toast({
+        title: t('contact.errorTitle'),
+        description: t('contact.errorDescription'),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
         title="Contact Taamul Credit Review Services | Dubai, UAE"
-        description="Get in touch with Taamul Credit Review Services in Dubai. Call +971 4 552 800, visit our TECOM office, or submit an inquiry for business financing support."
+        description="Get in touch with Taamul Credit Review Services in Dubai. Call +971 4 550 2800, visit our TECOM office, or submit an inquiry for business financing support."
         keywords="contact Taamul, business financing Dubai, TECOM office, financing inquiry"
       />
       <Header />

@@ -10,11 +10,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useToast } from "@/hooks/use-toast";
 
 const FloatingButtons = () => {
   const { t, isRTL } = useLanguage();
+  const { toast } = useToast();
   const [isCallbackOpen, setIsCallbackOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [callbackForm, setCallbackForm] = useState({
     name: "",
     phone: "",
@@ -39,11 +42,39 @@ const FloatingButtons = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleCallbackSubmit = (e: React.FormEvent) => {
+  const handleCallbackSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Wire up to Cloudflare Worker API (Phase 4)
-    setIsCallbackOpen(false);
-    setCallbackForm({ name: "", phone: "", preferredTime: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/callback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(callbackForm),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Submission failed");
+      }
+
+      toast({
+        title: t('callback.successTitle'),
+        description: t('callback.successDescription'),
+      });
+
+      setIsCallbackOpen(false);
+      setCallbackForm({ name: "", phone: "", preferredTime: "" });
+    } catch {
+      toast({
+        title: t('callback.errorTitle'),
+        description: t('callback.errorDescription'),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -134,8 +165,8 @@ const FloatingButtons = () => {
                 <option value="evening">{t('callback.evening')}</option>
               </select>
             </div>
-            <Button type="submit" variant="cta" size="lg" className="w-full">
-              {t('callback.submit')}
+            <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? t('callback.sending') : t('callback.submit')}
             </Button>
           </form>
         </DialogContent>
