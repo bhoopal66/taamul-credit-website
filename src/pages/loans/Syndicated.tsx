@@ -9,6 +9,8 @@ import {
   FileText,
   Handshake,
   TrendingUp,
+  Target,
+  Award,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -139,7 +141,15 @@ const Syndicated = () => {
       </section>
 
       {/* Taamul Advantage Section */}
-      <TaamulAdvantageSection />
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.syndicated.description"
+        advantages={[
+          { icon: Users, titleKey: "taamulAdvantage.syndicated.card1Title", descKey: "taamulAdvantage.syndicated.card1Desc" },
+          { icon: FileText, titleKey: "taamulAdvantage.syndicated.card2Title", descKey: "taamulAdvantage.syndicated.card2Desc" },
+          { icon: Target, titleKey: "taamulAdvantage.syndicated.card3Title", descKey: "taamulAdvantage.syndicated.card3Desc" },
+          { icon: Award, titleKey: "taamulAdvantage.syndicated.card4Title", descKey: "taamulAdvantage.syndicated.card4Desc" },
+        ]}
+      />
 
       {/* Eligibility & Documents */}
       <section className="py-12 md:py-24 bg-muted">

@@ -9,6 +9,9 @@ import {
   FileText,
   FileCheck,
   CreditCard,
+  Globe,
+  Anchor,
+  Layers,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -195,7 +198,16 @@ const TradeFinance = () => {
       </section>
 
       {/* Taamul Advantage Section */}
-      <TaamulAdvantageSection />
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.tradeFinance.description"
+        advantages={[
+          { icon: Globe, titleKey: "taamulAdvantage.tradeFinance.card1Title", descKey: "taamulAdvantage.tradeFinance.card1Desc" },
+          { icon: FileText, titleKey: "taamulAdvantage.tradeFinance.card2Title", descKey: "taamulAdvantage.tradeFinance.card2Desc" },
+          { icon: Anchor, titleKey: "taamulAdvantage.tradeFinance.card3Title", descKey: "taamulAdvantage.tradeFinance.card3Desc" },
+          { icon: Shield, titleKey: "taamulAdvantage.tradeFinance.card4Title", descKey: "taamulAdvantage.tradeFinance.card4Desc" },
+          { icon: Layers, titleKey: "taamulAdvantage.tradeFinance.card5Title", descKey: "taamulAdvantage.tradeFinance.card5Desc" },
+        ]}
+      />
 
       {/* Eligibility & Documents */}
       <section className="py-12 md:py-24 bg-muted">

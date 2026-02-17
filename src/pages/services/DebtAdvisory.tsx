@@ -12,6 +12,7 @@ import {
   Target,
   Users,
   Zap,
+  Scale,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/layout/Header";
@@ -20,6 +21,7 @@ import FloatingButtons from "@/components/layout/FloatingButtons";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
+import TaamulAdvantageSection from "@/components/loans/TaamulAdvantageSection";
 
 const DebtAdvisory = () => {
   const { t, isRTL } = useLanguage();
@@ -44,29 +46,6 @@ const DebtAdvisory = () => {
       icon: BarChart3,
       titleKey: "debtAdvisory.services.riskAnalysis",
       descKey: "debtAdvisory.services.riskAnalysisDesc",
-    },
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: Target,
-      titleKey: "debtAdvisory.whyChoose.strategicExpertise",
-      descKey: "debtAdvisory.whyChoose.strategicExpertiseDesc",
-    },
-    {
-      icon: Users,
-      titleKey: "debtAdvisory.whyChoose.bankingRelationships",
-      descKey: "debtAdvisory.whyChoose.bankingRelationshipsDesc",
-    },
-    {
-      icon: Zap,
-      titleKey: "debtAdvisory.whyChoose.fastExecution",
-      descKey: "debtAdvisory.whyChoose.fastExecutionDesc",
-    },
-    {
-      icon: Shield,
-      titleKey: "debtAdvisory.whyChoose.riskMitigation",
-      descKey: "debtAdvisory.whyChoose.riskMitigationDesc",
     },
   ];
 
@@ -161,42 +140,17 @@ const DebtAdvisory = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Dark Section */}
-      <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16`}>
-            <h2 className="text-2xl md:text-display-sm text-white mb-4">
-              {t("debtAdvisory.advantageTitle")} <span className="text-accent">{t("debtAdvisory.advantageHighlight")}</span> {t("debtAdvisory.advantageWord")}
-            </h2>
-            <p className="text-lg text-white/80">
-              {t("debtAdvisory.advantageDesc")}
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((item, index) => (
-              <motion.div
-                key={item.titleKey}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 ${isRTL ? 'text-right' : ''}`}
-              >
-                <div className={`w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
-                  <item.icon className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">{t(item.titleKey)}</h3>
-                <p className="text-sm text-white/70">{t(item.descKey)}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Taamul Advantage Section */}
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.debtAdvisory.description"
+        advantages={[
+          { icon: Target, titleKey: "taamulAdvantage.debtAdvisory.card1Title", descKey: "taamulAdvantage.debtAdvisory.card1Desc" },
+          { icon: Users, titleKey: "taamulAdvantage.debtAdvisory.card2Title", descKey: "taamulAdvantage.debtAdvisory.card2Desc" },
+          { icon: Scale, titleKey: "taamulAdvantage.debtAdvisory.card3Title", descKey: "taamulAdvantage.debtAdvisory.card3Desc" },
+          { icon: BarChart3, titleKey: "taamulAdvantage.debtAdvisory.card4Title", descKey: "taamulAdvantage.debtAdvisory.card4Desc" },
+          { icon: RefreshCw, titleKey: "taamulAdvantage.debtAdvisory.card5Title", descKey: "taamulAdvantage.debtAdvisory.card5Desc" },
+        ]}
+      />
 
       {/* Benefits & Process */}
       <section className="py-12 md:py-24 bg-muted">

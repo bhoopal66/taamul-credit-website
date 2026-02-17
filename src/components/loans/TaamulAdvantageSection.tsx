@@ -1,11 +1,23 @@
 import { motion } from "framer-motion";
 import { BadgeCheck, Gift, Layers, Users, Headphones } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import type { LucideIcon } from "lucide-react";
 
-const TaamulAdvantageSection = () => {
+interface Advantage {
+  icon: LucideIcon;
+  titleKey: string;
+  descKey: string;
+}
+
+interface TaamulAdvantageSectionProps {
+  descriptionKey?: string;
+  advantages?: Advantage[];
+}
+
+const TaamulAdvantageSection = ({ descriptionKey, advantages: customAdvantages }: TaamulAdvantageSectionProps) => {
   const { t, isRTL } = useLanguage();
 
-  const advantages = [
+  const defaultAdvantages: Advantage[] = [
     {
       icon: BadgeCheck,
       titleKey: "taamulAdvantage.authorizedDSA",
@@ -33,6 +45,9 @@ const TaamulAdvantageSection = () => {
     },
   ];
 
+  const advantages = customAdvantages || defaultAdvantages;
+  const gridClass = advantages.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-2 lg:grid-cols-5";
+
   return (
     <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
@@ -49,11 +64,11 @@ const TaamulAdvantageSection = () => {
             )}
           </h2>
           <p className="text-lg text-white/80">
-            {t('taamulAdvantage.description')}
+            {t(descriptionKey || 'taamulAdvantage.description')}
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className={`grid ${gridClass} gap-6`}>
           {advantages.map((item, index) => (
             <motion.div
               key={item.titleKey}

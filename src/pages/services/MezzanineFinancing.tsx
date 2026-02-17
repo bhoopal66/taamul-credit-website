@@ -13,6 +13,8 @@ import {
   TrendingUp,
   Zap,
   Scale,
+  Users,
+  Repeat,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/layout/Header";
@@ -21,6 +23,7 @@ import FloatingButtons from "@/components/layout/FloatingButtons";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
+import TaamulAdvantageSection from "@/components/loans/TaamulAdvantageSection";
 
 const MezzanineFinancing = () => {
   const { t, isRTL } = useLanguage();
@@ -45,29 +48,6 @@ const MezzanineFinancing = () => {
       icon: CalendarClock,
       titleKey: "mezzanineFinancing.services.customPayment",
       descKey: "mezzanineFinancing.services.customPaymentDesc",
-    },
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: Target,
-      titleKey: "mezzanineFinancing.whyChoose.tailoredStructures",
-      descKey: "mezzanineFinancing.whyChoose.tailoredStructuresDesc",
-    },
-    {
-      icon: TrendingUp,
-      titleKey: "mezzanineFinancing.whyChoose.growthFocus",
-      descKey: "mezzanineFinancing.whyChoose.growthFocusDesc",
-    },
-    {
-      icon: Scale,
-      titleKey: "mezzanineFinancing.whyChoose.balancedTerms",
-      descKey: "mezzanineFinancing.whyChoose.balancedTermsDesc",
-    },
-    {
-      icon: Zap,
-      titleKey: "mezzanineFinancing.whyChoose.quickTurnaround",
-      descKey: "mezzanineFinancing.whyChoose.quickTurnaroundDesc",
     },
   ];
 
@@ -162,42 +142,17 @@ const MezzanineFinancing = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Dark Section */}
-      <section className="py-12 md:py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className={`text-center max-w-3xl mx-auto mb-8 md:mb-16`}>
-            <h2 className="text-2xl md:text-display-sm text-white mb-4">
-              {t("mezzanineFinancing.advantageTitle")} <span className="text-accent">{t("mezzanineFinancing.advantageHighlight")}</span> {t("mezzanineFinancing.advantageWord")}
-            </h2>
-            <p className="text-lg text-white/80">
-              {t("mezzanineFinancing.advantageDesc")}
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((item, index) => (
-              <motion.div
-                key={item.titleKey}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 ${isRTL ? 'text-right' : ''}`}
-              >
-                <div className={`w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
-                  <item.icon className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">{t(item.titleKey)}</h3>
-                <p className="text-sm text-white/70">{t(item.descKey)}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Taamul Advantage Section */}
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.mezzanine.description"
+        advantages={[
+          { icon: Layers, titleKey: "taamulAdvantage.mezzanine.card1Title", descKey: "taamulAdvantage.mezzanine.card1Desc" },
+          { icon: Users, titleKey: "taamulAdvantage.mezzanine.card2Title", descKey: "taamulAdvantage.mezzanine.card2Desc" },
+          { icon: Shield, titleKey: "taamulAdvantage.mezzanine.card3Title", descKey: "taamulAdvantage.mezzanine.card3Desc" },
+          { icon: Scale, titleKey: "taamulAdvantage.mezzanine.card4Title", descKey: "taamulAdvantage.mezzanine.card4Desc" },
+          { icon: Repeat, titleKey: "taamulAdvantage.mezzanine.card5Title", descKey: "taamulAdvantage.mezzanine.card5Desc" },
+        ]}
+      />
 
       {/* Benefits & Use Cases */}
       <section className="py-12 md:py-24 bg-muted">

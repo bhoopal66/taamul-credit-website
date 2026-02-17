@@ -9,6 +9,9 @@ import {
   FileText,
   Clock,
   Car,
+  Layers,
+  Truck,
+  BadgeCheck,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -147,7 +150,16 @@ const EquipmentFinancing = () => {
       </section>
 
       {/* Taamul Advantage Section */}
-      <TaamulAdvantageSection />
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.equipment.description"
+        advantages={[
+          { icon: Layers, titleKey: "taamulAdvantage.equipment.card1Title", descKey: "taamulAdvantage.equipment.card1Desc" },
+          { icon: Truck, titleKey: "taamulAdvantage.equipment.card2Title", descKey: "taamulAdvantage.equipment.card2Desc" },
+          { icon: BadgeCheck, titleKey: "taamulAdvantage.equipment.card3Title", descKey: "taamulAdvantage.equipment.card3Desc" },
+          { icon: Wrench, titleKey: "taamulAdvantage.equipment.card4Title", descKey: "taamulAdvantage.equipment.card4Desc" },
+          { icon: Shield, titleKey: "taamulAdvantage.equipment.card5Title", descKey: "taamulAdvantage.equipment.card5Desc" },
+        ]}
+      />
 
       {/* Eligibility & Documents */}
       <section className="py-12 md:py-24 bg-muted">

@@ -8,6 +8,11 @@ import {
   FileText,
   Lock,
   TrendingDown,
+  Search,
+  Percent,
+  FileCheck,
+  TrendingUp,
+  Layers,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -142,7 +147,16 @@ const SecuredLoans = () => {
       </section>
 
       {/* Taamul Advantage Section */}
-      <TaamulAdvantageSection />
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.secured.description"
+        advantages={[
+          { icon: Search, titleKey: "taamulAdvantage.secured.card1Title", descKey: "taamulAdvantage.secured.card1Desc" },
+          { icon: Percent, titleKey: "taamulAdvantage.secured.card2Title", descKey: "taamulAdvantage.secured.card2Desc" },
+          { icon: FileCheck, titleKey: "taamulAdvantage.secured.card3Title", descKey: "taamulAdvantage.secured.card3Desc" },
+          { icon: TrendingUp, titleKey: "taamulAdvantage.secured.card4Title", descKey: "taamulAdvantage.secured.card4Desc" },
+          { icon: Layers, titleKey: "taamulAdvantage.secured.card5Title", descKey: "taamulAdvantage.secured.card5Desc" },
+        ]}
+      />
 
       {/* Eligibility & Documents */}
       <section className="py-12 md:py-24 bg-muted">

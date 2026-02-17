@@ -9,6 +9,8 @@ import {
   FileText,
   Clock,
   Banknote,
+  TrendingUp,
+  Scale,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -143,7 +145,16 @@ const CorporateLoans = () => {
       </section>
 
       {/* Taamul Advantage Section */}
-      <TaamulAdvantageSection />
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.corporate.description"
+        advantages={[
+          { icon: Building2, titleKey: "taamulAdvantage.corporate.card1Title", descKey: "taamulAdvantage.corporate.card1Desc" },
+          { icon: TrendingUp, titleKey: "taamulAdvantage.corporate.card2Title", descKey: "taamulAdvantage.corporate.card2Desc" },
+          { icon: Scale, titleKey: "taamulAdvantage.corporate.card3Title", descKey: "taamulAdvantage.corporate.card3Desc" },
+          { icon: Globe, titleKey: "taamulAdvantage.corporate.card4Title", descKey: "taamulAdvantage.corporate.card4Desc" },
+          { icon: FileText, titleKey: "taamulAdvantage.corporate.card5Title", descKey: "taamulAdvantage.corporate.card5Desc" },
+        ]}
+      />
 
       {/* Eligibility & Documents */}
       <section className="py-12 md:py-24 bg-muted">

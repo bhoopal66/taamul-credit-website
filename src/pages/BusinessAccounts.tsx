@@ -20,6 +20,8 @@ import {
   FileCheck,
   Send,
   CheckCircle2,
+  BadgeCheck,
+  Banknote,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,6 +36,7 @@ import FloatingButtons from "@/components/layout/FloatingButtons";
 import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
+import TaamulAdvantageSection from "@/components/loans/TaamulAdvantageSection";
 
 const BusinessAccounts = () => {
   const { t, isRTL } = useLanguage();
@@ -413,6 +416,18 @@ const BusinessAccounts = () => {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* Taamul Advantage Section */}
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.businessAccounts.description"
+        advantages={[
+          { icon: Users, titleKey: "taamulAdvantage.businessAccounts.card1Title", descKey: "taamulAdvantage.businessAccounts.card1Desc" },
+          { icon: BadgeCheck, titleKey: "taamulAdvantage.businessAccounts.card2Title", descKey: "taamulAdvantage.businessAccounts.card2Desc" },
+          { icon: Globe, titleKey: "taamulAdvantage.businessAccounts.card3Title", descKey: "taamulAdvantage.businessAccounts.card3Desc" },
+          { icon: Banknote, titleKey: "taamulAdvantage.businessAccounts.card4Title", descKey: "taamulAdvantage.businessAccounts.card4Desc" },
+          { icon: Headphones, titleKey: "taamulAdvantage.businessAccounts.card5Title", descKey: "taamulAdvantage.businessAccounts.card5Desc" },
+        ]}
+      />
 
       {/* Requirements Section */}
       <section className="py-20 bg-muted">

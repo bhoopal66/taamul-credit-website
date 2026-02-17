@@ -8,6 +8,9 @@ import {
   FileText,
   Shield,
   Zap,
+  RefreshCw,
+  Scale,
+  Layers,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -142,7 +145,16 @@ const WorkingCapital = () => {
       </section>
 
       {/* Taamul Advantage Section */}
-      <TaamulAdvantageSection />
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.workingCapital.description"
+        advantages={[
+          { icon: TrendingUp, titleKey: "taamulAdvantage.workingCapital.card1Title", descKey: "taamulAdvantage.workingCapital.card1Desc" },
+          { icon: RefreshCw, titleKey: "taamulAdvantage.workingCapital.card2Title", descKey: "taamulAdvantage.workingCapital.card2Desc" },
+          { icon: Zap, titleKey: "taamulAdvantage.workingCapital.card3Title", descKey: "taamulAdvantage.workingCapital.card3Desc" },
+          { icon: Scale, titleKey: "taamulAdvantage.workingCapital.card4Title", descKey: "taamulAdvantage.workingCapital.card4Desc" },
+          { icon: Layers, titleKey: "taamulAdvantage.workingCapital.card5Title", descKey: "taamulAdvantage.workingCapital.card5Desc" },
+        ]}
+      />
 
       {/* Eligibility & Documents */}
       <section className="py-12 md:py-24 bg-muted">

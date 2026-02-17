@@ -9,6 +9,10 @@ import {
   FileText,
   Clock,
   Briefcase,
+  FileCheck,
+  TrendingUp,
+  Zap,
+  Headphones,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -143,7 +147,16 @@ const SMELoans = () => {
       </section>
 
       {/* Taamul Advantage Section */}
-      <TaamulAdvantageSection />
+      <TaamulAdvantageSection
+        descriptionKey="taamulAdvantage.sme.description"
+        advantages={[
+          { icon: FileCheck, titleKey: "taamulAdvantage.sme.card1Title", descKey: "taamulAdvantage.sme.card1Desc" },
+          { icon: Users, titleKey: "taamulAdvantage.sme.card2Title", descKey: "taamulAdvantage.sme.card2Desc" },
+          { icon: TrendingUp, titleKey: "taamulAdvantage.sme.card3Title", descKey: "taamulAdvantage.sme.card3Desc" },
+          { icon: Zap, titleKey: "taamulAdvantage.sme.card4Title", descKey: "taamulAdvantage.sme.card4Desc" },
+          { icon: Headphones, titleKey: "taamulAdvantage.sme.card5Title", descKey: "taamulAdvantage.sme.card5Desc" },
+        ]}
+      />
 
       {/* Eligibility & Documents */}
       <section className="py-12 md:py-24 bg-muted">
