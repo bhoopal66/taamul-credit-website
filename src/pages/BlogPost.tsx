@@ -378,14 +378,14 @@ const BlogPost = () => {
                 </Button>
                 <Button asChild variant="heroOutline" size="xl">
                   <a
-                    href="tel:+971529015022"
+                    href="tel:+971529015026"
                     className={cn(
                       "flex items-center gap-2",
                       isRTL && "flex-row-reverse"
                     )}
                   >
                     <Phone className="h-5 w-5" />
-                    {t("ctaSection.callNow")} +971 52 901 5022
+                    {t("ctaSection.callNow")} +971 52 901 5026
                   </a>
                 </Button>
               </div>

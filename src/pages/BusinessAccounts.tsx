@@ -535,7 +535,7 @@ const BusinessAccounts = () => {
                 size="xl"
                 className="border-white text-white hover:bg-white/10"
               >
-                <a href="tel:+971529015022" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <a href="tel:+971529015026" className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Phone className="h-5 w-5" />
                   {t('businessAccounts.speakToAdvisor')}
                 </a>
