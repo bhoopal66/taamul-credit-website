@@ -565,9 +565,9 @@ const translations = {
         companyName: "Taamul Credit Review Services LLC",
         address1: "319 Gharhoud Star Building",
         address2: "Dubai, UAE",
-        hours1: "Mon - Fri: 10:00 AM - 2:00 PM",
-        hours2: "Sat: 10:00 AM - 2:00 PM",
-        hours3: "Sun: Closed"
+        hours1: "Mon – Thu: 10:00 AM - 7:00 PM",
+        hours2: "Fri: 10:00 AM - 12:30 PM & 2:30 PM - 7:00 PM",
+        hours3: "Sat: 10:00 AM - 2:00 PM"
       },
       subjects: {
         businessLoan: "Business Loan Inquiry",
@@ -1938,9 +1938,9 @@ const translations = {
         companyName: "شركة تعامل لخدمات مراجعة الائتمان ذ.م.م",
         address1: "319 مبنى غرهود ستار",
         address2: "دبي، الإمارات العربية المتحدة",
-        hours1: "الاثنين - الجمعة: 10:00 ص - 2:00 م",
-        hours2: "السبت: 10:00 ص - 2:00 م",
-        hours3: "الأحد: مغلق"
+        hours1: "الاثنين – الخميس: 10:00 ص - 7:00 م",
+        hours2: "الجمعة: 10:00 ص - 12:30 م و 2:30 م - 7:00 م",
+        hours3: "السبت: 10:00 ص - 2:00 م"
       },
       subjects: {
         businessLoan: "استفسار عن قرض تجاري",

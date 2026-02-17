@@ -351,8 +351,8 @@ const HeroSection = () => {
                   <p className="text-xs text-muted-foreground mt-1">
                     {t('hero.authorizedDsaLine2')}
                   </p>
-                  <p className="text-[11px] text-muted-foreground/70 mt-1 italic">
-                    {t('hero.authorizedDsaLine3')}
+                  <p className="text-xs text-foreground/70 mt-1 italic">
+                    *{t('hero.authorizedDsaLine3')}
                   </p>
                 </motion.div>
               </div>

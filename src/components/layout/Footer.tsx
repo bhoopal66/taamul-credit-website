@@ -165,7 +165,16 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#calculator" className="text-white/70 hover:text-white transition-colors">
+                <Link
+                  to="/#calculator"
+                  className="text-white/70 hover:text-white transition-colors"
+                  onClick={(e) => {
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
                   {t('footer.loanCalculator')}
                 </Link>
               </li>
