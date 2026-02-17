@@ -2342,7 +2342,7 @@ const translations = {
       taamulAdvantage: "ميزة تعامل",
       taamul: "تعامل",
       advantage: "ميزة",
-      advantageDesc: "اكتشف طريقة أذكى للوصول إلى تمويل الأعمال من خلال نهجنا الذي يضع العميل أولاً.",
+      advantageDesc: "فهم معنى تمويل نقاط البيع (POS)، احصل على تمويل معتمد على معاملات الدفع بالبطاقات الخاصة بعملك. عملية بسيطة وشفافة، مصممة خصيصاً للشركات التي تحقق مبيعات منتظمة عبر أجهزة نقاط البيع.",
       // Business Loans
       businessLoansTitle: "تمويل الأعمال من أجل",
       businessLoansHighlight: "توسع الأعمال",
@@ -2609,7 +2609,7 @@ const translations = {
       smeStartupFriendly: "حلول صديقة للمشاريع الصغيرة والناشئة",
       smeStartupFriendlyDesc: "خيارات تمويل مخصصة مصممة خصيصاً للشركات الصغيرة والمؤسسات الناشئة",
       endToEndSupport: "دعم من البداية إلى النهاية",
-      endToEndSupportDesc: "من التوثيق إلى الصرف، نرشدك خلال كل خطوة من العملية"
+      endToEndSupportDesc: "من التوثيق إلى الصرف، نرشدك خلال كل خطوة في العملية"
     },
     // Taamul Advantage Section (Shared across all loan pages)
     taamulAdvantage: {
