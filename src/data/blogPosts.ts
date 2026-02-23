@@ -37,13 +37,29 @@ import invoiceDiscounting2 from "@/assets/blog/invoice-discounting-2.webp";
 import invoiceDiscounting3 from "@/assets/blog/invoice-discounting-3.webp";
 import placeholderBlog from "@/assets/blog/placeholder-blog.svg";
 import eiborRates1 from "@/assets/blog/eibor-rates-1.webp";
+import eiborRates2 from "@/assets/blog/eibor-rates-2.webp";
+import eiborRates3 from "@/assets/blog/eibor-rates-3.webp";
 import financingOptionsSme1 from "@/assets/blog/financing-options-sme-1.webp";
+import financingOptionsSme2 from "@/assets/blog/financing-options-sme-2.webp";
+import financingOptionsSme3 from "@/assets/blog/financing-options-sme-3.webp";
 import uaeOutlook20251 from "@/assets/blog/uae-outlook-2025-1.webp";
+import uaeOutlook20252 from "@/assets/blog/uae-outlook-2025-2.webp";
+import uaeOutlook20253 from "@/assets/blog/uae-outlook-2025-3.webp";
 import winningLoanApp1 from "@/assets/blog/winning-loan-app-1.webp";
+import winningLoanApp2 from "@/assets/blog/winning-loan-app-2.webp";
+import winningLoanApp3 from "@/assets/blog/winning-loan-app-3.webp";
 import cbuaeRegulations1 from "@/assets/blog/cbuae-regulations-1.webp";
+import cbuaeRegulations2 from "@/assets/blog/cbuae-regulations-2.webp";
+import cbuaeRegulations3 from "@/assets/blog/cbuae-regulations-3.webp";
 import equipFinanceLease1 from "@/assets/blog/equip-finance-lease-1.webp";
+import equipFinanceLease2 from "@/assets/blog/equip-finance-lease-2.webp";
+import equipFinanceLease3 from "@/assets/blog/equip-finance-lease-3.webp";
 import buildCreditUae1 from "@/assets/blog/build-credit-uae-1.webp";
+import buildCreditUae2 from "@/assets/blog/build-credit-uae-2.webp";
+import buildCreditUae3 from "@/assets/blog/build-credit-uae-3.webp";
 import tradeFinance1 from "@/assets/blog/trade-finance-1.webp";
+import tradeFinance2 from "@/assets/blog/trade-finance-2.webp";
+import tradeFinance3 from "@/assets/blog/trade-finance-3.webp";
 
 export interface BlogSection {
   heading: string;
@@ -744,7 +760,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-01-28",
     readTime: 6,
     heroImage: eiborRates1,
-    images: [eiborRates1, eiborRates1, eiborRates1],
+    images: [eiborRates1, eiborRates2, eiborRates3],
     keywords: "EIBOR, UAE interest rates, business loan rates, Emirates Interbank Offered Rate, CBUAE, commercial lending",
     sections: [
       {
@@ -795,7 +811,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-01-15",
     readTime: 5,
     heroImage: financingOptionsSme1,
-    images: [financingOptionsSme1, financingOptionsSme1, financingOptionsSme1],
+    images: [financingOptionsSme1, financingOptionsSme2, financingOptionsSme3],
     keywords: "UAE startup financing, SME loans, working capital, trade finance, equipment financing, government funding UAE",
     sections: [
       {
@@ -853,7 +869,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-01-05",
     readTime: 7,
     heroImage: uaeOutlook20251,
-    images: [uaeOutlook20251, uaeOutlook20251, uaeOutlook20251],
+    images: [uaeOutlook20251, uaeOutlook20252, uaeOutlook20253],
     keywords: "UAE economy 2025, GDP growth, digital economy UAE, SME policies, business expansion UAE",
     sections: [
       {
@@ -911,7 +927,7 @@ export const blogPosts: BlogPost[] = [
     date: "2024-12-20",
     readTime: 8,
     heroImage: winningLoanApp1,
-    images: [winningLoanApp1, winningLoanApp1, winningLoanApp1],
+    images: [winningLoanApp1, winningLoanApp2, winningLoanApp3],
     keywords: "loan application UAE, business loan documents, financial statements, loan approval tips, UAE bank requirements",
     sections: [
       {
@@ -976,7 +992,7 @@ export const blogPosts: BlogPost[] = [
     date: "2024-12-10",
     readTime: 5,
     heroImage: cbuaeRegulations1,
-    images: [cbuaeRegulations1, cbuaeRegulations1, cbuaeRegulations1],
+    images: [cbuaeRegulations1, cbuaeRegulations2, cbuaeRegulations3],
     keywords: "UAE Central Bank, CBUAE regulations, commercial lending rules, AML compliance, SME lending guidelines",
     sections: [
       {
@@ -1034,7 +1050,7 @@ export const blogPosts: BlogPost[] = [
     date: "2024-11-28",
     readTime: 6,
     heroImage: equipFinanceLease1,
-    images: [equipFinanceLease1, equipFinanceLease1, equipFinanceLease1],
+    images: [equipFinanceLease1, equipFinanceLease2, equipFinanceLease3],
     keywords: "equipment financing UAE, leasing vs buying, business equipment loans, asset financing, equipment lease",
     sections: [
       {
@@ -1078,7 +1094,7 @@ export const blogPosts: BlogPost[] = [
     date: "2024-11-15",
     readTime: 7,
     heroImage: buildCreditUae1,
-    images: [buildCreditUae1, buildCreditUae1, buildCreditUae1],
+    images: [buildCreditUae1, buildCreditUae2, buildCreditUae3],
     keywords: "business credit UAE, AECB credit score, credit building, financing terms, business credit profile",
     sections: [
       {
@@ -1150,7 +1166,7 @@ export const blogPosts: BlogPost[] = [
     date: "2024-11-01",
     readTime: 6,
     heroImage: tradeFinance1,
-    images: [tradeFinance1, tradeFinance1, tradeFinance1],
+    images: [tradeFinance1, tradeFinance2, tradeFinance3],
     keywords: "trade finance UAE, letters of credit, bank guarantees, supply chain financing, import export business",
     sections: [
       {
