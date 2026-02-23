@@ -36,6 +36,14 @@ import invoiceDiscounting1 from "@/assets/blog/invoice-discounting-1.webp";
 import invoiceDiscounting2 from "@/assets/blog/invoice-discounting-2.webp";
 import invoiceDiscounting3 from "@/assets/blog/invoice-discounting-3.webp";
 import placeholderBlog from "@/assets/blog/placeholder-blog.svg";
+import eiborRates1 from "@/assets/blog/eibor-rates-1.webp";
+import financingOptionsSme1 from "@/assets/blog/financing-options-sme-1.webp";
+import uaeOutlook20251 from "@/assets/blog/uae-outlook-2025-1.webp";
+import winningLoanApp1 from "@/assets/blog/winning-loan-app-1.webp";
+import cbuaeRegulations1 from "@/assets/blog/cbuae-regulations-1.webp";
+import equipFinanceLease1 from "@/assets/blog/equip-finance-lease-1.webp";
+import buildCreditUae1 from "@/assets/blog/build-credit-uae-1.webp";
+import tradeFinance1 from "@/assets/blog/trade-finance-1.webp";
 
 export interface BlogSection {
   heading: string;
@@ -735,8 +743,8 @@ export const blogPosts: BlogPost[] = [
     categoryAr: "التمويل",
     date: "2025-01-28",
     readTime: 6,
-    heroImage: placeholderBlog,
-    images: [placeholderBlog, placeholderBlog, placeholderBlog],
+    heroImage: eiborRates1,
+    images: [eiborRates1, eiborRates1, eiborRates1],
     keywords: "EIBOR, UAE interest rates, business loan rates, Emirates Interbank Offered Rate, CBUAE, commercial lending",
     sections: [
       {
@@ -786,8 +794,8 @@ export const blogPosts: BlogPost[] = [
     categoryAr: "نمو الشركات",
     date: "2025-01-15",
     readTime: 5,
-    heroImage: placeholderBlog,
-    images: [placeholderBlog, placeholderBlog, placeholderBlog],
+    heroImage: financingOptionsSme1,
+    images: [financingOptionsSme1, financingOptionsSme1, financingOptionsSme1],
     keywords: "UAE startup financing, SME loans, working capital, trade finance, equipment financing, government funding UAE",
     sections: [
       {
@@ -844,8 +852,8 @@ export const blogPosts: BlogPost[] = [
     categoryAr: "اتجاهات السوق",
     date: "2025-01-05",
     readTime: 7,
-    heroImage: placeholderBlog,
-    images: [placeholderBlog, placeholderBlog, placeholderBlog],
+    heroImage: uaeOutlook20251,
+    images: [uaeOutlook20251, uaeOutlook20251, uaeOutlook20251],
     keywords: "UAE economy 2025, GDP growth, digital economy UAE, SME policies, business expansion UAE",
     sections: [
       {
@@ -902,8 +910,8 @@ export const blogPosts: BlogPost[] = [
     categoryAr: "نصائح تجارية",
     date: "2024-12-20",
     readTime: 8,
-    heroImage: placeholderBlog,
-    images: [placeholderBlog, placeholderBlog, placeholderBlog],
+    heroImage: winningLoanApp1,
+    images: [winningLoanApp1, winningLoanApp1, winningLoanApp1],
     keywords: "loan application UAE, business loan documents, financial statements, loan approval tips, UAE bank requirements",
     sections: [
       {
@@ -967,8 +975,8 @@ export const blogPosts: BlogPost[] = [
     categoryAr: "اللوائح",
     date: "2024-12-10",
     readTime: 5,
-    heroImage: placeholderBlog,
-    images: [placeholderBlog, placeholderBlog, placeholderBlog],
+    heroImage: cbuaeRegulations1,
+    images: [cbuaeRegulations1, cbuaeRegulations1, cbuaeRegulations1],
     keywords: "UAE Central Bank, CBUAE regulations, commercial lending rules, AML compliance, SME lending guidelines",
     sections: [
       {
@@ -1025,8 +1033,8 @@ export const blogPosts: BlogPost[] = [
     categoryAr: "التمويل",
     date: "2024-11-28",
     readTime: 6,
-    heroImage: placeholderBlog,
-    images: [placeholderBlog, placeholderBlog, placeholderBlog],
+    heroImage: equipFinanceLease1,
+    images: [equipFinanceLease1, equipFinanceLease1, equipFinanceLease1],
     keywords: "equipment financing UAE, leasing vs buying, business equipment loans, asset financing, equipment lease",
     sections: [
       {
@@ -1069,8 +1077,8 @@ export const blogPosts: BlogPost[] = [
     categoryAr: "نصائح تجارية",
     date: "2024-11-15",
     readTime: 7,
-    heroImage: placeholderBlog,
-    images: [placeholderBlog, placeholderBlog, placeholderBlog],
+    heroImage: buildCreditUae1,
+    images: [buildCreditUae1, buildCreditUae1, buildCreditUae1],
     keywords: "business credit UAE, AECB credit score, credit building, financing terms, business credit profile",
     sections: [
       {
@@ -1141,8 +1149,8 @@ export const blogPosts: BlogPost[] = [
     categoryAr: "نمو الشركات",
     date: "2024-11-01",
     readTime: 6,
-    heroImage: placeholderBlog,
-    images: [placeholderBlog, placeholderBlog, placeholderBlog],
+    heroImage: tradeFinance1,
+    images: [tradeFinance1, tradeFinance1, tradeFinance1],
     keywords: "trade finance UAE, letters of credit, bank guarantees, supply chain financing, import export business",
     sections: [
       {
