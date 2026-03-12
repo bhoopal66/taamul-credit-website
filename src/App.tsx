@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ScrollToTop from "./components/ScrollToTop";
+import ChatWidget from "./components/ChatWidget";
 import CookieConsent from "./components/CookieConsent";
 import Index from "./pages/Index";
 
@@ -73,6 +74,7 @@ const App = () => (
             </Routes>
           </Suspense>
           <CookieConsent />
+          <ChatWidget />
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
