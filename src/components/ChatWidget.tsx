@@ -201,7 +201,7 @@ export default function ChatWidget() {
         onClick={() => setOpen((p) => !p)}
         className="fixed z-50 flex items-center justify-center w-13 h-13 rounded-full bg-blue-800 text-white shadow-lg hover:bg-blue-700 transition-all"
         style={{
-          bottom: "84px", // sits just above the yellow call button
+          bottom: "130px", // sits just above the yellow call button
           right: "16px",
           width: "52px",
           height: "52px",
