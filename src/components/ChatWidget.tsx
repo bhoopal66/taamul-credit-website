@@ -201,8 +201,8 @@ export default function ChatWidget() {
         onClick={() => setOpen((p) => !p)}
         className="fixed z-50 flex items-center justify-center w-13 h-13 rounded-full bg-blue-800 text-white shadow-lg hover:bg-blue-700 transition-all"
         style={{
-          bottom: "150px", // sits just above the yellow call button
-          right: "25px",
+          bottom: "165px", // sits just above the yellow call button
+          right: "29px",
           width: "52px",
           height: "52px",
           animation: !open ? "tcPulse 2.5s infinite" : "none",
