@@ -116,7 +116,7 @@ export default function ChatWidget() {
         <div
           className="fixed z-50 flex flex-col overflow-hidden bg-white rounded-2xl shadow-2xl"
           style={{
-            bottom: "200px",
+            bottom: "230px",
             right: "16px",
             width: "340px",
             height: "460px",
