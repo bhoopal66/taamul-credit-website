@@ -25,6 +25,7 @@ import upfrontLogo from "@/assets/partners/upfront.png";
 import hallidayLogo from "@/assets/partners/halliday.png";
 import grenkeLogo from "@/assets/partners/grenke.png";
 import invoicemateLogo from "@/assets/partners/invoicemate.png";
+import malLogo from "@/assets/partners/mal.png";
 
 const partnerBanks = [
   { name: "RAKBANK", logo: rakbankLogo },
@@ -48,6 +49,7 @@ const fintechPartners = [
   { name: "Halliday", logo: hallidayLogo },
   { name: "Grenke", logo: grenkeLogo },
   { name: "Invoicemate", logo: invoicemateLogo },
+  { name: "Mal", logo: malLogo },
 ];
 
 const PartnersSection = () => {
