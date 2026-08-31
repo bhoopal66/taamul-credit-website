@@ -13,6 +13,7 @@ import wioLogo from "@/assets/partners/wio.png";
 import mashreqLogo from "@/assets/partners/mashreq.png";
 import nbbLogo from "@/assets/partners/nbb.png";
 import ajmanBankLogo from "@/assets/partners/ajman-bank.png";
+import fabLogo from "@/assets/pasrtners/fab.png";
 
 // Fintech partner logos
 import credibleXLogo from "@/assets/partners/credible-x.png";
@@ -34,6 +35,7 @@ const partnerBanks = [
   { name: "Mashreq Bank", logo: mashreqLogo },
   { name: "National Bank of Bahrain", logo: nbbLogo },
   { name: "Ajman Bank", logo: ajmanBankLogo },
+  { name: "FAB", logo: fabLogo },
 ];
 
 const fintechPartners = [
