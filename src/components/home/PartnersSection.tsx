@@ -13,7 +13,7 @@ import wioLogo from "@/assets/partners/wio.png";
 import mashreqLogo from "@/assets/partners/mashreq.png";
 import nbbLogo from "@/assets/partners/nbb.png";
 import ajmanBankLogo from "@/assets/partners/ajman-bank.png";
-import fabLogo from "@/assets/pasrtners/fab.png";
+import fabLogo from "@/assets/partners/fab.png";
 
 // Fintech partner logos
 import credibleXLogo from "@/assets/partners/credible-x.png";
