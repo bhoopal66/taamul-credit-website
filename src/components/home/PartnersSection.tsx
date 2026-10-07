@@ -35,10 +35,10 @@ const partnerBanks = [
   { name: "National Bank of Fujairah", logo: nbfLogo },
   { name: "WIO Bank", logo: wioLogo },
   { name: "Mashreq Bank", logo: mashreqLogo },
-  { name: "National Bank of Bahrain", logo: nbbLogo },
-  { name: "Ajman Bank", logo: ajmanBankLogo },
   { name: "FAB", logo: fabLogo },
   { name: "CBD", logo: cbdLogo },
+  { name: "National Bank of Bahrain", logo: nbbLogo },
+  { name: "Ajman Bank", logo: ajmanBankLogo },
 ];
 
 const fintechPartners = [
